@@ -2,7 +2,6 @@ name: Weekly Process Safety Incident Update
 
 on:
   workflow_dispatch:
-
   schedule:
     - cron: "17 7 * * 1"
       timezone: "Asia/Singapore"
@@ -19,6 +18,7 @@ concurrency:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
 
     steps:
       - name: Check out repository
@@ -34,7 +34,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run incident monitor
-        run: python src/main.py
+        run: python -u src/main.py
 
       - name: Commit updated incident data
         run: |
