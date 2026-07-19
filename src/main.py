@@ -1348,17 +1348,27 @@ def discover_query(
 ) -> list[dict]:
     query_name = query_config["name"]
     query = query_config["query"]
+    providers = query_config.get(
+        "providers",
+        ["GDELT", "Google News RSS"],
+    )
 
     discovered = []
 
-    if settings.get("gdelt_enabled", True):
+    if (
+        settings.get("gdelt_enabled", True)
+        and "GDELT" in providers
+    ):
         try:
             results = fetch_gdelt(
                 query,
                 query_name,
-                settings.get(
-                    "gdelt_max_records_per_query",
-                    50,
+                query_config.get(
+                    "gdelt_max_records",
+                    settings.get(
+                        "gdelt_max_records_per_query",
+                        50,
+                    ),
                 ),
             )
 
@@ -1372,14 +1382,20 @@ def discover_query(
             diagnostics["providers"]["GDELT"]["failures"].append(str(exc))
             print(f"WARNING: {exc}", flush=True)
 
-    if settings.get("google_news_rss_enabled", True):
+    if (
+        settings.get("google_news_rss_enabled", True)
+        and "Google News RSS" in providers
+    ):
         try:
             results = fetch_google_news_rss(
                 query,
                 query_name,
-                settings.get(
-                    "google_news_max_records_per_query",
-                    50,
+                query_config.get(
+                    "google_news_max_records",
+                    settings.get(
+                        "google_news_max_records_per_query",
+                        50,
+                    ),
                 ),
             )
 
@@ -1413,6 +1429,8 @@ def collect_candidates(
         "confirmed_candidates": 0,
         "under_review_candidates": 0,
         "rejected_after_analysis": 0,
+        "outside_lookback_window": 0,
+        "query_details": [],
         "providers": {
             "GDELT": {
                 "queries_succeeded": 0,
@@ -1430,11 +1448,23 @@ def collect_candidates(
     }
 
     candidates = []
-    global_seen = set()
+
+    # Important v0.5 fix:
+    # Do NOT mark every discovered article as globally processed before it is
+    # selected. An article skipped by a broad query must still be eligible for
+    # a later targeted semiconductor-company query.
+    processed_selected_keys = set()
+    all_discovered_keys = set()
+
+    cutoff = utc_now() - timedelta(
+        days=settings["lookback_days"]
+    )
 
     for query_config in settings["queries"]:
+        query_name = query_config["name"]
+
         print(
-            f"\n=== {query_config['name']} ===",
+            f"\\n=== {query_name} ===",
             flush=True,
         )
 
@@ -1449,13 +1479,41 @@ def collect_candidates(
         stream = query_config["stream"]
         shortlisted = []
 
+        query_detail = {
+            "name": query_name,
+            "stream": stream,
+            "priority": query_config.get("priority", "normal"),
+            "discovered": len(articles),
+            "quick_screened_in": 0,
+            "selected_for_enrichment": 0,
+            "selected_titles": [],
+        }
+
         for article in articles:
             key = article_key(article)
 
-            if key in global_seen:
-                continue
+            if key:
+                all_discovered_keys.add(key)
 
-            global_seen.add(key)
+            # Enforce the rolling window ourselves rather than relying only on
+            # provider-side date syntax.
+            published_at = article.get("published_at")
+
+            if published_at:
+                try:
+                    published_dt = datetime.fromisoformat(
+                        published_at.replace(
+                            "Z",
+                            "+00:00",
+                        )
+                    )
+
+                    if published_dt < cutoff:
+                        diagnostics["outside_lookback_window"] += 1
+                        continue
+
+                except ValueError:
+                    pass
 
             quick_text = " ".join(
                 [
@@ -1475,12 +1533,10 @@ def collect_candidates(
                 scoring,
             )
 
-            # Do not use source reliability as an early discard.
-            # The targeted query provides a modest floor so blocked publishers
-            # can still reach the Under Review queue.
             if stream == "Semiconductor":
                 if pre_semiconductor == 0 and pre_process == 0:
                     continue
+
             elif pre_process == 0:
                 continue
 
@@ -1499,6 +1555,7 @@ def collect_candidates(
             )
 
         diagnostics["quick_screened_in"] += len(shortlisted)
+        query_detail["quick_screened_in"] = len(shortlisted)
 
         shortlisted.sort(
             key=lambda item: (
@@ -1510,14 +1567,41 @@ def collect_candidates(
             reverse=True,
         )
 
-        enrichment_limit = settings.get(
-            "enrichment_limit_per_query",
-            20,
+        enrichment_limit = query_config.get(
+            "enrichment_limit",
+            settings.get(
+                "enrichment_limit_per_query",
+                20,
+            ),
         )
 
-        selected = shortlisted[:enrichment_limit]
+        # Only suppress an article if it was ACTUALLY selected and processed
+        # by an earlier query. Articles merely discovered earlier remain
+        # eligible for targeted follow-up searches.
+        eligible = [
+            item
+            for item in shortlisted
+            if article_key(item["article"]) not in processed_selected_keys
+        ]
+
+        selected = eligible[:enrichment_limit]
+
+        for item in selected:
+            processed_selected_keys.add(
+                article_key(
+                    item["article"]
+                )
+            )
 
         diagnostics["selected_for_enrichment"] += len(selected)
+
+        query_detail["selected_for_enrichment"] = len(selected)
+        query_detail["selected_titles"] = [
+            item["article"].get("title", "")
+            for item in selected[:30]
+        ]
+
+        diagnostics["query_details"].append(query_detail)
 
         print(
             f"{len(articles)} unique provider results; "
@@ -1566,6 +1650,7 @@ def collect_candidates(
 
         for item in selected:
             article = item["article"]
+
             context = contexts.get(
                 article_key(article),
                 {
@@ -1598,7 +1683,7 @@ def collect_candidates(
             else:
                 diagnostics["under_review_candidates"] += 1
 
-    diagnostics["unique_articles"] = len(global_seen)
+    diagnostics["unique_articles"] = len(all_discovered_keys)
 
     provider_successes = sum(
         provider["queries_succeeded"]
@@ -1734,7 +1819,7 @@ def main() -> None:
     database = load_json(
         INCIDENTS_PATH,
         {
-            "schema_version": 4,
+            "schema_version": 5,
             "last_run": None,
             "incidents": [],
         },
@@ -1762,7 +1847,7 @@ def main() -> None:
     run_time = iso_now()
 
     print(
-        "Process Safety Incident Watch v0.4",
+        "Process Safety Incident Watch v0.5",
         flush=True,
     )
 
@@ -1843,7 +1928,7 @@ def main() -> None:
         reverse=True,
     )
 
-    database["schema_version"] = 4
+    database["schema_version"] = 5
     database["last_run"] = run_time
 
     unknown_sources["last_run"] = run_time
