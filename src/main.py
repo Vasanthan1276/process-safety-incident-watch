@@ -1,38 +1,42 @@
 from __future__ import annotations
 
+import email.utils
 import json
 import random
 import re
 import shutil
 import time
+import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
-from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
+from urllib.parse import parse_qsl, quote_plus, urlencode, urlparse, urlunparse
 
 import requests
 from bs4 import BeautifulSoup
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
 SETTINGS_PATH = ROOT / "config" / "settings.json"
 SCORING_PATH = ROOT / "config" / "scoring.json"
+
 INCIDENTS_PATH = ROOT / "data" / "incidents.json"
 REPORT_PATH = ROOT / "data" / "latest_report.json"
 DIAGNOSTICS_PATH = ROOT / "data" / "run_diagnostics.json"
+UNKNOWN_SOURCES_PATH = ROOT / "data" / "unknown_sources.json"
+
 HISTORY_DIR = ROOT / "history"
 PUBLIC_DATA_DIR = ROOT / "public" / "data"
 
 GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
-USER_AGENT = (
-    "ProcessSafetyIncidentWatch/0.2 "
-    "(public process-safety research and monitoring project)"
-)
+GOOGLE_NEWS_RSS_ENDPOINT = "https://news.google.com/rss/search"
 
-# Keep GDELT requests deliberately modest.
-GDELT_MAX_RECORDS = 50
-GDELT_RETRY_DELAYS = [10, 20, 40]
+USER_AGENT = (
+    "ProcessSafetyIncidentWatch/0.4 "
+    "(public process-safety incident monitoring project)"
+)
 
 TRACKING_PARAMS = {
     "utm_source",
@@ -55,13 +59,22 @@ SESSION.headers.update(
 )
 
 
-class GDELTQueryError(RuntimeError):
-    """Raised when a GDELT query cannot be completed after retries."""
+class DiscoveryError(RuntimeError):
+    """Raised when a discovery provider fails."""
 
 
-def load_json(path: Path) -> dict:
+def utc_now() -> datetime:
+    return datetime.now(timezone.utc)
+
+
+def iso_now() -> str:
+    return utc_now().replace(microsecond=0).isoformat()
+
+
+def load_json(path: Path, default: dict | None = None) -> dict:
     if not path.exists():
-        return {}
+        return default.copy() if default else {}
+
     return json.loads(path.read_text(encoding="utf-8"))
 
 
@@ -73,38 +86,10 @@ def save_json(path: Path, payload: dict) -> None:
     )
 
 
-def utc_now() -> datetime:
-    return datetime.now(timezone.utc)
-
-
-def iso_now() -> str:
-    return utc_now().replace(microsecond=0).isoformat()
-
-
-def parse_gdelt_date(value: str | None) -> str | None:
-    if not value:
-        return None
-
-    value = str(value).strip()
-
-    for fmt in ("%Y%m%dT%H%M%SZ", "%Y%m%d%H%M%S"):
-        try:
-            return (
-                datetime.strptime(value, fmt)
-                .replace(tzinfo=timezone.utc)
-                .isoformat()
-            )
-        except ValueError:
-            pass
-
-    return value
-
-
 def canonicalize_url(url: str) -> str:
     try:
         parts = urlparse(url)
-
-        filtered = [
+        filtered_query = [
             (key, value)
             for key, value in parse_qsl(parts.query, keep_blank_values=True)
             if key.lower() not in TRACKING_PARAMS
@@ -116,7 +101,7 @@ def canonicalize_url(url: str) -> str:
                 parts.netloc.lower(),
                 parts.path.rstrip("/"),
                 "",
-                urlencode(filtered),
+                urlencode(filtered_query),
                 "",
             )
         )
@@ -134,23 +119,42 @@ def domain_from_url(url: str) -> str:
 
 
 def domain_matches(domain: str, configured_domain: str) -> bool:
-    configured_domain = configured_domain.lower()
+    configured_domain = configured_domain.lower().strip()
     return domain == configured_domain or domain.endswith("." + configured_domain)
 
 
+def is_government_domain(domain: str) -> bool:
+    government_markers = (
+        ".gov",
+        ".gov.",
+        ".gob",
+        ".gob.",
+        ".go.kr",
+        ".go.jp",
+        ".go.th",
+        ".go.id",
+        ".gov.sg",
+        ".gov.my",
+        ".gov.tw",
+        ".gov.au",
+        ".gov.nz",
+        ".gc.ca",
+    )
+
+    return any(marker in domain for marker in government_markers)
+
+
 def score_reliability(domain: str, scoring: dict) -> int:
+    if not domain:
+        return 1
+
     for score_text in ("5", "4", "3"):
         for configured_domain in scoring["reliability"].get(score_text, []):
             if domain_matches(domain, configured_domain):
                 return int(score_text)
 
-    if (
-        domain.endswith(".gov")
-        or ".gov." in domain
-        or domain.endswith(".gob")
-        or ".gob." in domain
-    ):
-        return 4
+    if is_government_domain(domain):
+        return 5
 
     return 2
 
@@ -163,9 +167,23 @@ def normalize_text(value: str) -> str:
     return value.strip()
 
 
+def clean_html_text(value: str) -> str:
+    if not value:
+        return ""
+
+    soup = BeautifulSoup(value, "html.parser")
+    return " ".join(soup.get_text(" ", strip=True).split())
+
+
 def keyword_hits(text: str, keywords: list[str]) -> list[str]:
     lowered = text.lower()
-    return sorted({kw for kw in keywords if kw.lower() in lowered})
+    return sorted(
+        {
+            keyword
+            for keyword in keywords
+            if keyword.lower() in lowered
+        }
+    )
 
 
 def bounded_score(
@@ -185,46 +203,25 @@ def bounded_score(
     return 5
 
 
-def score_semiconductor(
-    text: str,
-    scoring: dict,
-) -> tuple[int, list[str]]:
-    hits = keyword_hits(
-        text,
-        scoring["keywords"]["semiconductor"],
-    )
-    return bounded_score(len(hits), (1, 2, 4, 6)), hits
-
-
-def score_process_safety(
-    text: str,
-    scoring: dict,
-) -> tuple[int, list[str]]:
-    hits = keyword_hits(
-        text,
-        scoring["keywords"]["process_safety"],
-    )
+def score_semiconductor(text: str, scoring: dict) -> tuple[int, list[str]]:
+    hits = keyword_hits(text, scoring["keywords"]["semiconductor"])
     return bounded_score(len(hits), (1, 2, 4, 7)), hits
 
 
-def score_severity(
-    text: str,
-    scoring: dict,
-) -> tuple[int, list[str]]:
-    high = keyword_hits(
-        text,
-        scoring["keywords"]["severity_high"],
-    )
-    medium = keyword_hits(
-        text,
-        scoring["keywords"]["severity_medium"],
-    )
+def score_process_safety(text: str, scoring: dict) -> tuple[int, list[str]]:
+    hits = keyword_hits(text, scoring["keywords"]["process_safety"])
+    return bounded_score(len(hits), (1, 2, 4, 8)), hits
+
+
+def score_severity(text: str, scoring: dict) -> tuple[int, list[str]]:
+    high = keyword_hits(text, scoring["keywords"]["severity_high"])
+    medium = keyword_hits(text, scoring["keywords"]["severity_medium"])
 
     if len(high) >= 3:
         score = 5
     elif high:
         score = 4
-    elif len(medium) >= 4:
+    elif len(medium) >= 5:
         score = 3
     elif len(medium) >= 2:
         score = 2
@@ -236,55 +233,62 @@ def score_severity(
     return score, sorted(set(high + medium))
 
 
-def get_retry_delay(
-    attempt_index: int,
-    response: requests.Response | None = None,
-) -> float:
-    if response is not None:
-        retry_after = response.headers.get("Retry-After")
+def parse_gdelt_date(value: str | None) -> str | None:
+    if not value:
+        return None
 
-        if retry_after:
-            try:
-                return max(float(retry_after), 10.0)
-            except ValueError:
-                pass
+    value = str(value).strip()
 
-    base = GDELT_RETRY_DELAYS[
-        min(attempt_index, len(GDELT_RETRY_DELAYS) - 1)
-    ]
+    for fmt in ("%Y%m%dT%H%M%SZ", "%Y%m%d%H%M%S"):
+        try:
+            return (
+                datetime.strptime(value, fmt)
+                .replace(tzinfo=timezone.utc)
+                .isoformat()
+            )
+        except ValueError:
+            continue
 
-    # Add jitter so multiple scheduled jobs do not retry simultaneously.
-    return base + random.uniform(2, 12)
+    return value
+
+
+def parse_rss_date(value: str | None) -> str | None:
+    if not value:
+        return None
+
+    try:
+        dt = email.utils.parsedate_to_datetime(value)
+
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+
+        return dt.astimezone(timezone.utc).isoformat()
+
+    except Exception:
+        return value
 
 
 def fetch_gdelt(
     query: str,
-    requested_max_records: int,
     query_name: str,
+    max_records: int,
 ) -> list[dict]:
-    max_records = min(
-        max(int(requested_max_records or GDELT_MAX_RECORDS), 1),
-        GDELT_MAX_RECORDS,
-    )
-
     params = {
         "query": query,
         "mode": "artlist",
         "format": "json",
-        "maxrecords": max_records,
+        "maxrecords": min(max_records, 50),
         "timespan": "3months",
         "sort": "datedesc",
     }
 
-    total_attempts = len(GDELT_RETRY_DELAYS) + 1
+    retry_delays = [10, 25]
+    total_attempts = len(retry_delays) + 1
 
     for attempt in range(total_attempts):
-        attempt_number = attempt + 1
-
         print(
-            f"GDELT request for {query_name}: "
-            f"attempt {attempt_number}/{total_attempts}, "
-            f"maxrecords={max_records}"
+            f"GDELT {query_name}: attempt {attempt + 1}/{total_attempts}",
+            flush=True,
         )
 
         try:
@@ -293,17 +297,17 @@ def fetch_gdelt(
                 params=params,
                 timeout=30,
             )
+
         except requests.RequestException as exc:
             if attempt == total_attempts - 1:
-                raise GDELTQueryError(
-                    f"{query_name}: network error after "
-                    f"{total_attempts} attempts: {exc}"
+                raise DiscoveryError(
+                    f"GDELT {query_name}: network failure: {exc}"
                 ) from exc
 
-            delay = get_retry_delay(attempt)
+            delay = retry_delays[attempt] + random.uniform(1, 5)
             print(
-                f"WARNING: {query_name} network error: {exc}. "
-                f"Retrying in {delay:.0f} seconds."
+                f"GDELT network error. Retrying in {delay:.0f}s.",
+                flush=True,
             )
             time.sleep(delay)
             continue
@@ -312,74 +316,211 @@ def fetch_gdelt(
             try:
                 payload = response.json()
             except ValueError as exc:
-                raise GDELTQueryError(
-                    f"{query_name}: GDELT returned invalid JSON."
+                raise DiscoveryError(
+                    f"GDELT {query_name}: invalid JSON response."
                 ) from exc
 
             articles = payload.get("articles", [])
 
             if not isinstance(articles, list):
-                raise GDELTQueryError(
-                    f"{query_name}: unexpected GDELT response format."
+                raise DiscoveryError(
+                    f"GDELT {query_name}: unexpected response structure."
                 )
 
             print(
-                f"GDELT query succeeded for {query_name}: "
-                f"{len(articles)} articles returned."
+                f"GDELT {query_name}: {len(articles)} articles.",
+                flush=True,
             )
-            return articles
 
-        if response.status_code == 429:
-            if attempt == total_attempts - 1:
-                raise GDELTQueryError(
-                    f"{query_name}: GDELT returned HTTP 429 "
-                    f"after {total_attempts} attempts."
+            normalized = []
+
+            for article in articles:
+                url = canonicalize_url(article.get("url", ""))
+
+                normalized.append(
+                    {
+                        "title": article.get("title", "").strip(),
+                        "url": url,
+                        "source_domain": domain_from_url(url),
+                        "source_name": article.get("domain", ""),
+                        "published_at": parse_gdelt_date(article.get("seendate")),
+                        "description": "",
+                        "discovery_source": "GDELT",
+                        "source_country": article.get("sourcecountry"),
+                        "language": article.get("language"),
+                    }
                 )
 
-            delay = get_retry_delay(attempt, response)
+            return normalized
+
+        if response.status_code == 429 and attempt < total_attempts - 1:
+            retry_after = response.headers.get("Retry-After")
+
+            try:
+                delay = float(retry_after) if retry_after else retry_delays[attempt]
+            except ValueError:
+                delay = retry_delays[attempt]
+
+            delay += random.uniform(1, 5)
 
             print(
-                f"WARNING: {query_name} received HTTP 429. "
-                f"Waiting {delay:.0f} seconds before retry."
+                f"GDELT HTTP 429. Retrying in {delay:.0f}s.",
+                flush=True,
             )
 
             time.sleep(delay)
             continue
 
-        if 500 <= response.status_code < 600:
-            if attempt == total_attempts - 1:
-                raise GDELTQueryError(
-                    f"{query_name}: GDELT returned "
-                    f"HTTP {response.status_code} after retries."
-                )
-
-            delay = get_retry_delay(attempt, response)
-
-            print(
-                f"WARNING: {query_name} received "
-                f"HTTP {response.status_code}. "
-                f"Retrying in {delay:.0f} seconds."
-            )
-
-            time.sleep(delay)
-            continue
-
-        raise GDELTQueryError(
-            f"{query_name}: GDELT returned "
-            f"HTTP {response.status_code}: "
-            f"{response.text[:300]}"
+        raise DiscoveryError(
+            f"GDELT {query_name}: HTTP {response.status_code}"
         )
 
-    raise GDELTQueryError(
-        f"{query_name}: unexpected retry loop exit."
+    raise DiscoveryError(
+        f"GDELT {query_name}: exhausted retries."
     )
+
+
+def fetch_google_news_rss(
+    query: str,
+    query_name: str,
+    max_records: int,
+) -> list[dict]:
+    params = {
+        "q": f"{query} when:90d",
+        "hl": "en-SG",
+        "gl": "SG",
+        "ceid": "SG:en",
+    }
+
+    try:
+        response = SESSION.get(
+            GOOGLE_NEWS_RSS_ENDPOINT,
+            params=params,
+            timeout=30,
+        )
+
+        response.raise_for_status()
+
+    except requests.RequestException as exc:
+        raise DiscoveryError(
+            f"Google News RSS {query_name}: {exc}"
+        ) from exc
+
+    try:
+        root = ET.fromstring(response.content)
+    except ET.ParseError as exc:
+        raise DiscoveryError(
+            f"Google News RSS {query_name}: invalid XML."
+        ) from exc
+
+    results = []
+
+    for item in root.findall(".//item")[:max_records]:
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        pub_date = (item.findtext("pubDate") or "").strip()
+        description = clean_html_text(item.findtext("description") or "")
+
+        source_node = item.find("source")
+        source_name = ""
+        source_url = ""
+
+        if source_node is not None:
+            source_name = (source_node.text or "").strip()
+            source_url = (source_node.attrib.get("url") or "").strip()
+
+        source_domain = domain_from_url(source_url)
+
+        results.append(
+            {
+                "title": title,
+                "url": canonicalize_url(link),
+                "source_domain": source_domain,
+                "source_name": source_name,
+                "published_at": parse_rss_date(pub_date),
+                "description": description,
+                "discovery_source": "Google News RSS",
+                "source_country": None,
+                "language": "English",
+            }
+        )
+
+    print(
+        f"Google News RSS {query_name}: {len(results)} articles.",
+        flush=True,
+    )
+
+    return results
+
+
+def article_key(article: dict) -> str:
+    title = normalize_text(article.get("title", ""))
+    domain = article.get("source_domain", "")
+
+    if title:
+        return f"{title}|{domain}"
+
+    return canonicalize_url(article.get("url", ""))
+
+
+def merge_discovered_articles(
+    articles: list[dict],
+) -> list[dict]:
+    merged = {}
+
+    for article in articles:
+        key = article_key(article)
+
+        if not key:
+            continue
+
+        if key not in merged:
+            merged[key] = article
+            merged[key]["discovery_sources"] = [
+                article.get("discovery_source", "Unknown")
+            ]
+            continue
+
+        existing = merged[key]
+
+        discovery_source = article.get(
+            "discovery_source",
+            "Unknown",
+        )
+
+        if discovery_source not in existing["discovery_sources"]:
+            existing["discovery_sources"].append(discovery_source)
+
+        if (
+            len(article.get("description", ""))
+            > len(existing.get("description", ""))
+        ):
+            existing["description"] = article.get("description", "")
+
+        if (
+            not existing.get("source_domain")
+            and article.get("source_domain")
+        ):
+            existing["source_domain"] = article["source_domain"]
+
+        if (
+            not existing.get("source_name")
+            and article.get("source_name")
+        ):
+            existing["source_name"] = article["source_name"]
+
+    return list(merged.values())
 
 
 def fetch_article_context(url: str) -> dict:
     result = {
         "description": "",
         "text": "",
+        "final_url": url,
     }
+
+    if not url:
+        return result
 
     try:
         response = SESSION.get(
@@ -388,32 +529,22 @@ def fetch_article_context(url: str) -> dict:
             allow_redirects=True,
         )
 
+        result["final_url"] = response.url
         response.raise_for_status()
 
-        content_type = response.headers.get(
-            "content-type",
-            "",
-        )
+        content_type = response.headers.get("content-type", "")
 
         if "html" not in content_type.lower():
             return result
 
-        soup = BeautifulSoup(
-            response.text,
-            "html.parser",
-        )
+        soup = BeautifulSoup(response.text, "html.parser")
 
-        meta_candidates = [
-            ("meta", {"property": "og:description"}),
-            ("meta", {"name": "description"}),
-            ("meta", {"name": "twitter:description"}),
-        ]
-
-        for tag_name, attrs in meta_candidates:
-            tag = soup.find(
-                tag_name,
-                attrs=attrs,
-            )
+        for attrs in (
+            {"property": "og:description"},
+            {"name": "description"},
+            {"name": "twitter:description"},
+        ):
+            tag = soup.find("meta", attrs=attrs)
 
             if tag and tag.get("content"):
                 result["description"] = " ".join(
@@ -434,34 +565,26 @@ def fetch_article_context(url: str) -> dict:
             if len(text) >= 60:
                 paragraphs.append(text)
 
-            if len(" ".join(paragraphs)) >= 5000:
+            if len(" ".join(paragraphs)) >= 4500:
                 break
 
-        result["text"] = " ".join(paragraphs)[:6000]
+        result["text"] = " ".join(paragraphs)[:5000]
 
         return result
 
     except Exception:
-        # Article-page access is optional. The GDELT metadata can still be used.
         return result
 
 
 def split_sentences(text: str) -> list[str]:
-    text = re.sub(
-        r"\s+",
-        " ",
-        text,
-    ).strip()
+    text = re.sub(r"\s+", " ", text).strip()
 
     if not text:
         return []
 
     return [
         sentence.strip()
-        for sentence in re.split(
-            r"(?<=[.!?])\s+",
-            text,
-        )
+        for sentence in re.split(r"(?<=[.!?])\s+", text)
         if len(sentence.strip()) >= 35
     ]
 
@@ -479,7 +602,7 @@ def make_summary(
     sentences = split_sentences(source)
 
     if not sentences:
-        return source[:500].strip()
+        return source[:650].strip()
 
     chosen = []
 
@@ -492,78 +615,81 @@ def make_summary(
         if len(chosen) == 2:
             break
 
-    summary = (
+    return (
         " ".join(chosen)
         if chosen
         else sentences[0]
-    )
-
-    return summary[:650].strip()
+    )[:650].strip()
 
 
 def process_safety_concern(
     process_hits: list[str],
     severity_hits: list[str],
 ) -> str:
-    all_hits = set(
-        process_hits + severity_hits
-    )
-
+    hits = set(process_hits + severity_hits)
     concerns = []
 
-    if all_hits & {
+    if hits & {
+        "toxic gas",
         "gas leak",
         "gas release",
-        "toxic",
-        "toxic plume",
+        "chemical leak",
+        "chemical release",
+        "hydrogen fluoride",
+        "hydrofluoric acid",
         "ammonia",
         "chlorine",
         "fluorine",
         "arsine",
         "phosphine",
-        "hydrogen fluoride",
-        "hydrofluoric acid",
-        "hf",
+        "toxic plume",
     }:
         concerns.append(
-            "toxic-gas or hazardous-material containment and detection"
+            "toxic-gas or hazardous-material containment, detection and emergency isolation"
         )
 
-    if all_hits & {
+    if hits & {
         "fire",
+        "flash fire",
         "explosion",
-        "explosive",
+        "blast",
         "flammable",
         "hydrogen",
         "silane",
+        "pyrophoric",
     }:
         concerns.append(
-            "fire and explosion prevention, isolation and emergency response"
+            "fire and explosion prevention, ignition control and emergency response"
         )
 
-    if all_hits & {
+    if hits & {
         "rupture",
         "overpressure",
         "pressure vessel",
+        "pipe failure",
+        "piping failure",
     }:
         concerns.append(
-            "mechanical integrity, overpressure protection and loss of containment"
+            "mechanical integrity, overpressure protection and loss-of-containment prevention"
         )
 
-    if all_hits & {
+    if hits & {
         "runaway reaction",
         "thermal runaway",
+        "reactive chemistry",
     }:
         concerns.append(
             "reactive-chemistry and thermal-runaway controls"
         )
 
-    if all_hits & {
+    if hits & {
         "scrubber",
         "abatement",
+        "exhaust",
+        "duct",
     }:
         concerns.append(
-            "abatement and exhaust-system reliability"
+            "exhaust and abatement-system reliability"
         )
 
     if not concerns:
@@ -571,43 +697,7 @@ def process_safety_concern(
             "loss-of-containment prevention and emergency response"
         )
 
-    return (
-        "; ".join(concerns[:3]).capitalize()
-        + "."
-    )
-
-
-def source_record(
-    article: dict,
-    reliability: int,
-    context: dict,
-) -> dict:
-    url = canonicalize_url(
-        article.get("url", "")
-    )
-
-    return {
-        "title": article.get(
-            "title",
-            "",
-        ).strip(),
-        "url": url,
-        "domain": domain_from_url(url),
-        "published_at": parse_gdelt_date(
-            article.get("seendate")
-        ),
-        "source_country": article.get(
-            "sourcecountry"
-        ),
-        "language": article.get(
-            "language"
-        ),
-        "reliability": reliability,
-        "description": context.get(
-            "description",
-            "",
-        )[:1000],
-    }
+    return "; ".join(concerns[:3]).capitalize() + "."
 
 
 def weighted_watch_score(
@@ -618,119 +708,133 @@ def weighted_watch_score(
     confidence: int,
     stream: str,
 ) -> float:
-    semiconductor_weight = (
-        0.20
-        if stream == "Semiconductor"
-        else 0.05
-    )
-
-    process_weight = (
-        0.30
-        + (0.20 - semiconductor_weight)
-    )
-
-    score = (
-        reliability * 0.20
-        + process_score * process_weight
-        + semiconductor_score * semiconductor_weight
-        + severity * 0.20
-        + confidence * 0.10
-    )
+    if stream == "Semiconductor":
+        score = (
+            reliability * 0.20
+            + process_score * 0.30
+            + semiconductor_score * 0.20
+            + severity * 0.20
+            + confidence * 0.10
+        )
+    else:
+        score = (
+            reliability * 0.20
+            + process_score * 0.45
+            + semiconductor_score * 0.05
+            + severity * 0.20
+            + confidence * 0.10
+        )
 
     return round(
-        max(
-            0.0,
-            min(
-                5.0,
-                score,
-            ),
-        ),
+        max(0.0, min(5.0, score)),
         2,
     )
 
 
-def candidate_from_article(
+def qualifies_for_monitoring(
+    stream: str,
+    process_score: int,
+    semiconductor_score: int,
+    settings: dict,
+) -> bool:
+    if process_score < settings["minimum_process_safety_relevance"]:
+        return False
+
+    if (
+        stream == "Semiconductor"
+        and semiconductor_score
+        < settings["minimum_semiconductor_relevance"]
+    ):
+        return False
+
+    return True
+
+
+def review_status_for(
+    reliability: int,
+    settings: dict,
+) -> str:
+    if reliability >= settings["minimum_confirmed_reliability"]:
+        return "Confirmed"
+
+    return "Under Review"
+
+
+def record_unknown_source(
+    unknown_sources: dict,
+    domain: str,
+    title: str,
+    source_name: str,
+    run_time: str,
+) -> None:
+    if not domain:
+        return
+
+    records = unknown_sources.setdefault("sources", {})
+    record = records.setdefault(
+        domain,
+        {
+            "domain": domain,
+            "source_name": source_name,
+            "first_seen": run_time,
+            "last_seen": run_time,
+            "times_seen": 0,
+            "sample_titles": [],
+        },
+    )
+
+    record["last_seen"] = run_time
+    record["times_seen"] += 1
+
+    if title and title not in record["sample_titles"]:
+        record["sample_titles"].append(title)
+        record["sample_titles"] = record["sample_titles"][:5]
+
+
+def build_candidate(
     article: dict,
     stream: str,
     scoring: dict,
+    settings: dict,
+    context: dict,
+    run_time: str,
+    unknown_sources: dict,
+    pre_semiconductor: int,
+    pre_process: int,
 ) -> dict | None:
-    title = article.get(
-        "title",
-        "",
-    ).strip()
+    title = article.get("title", "").strip()
 
-    url = canonicalize_url(
-        article.get(
-            "url",
-            "",
-        )
+    description = (
+        context.get("description", "")
+        or article.get("description", "")
     )
 
-    if not title or not url:
-        return None
+    body = context.get("text", "")
 
-    domain = domain_from_url(url)
+    source_domain = article.get("source_domain", "").strip()
+    final_url = canonicalize_url(context.get("final_url", ""))
+
+    final_domain = domain_from_url(final_url)
+
+    if (
+        final_domain
+        and final_domain not in {
+            "news.google.com",
+            "google.com",
+        }
+    ):
+        source_domain = final_domain
 
     reliability = score_reliability(
-        domain,
+        source_domain,
         scoring,
     )
-
-    metadata_text = " ".join(
-        [
-            title,
-            str(
-                article.get(
-                    "domain",
-                    "",
-                )
-            ),
-            str(
-                article.get(
-                    "sourcecountry",
-                    "",
-                )
-            ),
-        ]
-    )
-
-    pre_semiconductor, _ = score_semiconductor(
-        metadata_text,
-        scoring,
-    )
-
-    pre_process, _ = score_process_safety(
-        metadata_text,
-        scoring,
-    )
-
-    # This is only a cheap first-stage relevance filter.
-    if (
-        stream == "Semiconductor"
-        and pre_semiconductor == 0
-        and pre_process == 0
-    ):
-        return None
-
-    if (
-        stream == "Cross-Industry"
-        and pre_process == 0
-    ):
-        return None
-
-    context = fetch_article_context(url)
 
     combined = " ".join(
         [
             title,
-            context.get(
-                "description",
-                "",
-            ),
-            context.get(
-                "text",
-                "",
-            ),
+            description,
+            body,
         ]
     )
 
@@ -744,10 +848,51 @@ def candidate_from_article(
         scoring,
     )
 
-    severity, severity_hits = score_severity(
+    severity_score, severity_hits = score_severity(
         combined,
         scoring,
     )
+
+    # The discovery queries are already hazard-targeted. These floors prevent
+    # a valid item from disappearing solely because a publisher blocks scraping.
+    if stream == "Semiconductor":
+        semiconductor_score = max(
+            semiconductor_score,
+            1 if pre_semiconductor > 0 else 0,
+        )
+
+        process_score = max(
+            process_score,
+            1 if pre_process > 0 else 0,
+        )
+
+    else:
+        process_score = max(
+            process_score,
+            1 if pre_process > 0 else 0,
+        )
+
+    if not qualifies_for_monitoring(
+        stream,
+        process_score,
+        semiconductor_score,
+        settings,
+    ):
+        return None
+
+    review_status = review_status_for(
+        reliability,
+        settings,
+    )
+
+    if reliability < settings["minimum_confirmed_reliability"]:
+        record_unknown_source(
+            unknown_sources,
+            source_domain,
+            title,
+            article.get("source_name", ""),
+            run_time,
+        )
 
     confidence = max(
         1,
@@ -761,39 +906,50 @@ def candidate_from_article(
         reliability,
         process_score,
         semiconductor_score,
-        severity,
+        severity_score,
         confidence,
         stream,
     )
 
+    source_url = canonicalize_url(
+        article.get("url", "")
+    )
+
+    source = {
+        "title": title,
+        "url": source_url,
+        "domain": source_domain,
+        "source_name": article.get("source_name", ""),
+        "published_at": article.get("published_at"),
+        "source_country": article.get("source_country"),
+        "language": article.get("language"),
+        "reliability": reliability,
+        "discovery_sources": article.get(
+            "discovery_sources",
+            [article.get("discovery_source", "Unknown")],
+        ),
+        "description": description[:1200],
+    }
+
     return {
         "stream": stream,
         "title": title,
-        "reported_at": parse_gdelt_date(
-            article.get(
-                "seendate"
-            )
-        ),
+        "reported_at": article.get("published_at"),
         "summary": make_summary(
             title,
-            context.get(
-                "description",
-                "",
-            ),
-            context.get(
-                "text",
-                "",
-            ),
+            description,
+            body,
         ),
         "process_safety_concern": process_safety_concern(
             process_hits,
             severity_hits,
         ),
+        "review_status": review_status,
         "scores": {
             "source_reliability": reliability,
             "process_safety_relevance": process_score,
             "semiconductor_relevance": semiconductor_score,
-            "severity_potential": severity,
+            "severity_potential": severity_score,
             "confidence": confidence,
             "watch_score": watch_score,
         },
@@ -802,18 +958,12 @@ def candidate_from_article(
             "process_safety": process_hits,
             "severity": severity_hits,
         },
-        "sources": [
-            source_record(
-                article,
-                reliability,
-                context,
-            )
-        ],
+        "sources": [source],
     }
 
 
 def token_set(value: str) -> set[str]:
-    stop = {
+    stop_words = {
         "the",
         "a",
         "an",
@@ -834,22 +984,19 @@ def token_set(value: str) -> set[str]:
         "are",
         "was",
         "were",
+        "says",
+        "report",
     }
 
     return {
         token
-        for token in normalize_text(
-            value
-        ).split()
-        if token not in stop
+        for token in normalize_text(value).split()
+        if token not in stop_words
         and len(token) > 2
     }
 
 
-def title_similarity(
-    first: str,
-    second: str,
-) -> float:
+def title_similarity(first: str, second: str) -> float:
     sequence_score = SequenceMatcher(
         None,
         normalize_text(first),
@@ -862,68 +1009,32 @@ def title_similarity(
     if not first_set or not second_set:
         jaccard = 0.0
     else:
-        jaccard = (
-            len(
-                first_set
-                & second_set
-            )
-            / len(
-                first_set
-                | second_set
-            )
-        )
+        jaccard = len(first_set & second_set) / len(first_set | second_set)
 
-    return max(
-        sequence_score,
-        jaccard,
-    )
+    return max(sequence_score, jaccard)
 
 
-def source_urls(
-    incident: dict,
-) -> set[str]:
+def source_urls(incident: dict) -> set[str]:
     return {
-        canonicalize_url(
-            source.get(
-                "url",
-                "",
-            )
-        )
-        for source in incident.get(
-            "sources",
-            [],
-        )
-        if source.get(
-            "url"
-        )
+        canonicalize_url(source.get("url", ""))
+        for source in incident.get("sources", [])
+        if source.get("url")
     }
 
 
-def same_incident(
-    candidate: dict,
-    incident: dict,
-) -> bool:
-    candidate_urls = source_urls(
-        candidate
-    )
-
-    if candidate_urls & source_urls(
-        incident
-    ):
+def same_incident(candidate: dict, incident: dict) -> bool:
+    if source_urls(candidate) & source_urls(incident):
         return True
 
     similarity = title_similarity(
-        candidate["title"],
-        incident.get(
-            "title",
-            "",
-        ),
+        candidate.get("title", ""),
+        incident.get("title", ""),
     )
 
-    if similarity < 0.80:
+    if similarity < 0.78:
         return False
 
-    candidate_hits = set(
+    candidate_hazards = set(
         candidate.get(
             "keyword_evidence",
             {},
@@ -933,7 +1044,7 @@ def same_incident(
         )
     )
 
-    incident_hits = set(
+    incident_hazards = set(
         incident.get(
             "keyword_evidence",
             {},
@@ -943,12 +1054,8 @@ def same_incident(
         )
     )
 
-    return (
-        similarity >= 0.92
-        or bool(
-            candidate_hits
-            & incident_hits
-        )
+    return similarity >= 0.91 or bool(
+        candidate_hazards & incident_hazards
     )
 
 
@@ -957,282 +1064,166 @@ def next_incident_id(
     year: int,
 ) -> str:
     prefix = f"PSI-{year}-"
-
-    existing = []
+    numbers = []
 
     for incident in incidents:
-        incident_id = incident.get(
-            "incident_id",
-            "",
-        )
+        incident_id = incident.get("incident_id", "")
 
-        if incident_id.startswith(
-            prefix
-        ):
-            try:
-                existing.append(
-                    int(
-                        incident_id.rsplit(
-                            "-",
-                            1,
-                        )[1]
-                    )
+        if not incident_id.startswith(prefix):
+            continue
+
+        try:
+            numbers.append(
+                int(
+                    incident_id.rsplit("-", 1)[1]
                 )
-            except ValueError:
-                pass
+            )
+        except ValueError:
+            continue
 
-    sequence = (
-        max(
-            existing,
-            default=0,
-        )
-        + 1
-    )
-
-    return (
-        f"{prefix}"
-        f"{sequence:04d}"
-    )
+    return f"{prefix}{max(numbers, default=0) + 1:04d}"
 
 
-def merge_scores(
-    existing: dict,
-    candidate: dict,
-) -> bool:
-    changed = False
+def recompute_incident_scores(
+    incident: dict,
+) -> None:
+    scores = incident.setdefault("scores", {})
+    sources = incident.get("sources", [])
 
-    old_scores = existing.setdefault(
-        "scores",
-        {},
-    )
-
-    new_scores = candidate.get(
-        "scores",
-        {},
-    )
-
-    for key in (
-        "source_reliability",
-        "process_safety_relevance",
-        "semiconductor_relevance",
-        "severity_potential",
-    ):
-        old_value = old_scores.get(
-            key,
-            0,
-        )
-
-        new_value = new_scores.get(
-            key,
-            0,
-        )
-
-        if new_value > old_value:
-            old_scores[key] = new_value
-            changed = True
-
-    source_count = len(
-        existing.get(
-            "sources",
-            [],
-        )
-    )
-
-    best_reliability = old_scores.get(
-        "source_reliability",
-        0,
-    )
-
-    confidence = min(
-        5,
-        max(
-            best_reliability,
-            2 + min(
-                source_count,
-                3,
-            ),
+    best_reliability = max(
+        (
+            source.get("reliability", 0)
+            for source in sources
         ),
-    )
-
-    if confidence != old_scores.get(
-        "confidence"
-    ):
-        old_scores[
-            "confidence"
-        ] = confidence
-
-        changed = True
-
-    new_watch_score = weighted_watch_score(
-        old_scores.get(
+        default=scores.get(
             "source_reliability",
             0,
         ),
-        old_scores.get(
-            "process_safety_relevance",
-            0,
-        ),
-        old_scores.get(
-            "semiconductor_relevance",
-            0,
-        ),
-        old_scores.get(
-            "severity_potential",
-            0,
-        ),
-        old_scores.get(
-            "confidence",
-            0,
-        ),
-        existing.get(
-            "stream",
-            "Cross-Industry",
+    )
+
+    scores["source_reliability"] = best_reliability
+
+    source_count = len(sources)
+
+    scores["confidence"] = min(
+        5,
+        max(
+            best_reliability,
+            1 + min(source_count, 4),
         ),
     )
 
-    if new_watch_score != old_scores.get(
-        "watch_score"
-    ):
-        old_scores[
-            "watch_score"
-        ] = new_watch_score
-
-        changed = True
-
-    return changed
+    scores["watch_score"] = weighted_watch_score(
+        scores.get("source_reliability", 0),
+        scores.get("process_safety_relevance", 0),
+        scores.get("semiconductor_relevance", 0),
+        scores.get("severity_potential", 0),
+        scores.get("confidence", 0),
+        incident.get("stream", "Cross-Industry"),
+    )
 
 
 def merge_candidate(
     candidate: dict,
     incidents: list[dict],
     run_time: str,
+    settings: dict,
 ) -> tuple[str, dict]:
     for incident in incidents:
-        if not same_incident(
-            candidate,
-            incident,
-        ):
+        if not same_incident(candidate, incident):
             continue
 
         changes = []
+        known_urls = source_urls(incident)
 
-        known_urls = source_urls(
-            incident
-        )
+        for source in candidate.get("sources", []):
+            url = canonicalize_url(source.get("url", ""))
 
-        for source in candidate.get(
-            "sources",
-            [],
-        ):
-            source_url = canonicalize_url(
-                source.get(
-                    "url",
-                    "",
-                )
-            )
-
-            if source_url not in known_urls:
-                incident.setdefault(
-                    "sources",
-                    [],
-                ).append(
-                    source
-                )
-
-                known_urls.add(
-                    source_url
-                )
-
+            if url and url not in known_urls:
+                incident.setdefault("sources", []).append(source)
+                known_urls.add(url)
                 changes.append(
-                    "Added source: "
-                    + source.get(
-                        "domain",
-                        "unknown source",
-                    )
+                    f"Added source: {source.get('domain') or source.get('source_name') or 'unknown'}"
                 )
 
-        candidate_summary = candidate.get(
-            "summary",
-            "",
-        )
-
-        existing_summary = incident.get(
-            "summary",
-            "",
-        )
-
-        if (
-            candidate_summary
-            and candidate_summary != existing_summary
-            and len(
-                candidate_summary
-            ) > len(
-                existing_summary
-            )
+        for score_key in (
+            "process_safety_relevance",
+            "semiconductor_relevance",
+            "severity_potential",
         ):
-            incident[
-                "summary"
-            ] = candidate_summary
-
-            changes.append(
-                "Expanded incident summary from newly retrieved source material"
+            old_value = incident.setdefault(
+                "scores",
+                {},
+            ).get(
+                score_key,
+                0,
             )
 
-        old_evidence = incident.setdefault(
-            "keyword_evidence",
-            {},
-        )
+            new_value = candidate.get(
+                "scores",
+                {},
+            ).get(
+                score_key,
+                0,
+            )
+
+            if new_value > old_value:
+                incident["scores"][score_key] = new_value
+                changes.append(
+                    f"Increased {score_key.replace('_', ' ')} score"
+                )
+
+        existing_summary = incident.get("summary", "")
+        new_summary = candidate.get("summary", "")
+
+        if new_summary and len(new_summary) > len(existing_summary):
+            incident["summary"] = new_summary
+            changes.append(
+                "Expanded incident summary from a newly retrieved source"
+            )
+
+        evidence = incident.setdefault("keyword_evidence", {})
 
         for category, hits in candidate.get(
             "keyword_evidence",
             {},
         ).items():
             merged_hits = sorted(
-                set(
-                    old_evidence.get(
-                        category,
-                        [],
-                    )
-                )
-                | set(
-                    hits
-                )
+                set(evidence.get(category, []))
+                | set(hits)
             )
 
-            if merged_hits != old_evidence.get(
-                category,
-                [],
-            ):
-                old_evidence[
-                    category
-                ] = merged_hits
-
+            if merged_hits != evidence.get(category, []):
+                evidence[category] = merged_hits
                 changes.append(
-                    "Added "
-                    + category.replace(
-                        "_",
-                        " ",
-                    )
-                    + " evidence"
+                    f"Added {category.replace('_', ' ')} evidence"
                 )
 
-        if merge_scores(
-            incident,
-            candidate,
-        ):
+        previous_review_status = incident.get(
+            "review_status",
+            "Under Review",
+        )
+
+        recompute_incident_scores(incident)
+
+        new_review_status = review_status_for(
+            incident["scores"].get(
+                "source_reliability",
+                0,
+            ),
+            settings,
+        )
+
+        incident["review_status"] = new_review_status
+
+        if new_review_status != previous_review_status:
             changes.append(
-                "Updated incident scoring"
+                f"Review status changed from {previous_review_status} to {new_review_status}"
             )
 
         if changes:
-            incident[
-                "last_updated"
-            ] = run_time
-
-            incident[
-                "status"
-            ] = "Updated"
-
+            incident["last_updated"] = run_time
+            incident["status"] = "Updated"
             incident.setdefault(
                 "change_history",
                 [],
@@ -1240,59 +1231,32 @@ def merge_candidate(
                 {
                     "timestamp": run_time,
                     "type": "updated",
-                    "changes": sorted(
-                        set(
-                            changes
-                        )
-                    ),
+                    "changes": sorted(set(changes)),
                 }
             )
 
-            return (
-                "updated",
-                incident,
-            )
+            return "updated", incident
 
-        return (
-            "unchanged",
-            incident,
-        )
-
-    year = utc_now().year
+        return "unchanged", incident
 
     incident = {
         "incident_id": next_incident_id(
             incidents,
-            year,
+            utc_now().year,
         ),
-        "stream": candidate[
-            "stream"
-        ],
-        "title": candidate[
-            "title"
-        ],
+        "stream": candidate["stream"],
+        "title": candidate["title"],
         "incident_date": None,
-        "reported_at": candidate.get(
-            "reported_at"
-        ),
+        "reported_at": candidate.get("reported_at"),
         "first_detected": run_time,
         "last_updated": run_time,
         "status": "New",
-        "summary": candidate[
-            "summary"
-        ],
-        "process_safety_concern": candidate[
-            "process_safety_concern"
-        ],
-        "scores": candidate[
-            "scores"
-        ],
-        "keyword_evidence": candidate[
-            "keyword_evidence"
-        ],
-        "sources": candidate[
-            "sources"
-        ],
+        "review_status": candidate["review_status"],
+        "summary": candidate["summary"],
+        "process_safety_concern": candidate["process_safety_concern"],
+        "scores": candidate["scores"],
+        "keyword_evidence": candidate["keyword_evidence"],
+        "sources": candidate["sources"],
         "change_history": [
             {
                 "timestamp": run_time,
@@ -1304,32 +1268,20 @@ def merge_candidate(
         ],
     }
 
-    incidents.append(
-        incident
-    )
+    incidents.append(incident)
 
-    return (
-        "new",
-        incident,
-    )
+    return "new", incident
 
 
-def reported_datetime(
-    incident: dict,
-) -> datetime | None:
-    value = incident.get(
-        "reported_at"
-    )
+def reported_datetime(incident: dict) -> datetime | None:
+    value = incident.get("reported_at")
 
     if not value:
         return None
 
     try:
         return datetime.fromisoformat(
-            value.replace(
-                "Z",
-                "+00:00",
-            )
+            value.replace("Z", "+00:00")
         )
     except ValueError:
         return None
@@ -1340,35 +1292,19 @@ def archive_old_incidents(
     lookback_days: int,
     run_time: str,
 ) -> list[str]:
-    cutoff = (
-        utc_now()
-        - timedelta(
-            days=lookback_days
-        )
-    )
-
-    archived = []
+    cutoff = utc_now() - timedelta(days=lookback_days)
+    archived_ids = []
 
     for incident in incidents:
-        incident_datetime = reported_datetime(
-            incident
-        )
+        dt = reported_datetime(incident)
 
         if (
-            incident_datetime
-            and incident_datetime < cutoff
-            and incident.get(
-                "status"
-            ) != "Archived"
+            dt
+            and dt < cutoff
+            and incident.get("status") != "Archived"
         ):
-            incident[
-                "status"
-            ] = "Archived"
-
-            incident[
-                "last_updated"
-            ] = run_time
-
+            incident["status"] = "Archived"
+            incident["last_updated"] = run_time
             incident.setdefault(
                 "change_history",
                 [],
@@ -1381,313 +1317,303 @@ def archive_old_incidents(
                     ],
                 }
             )
-
-            archived.append(
-                incident[
-                    "incident_id"
-                ]
+            archived_ids.append(
+                incident["incident_id"]
             )
 
-    return archived
+    return archived_ids
 
 
-def publishable(
-    candidate: dict,
+def migrate_existing_incidents(
+    incidents: list[dict],
     settings: dict,
-) -> bool:
-    scores = candidate[
-        "scores"
-    ]
+) -> None:
+    for incident in incidents:
+        scores = incident.setdefault("scores", {})
 
-    if scores[
-        "source_reliability"
-    ] < settings[
-        "minimum_publish_reliability"
-    ]:
-        return False
+        if "review_status" not in incident:
+            incident["review_status"] = review_status_for(
+                scores.get(
+                    "source_reliability",
+                    0,
+                ),
+                settings,
+            )
 
-    if scores[
-        "process_safety_relevance"
-    ] < settings[
-        "minimum_process_safety_relevance"
-    ]:
-        return False
 
-    if (
-        candidate[
-            "stream"
-        ] == "Semiconductor"
-        and scores[
-            "semiconductor_relevance"
-        ] < settings[
-            "minimum_semiconductor_relevance"
-        ]
-    ):
-        return False
+def discover_query(
+    query_config: dict,
+    settings: dict,
+    diagnostics: dict,
+) -> list[dict]:
+    query_name = query_config["name"]
+    query = query_config["query"]
 
-    return True
+    discovered = []
+
+    if settings.get("gdelt_enabled", True):
+        try:
+            results = fetch_gdelt(
+                query,
+                query_name,
+                settings.get(
+                    "gdelt_max_records_per_query",
+                    50,
+                ),
+            )
+
+            discovered.extend(results)
+
+            diagnostics["providers"]["GDELT"]["queries_succeeded"] += 1
+            diagnostics["providers"]["GDELT"]["articles_returned"] += len(results)
+
+        except DiscoveryError as exc:
+            diagnostics["providers"]["GDELT"]["queries_failed"] += 1
+            diagnostics["providers"]["GDELT"]["failures"].append(str(exc))
+            print(f"WARNING: {exc}", flush=True)
+
+    if settings.get("google_news_rss_enabled", True):
+        try:
+            results = fetch_google_news_rss(
+                query,
+                query_name,
+                settings.get(
+                    "google_news_max_records_per_query",
+                    50,
+                ),
+            )
+
+            discovered.extend(results)
+
+            diagnostics["providers"]["Google News RSS"]["queries_succeeded"] += 1
+            diagnostics["providers"]["Google News RSS"]["articles_returned"] += len(results)
+
+        except DiscoveryError as exc:
+            diagnostics["providers"]["Google News RSS"]["queries_failed"] += 1
+            diagnostics["providers"]["Google News RSS"]["failures"].append(str(exc))
+            print(f"WARNING: {exc}", flush=True)
+
+    return merge_discovered_articles(discovered)
 
 
 def collect_candidates(
     settings: dict,
     scoring: dict,
+    run_time: str,
+    unknown_sources: dict,
 ) -> tuple[list[dict], dict]:
-    candidates = []
-    seen_urls = set()
-
     diagnostics = {
+        "generated_at": run_time,
         "queries_total": len(settings["queries"]),
-        "queries_succeeded": 0,
-        "queries_failed": 0,
-        "articles_returned": 0,
+        "articles_discovered": 0,
         "unique_articles": 0,
-        "articles_selected_for_enrichment": 0,
+        "quick_screened_in": 0,
+        "selected_for_enrichment": 0,
         "article_pages_enriched": 0,
-        "candidates_after_initial_screen": 0,
-        "publishable_candidates": 0,
-        "failures": [],
+        "confirmed_candidates": 0,
+        "under_review_candidates": 0,
+        "rejected_after_analysis": 0,
+        "providers": {
+            "GDELT": {
+                "queries_succeeded": 0,
+                "queries_failed": 0,
+                "articles_returned": 0,
+                "failures": [],
+            },
+            "Google News RSS": {
+                "queries_succeeded": 0,
+                "queries_failed": 0,
+                "articles_returned": 0,
+                "failures": [],
+            },
+        },
     }
 
-    query_configs = settings["queries"]
+    candidates = []
+    global_seen = set()
 
-    for query_index, query_config in enumerate(query_configs):
-        query_name = query_config["name"]
+    for query_config in settings["queries"]:
+        print(
+            f"\n=== {query_config['name']} ===",
+            flush=True,
+        )
+
+        articles = discover_query(
+            query_config,
+            settings,
+            diagnostics,
+        )
+
+        diagnostics["articles_discovered"] += len(articles)
+
         stream = query_config["stream"]
-
-        print(f"\\nSearching: {query_name}", flush=True)
-
-        try:
-            articles = fetch_gdelt(
-                query_config["query"],
-                settings.get(
-                    "gdelt_max_records_per_query",
-                    GDELT_MAX_RECORDS,
-                ),
-                query_name,
-            )
-            diagnostics["queries_succeeded"] += 1
-            diagnostics["articles_returned"] += len(articles)
-
-        except GDELTQueryError as exc:
-            diagnostics["queries_failed"] += 1
-            diagnostics["failures"].append(str(exc))
-            print(f"ERROR: {exc}", flush=True)
-            articles = []
-
         shortlisted = []
 
         for article in articles:
-            url = canonicalize_url(article.get("url", ""))
+            key = article_key(article)
 
-            if not url or url in seen_urls:
+            if key in global_seen:
                 continue
 
-            seen_urls.add(url)
+            global_seen.add(key)
 
-            title = article.get("title", "").strip()
-            domain = domain_from_url(url)
-            reliability = score_reliability(domain, scoring)
-
-            metadata_text = " ".join(
+            quick_text = " ".join(
                 [
-                    title,
-                    str(article.get("domain", "")),
-                    str(article.get("sourcecountry", "")),
+                    article.get("title", ""),
+                    article.get("description", ""),
+                    article.get("source_name", ""),
                 ]
             )
 
             pre_semiconductor, _ = score_semiconductor(
-                metadata_text,
+                quick_text,
                 scoring,
             )
+
             pre_process, _ = score_process_safety(
-                metadata_text,
+                quick_text,
                 scoring,
             )
 
-            if reliability < settings["minimum_publish_reliability"]:
-                continue
-
+            # Do not use source reliability as an early discard.
+            # The targeted query provides a modest floor so blocked publishers
+            # can still reach the Under Review queue.
             if stream == "Semiconductor":
                 if pre_semiconductor == 0 and pre_process == 0:
                     continue
             elif pre_process == 0:
                 continue
 
+            reliability = score_reliability(
+                article.get("source_domain", ""),
+                scoring,
+            )
+
             shortlisted.append(
                 {
                     "article": article,
-                    "reliability": reliability,
                     "pre_semiconductor": pre_semiconductor,
                     "pre_process": pre_process,
+                    "reliability": reliability,
                 }
             )
+
+        diagnostics["quick_screened_in"] += len(shortlisted)
 
         shortlisted.sort(
             key=lambda item: (
                 item["pre_process"],
                 item["pre_semiconductor"],
                 item["reliability"],
-                item["article"].get("seendate", ""),
+                item["article"].get("published_at") or "",
             ),
             reverse=True,
         )
 
-        enrichment_limit = 15
+        enrichment_limit = settings.get(
+            "enrichment_limit_per_query",
+            20,
+        )
+
         selected = shortlisted[:enrichment_limit]
-        diagnostics["articles_selected_for_enrichment"] += len(selected)
+
+        diagnostics["selected_for_enrichment"] += len(selected)
 
         print(
-            f"{query_name}: {len(articles)} returned, "
-            f"{len(shortlisted)} passed quick screening, "
-            f"{len(selected)} selected for article enrichment.",
+            f"{len(articles)} unique provider results; "
+            f"{len(shortlisted)} passed quick relevance; "
+            f"{len(selected)} selected for enrichment.",
             flush=True,
         )
 
-        contexts_by_url = {}
+        contexts = {}
 
         if selected:
-            with ThreadPoolExecutor(max_workers=6) as executor:
+            with ThreadPoolExecutor(
+                max_workers=settings.get(
+                    "article_fetch_workers",
+                    6,
+                )
+            ) as executor:
                 future_map = {
                     executor.submit(
                         fetch_article_context,
-                        canonicalize_url(item["article"].get("url", "")),
+                        item["article"].get("url", ""),
                     ): item
                     for item in selected
                 }
 
                 for future in as_completed(future_map):
                     item = future_map[future]
-                    url = canonicalize_url(
-                        item["article"].get("url", "")
-                    )
+                    key = article_key(item["article"])
 
                     try:
                         context = future.result()
                     except Exception:
-                        context = {"description": "", "text": ""}
+                        context = {
+                            "description": "",
+                            "text": "",
+                            "final_url": item["article"].get(
+                                "url",
+                                "",
+                            ),
+                        }
 
-                    contexts_by_url[url] = context
+                    contexts[key] = context
 
                     if context.get("description") or context.get("text"):
                         diagnostics["article_pages_enriched"] += 1
 
         for item in selected:
             article = item["article"]
-            url = canonicalize_url(article.get("url", ""))
-            context = contexts_by_url.get(
-                url,
-                {"description": "", "text": ""},
+            context = contexts.get(
+                article_key(article),
+                {
+                    "description": "",
+                    "text": "",
+                    "final_url": article.get("url", ""),
+                },
             )
 
-            title = article.get("title", "").strip()
-            reliability = item["reliability"]
-
-            combined = " ".join(
-                [
-                    title,
-                    context.get("description", ""),
-                    context.get("text", ""),
-                ]
-            )
-
-            semiconductor_score, semiconductor_hits = score_semiconductor(
-                combined,
-                scoring,
-            )
-            process_score, process_hits = score_process_safety(
-                combined,
-                scoring,
-            )
-            severity, severity_hits = score_severity(
-                combined,
-                scoring,
-            )
-
-            if stream == "Semiconductor":
-                semiconductor_score = max(
-                    semiconductor_score,
-                    min(2, item["pre_semiconductor"] + 1),
-                )
-
-            process_score = max(
-                process_score,
-                min(2, item["pre_process"] + 1),
-            )
-
-            confidence = max(1, min(5, reliability))
-
-            watch_score = weighted_watch_score(
-                reliability,
-                process_score,
-                semiconductor_score,
-                severity,
-                confidence,
+            candidate = build_candidate(
+                article,
                 stream,
+                scoring,
+                settings,
+                context,
+                run_time,
+                unknown_sources,
+                item["pre_semiconductor"],
+                item["pre_process"],
             )
 
-            candidate = {
-                "stream": stream,
-                "title": title,
-                "reported_at": parse_gdelt_date(
-                    article.get("seendate")
-                ),
-                "summary": make_summary(
-                    title,
-                    context.get("description", ""),
-                    context.get("text", ""),
-                ),
-                "process_safety_concern": process_safety_concern(
-                    process_hits,
-                    severity_hits,
-                ),
-                "scores": {
-                    "source_reliability": reliability,
-                    "process_safety_relevance": process_score,
-                    "semiconductor_relevance": semiconductor_score,
-                    "severity_potential": severity,
-                    "confidence": confidence,
-                    "watch_score": watch_score,
-                },
-                "keyword_evidence": {
-                    "semiconductor": semiconductor_hits,
-                    "process_safety": process_hits,
-                    "severity": severity_hits,
-                },
-                "sources": [
-                    source_record(
-                        article,
-                        reliability,
-                        context,
-                    )
-                ],
-            }
+            if candidate is None:
+                diagnostics["rejected_after_analysis"] += 1
+                continue
 
-            diagnostics["candidates_after_initial_screen"] += 1
+            candidates.append(candidate)
 
-            if publishable(candidate, settings):
-                candidates.append(candidate)
-                diagnostics["publishable_candidates"] += 1
+            if candidate["review_status"] == "Confirmed":
+                diagnostics["confirmed_candidates"] += 1
+            else:
+                diagnostics["under_review_candidates"] += 1
 
-        if query_index < len(query_configs) - 1:
-            delay = random.uniform(8, 12)
-            print(
-                f"Waiting {delay:.0f} seconds before the next GDELT search.",
-                flush=True,
-            )
-            time.sleep(delay)
+    diagnostics["unique_articles"] = len(global_seen)
 
-    diagnostics["unique_articles"] = len(seen_urls)
+    provider_successes = sum(
+        provider["queries_succeeded"]
+        for provider in diagnostics["providers"].values()
+    )
 
-    if diagnostics["queries_succeeded"] == 0:
+    if provider_successes == 0:
         raise RuntimeError(
-            "All GDELT discovery queries failed. "
-            "The incident database and dashboard have NOT been updated. "
-            "Run the workflow again later."
+            "All discovery providers failed. "
+            "Existing incident data has been preserved."
         )
 
     candidates.sort(
         key=lambda item: (
+            item["review_status"] == "Confirmed",
             item["scores"]["watch_score"],
             item.get("reported_at") or "",
         ),
@@ -1708,58 +1634,55 @@ def create_report(
     active = [
         incident
         for incident in incidents
-        if incident.get(
-            "status"
-        ) != "Archived"
+        if incident.get("status") != "Archived"
     ]
 
-    new_set = set(
-        new_ids
-    )
-
-    updated_set = set(
-        updated_ids
-    )
-
-    unchanged = [
+    confirmed = [
         incident
         for incident in active
-        if incident[
-            "incident_id"
-        ] not in new_set
-        and incident[
-            "incident_id"
-        ] not in updated_set
+        if incident.get("review_status") == "Confirmed"
+    ]
+
+    under_review = [
+        incident
+        for incident in active
+        if incident.get("review_status") == "Under Review"
+    ]
+
+    high_priority = [
+        incident
+        for incident in active
+        if incident.get(
+            "scores",
+            {},
+        ).get(
+            "watch_score",
+            0,
+        ) >= 4.0
     ]
 
     return {
         "generated_at": run_time,
         "window_days": lookback_days,
         "counts": {
-            "active": len(
-                active
-            ),
-            "new": len(
-                new_ids
-            ),
-            "updated": len(
-                updated_ids
-            ),
-            "unchanged": len(
-                unchanged
-            ),
-            "archived": len(
-                archived_ids
-            ),
+            "active": len(active),
+            "confirmed": len(confirmed),
+            "under_review": len(under_review),
+            "new": len(new_ids),
+            "updated": len(updated_ids),
+            "archived": len(archived_ids),
+            "high_priority": len(high_priority),
         },
-        "new_incident_ids": new_ids,
-        "updated_incident_ids": updated_ids,
-        "archived_incident_ids": archived_ids,
+        "new_incident_ids": sorted(set(new_ids)),
+        "updated_incident_ids": sorted(set(updated_ids)),
+        "archived_incident_ids": sorted(set(archived_ids)),
     }
 
 
 def snapshot_history(
     database: dict,
+    report: dict,
+    diagnostics: dict,
     run_time: str,
 ) -> None:
     HISTORY_DIR.mkdir(
@@ -1767,14 +1690,21 @@ def snapshot_history(
         exist_ok=True,
     )
 
-    date_key = run_time[
-        :10
-    ]
+    date_key = run_time[:10]
 
     save_json(
-        HISTORY_DIR
-        / f"{date_key}.json",
+        HISTORY_DIR / f"{date_key}-incidents.json",
         database,
+    )
+
+    save_json(
+        HISTORY_DIR / f"{date_key}-report.json",
+        report,
+    )
+
+    save_json(
+        HISTORY_DIR / f"{date_key}-diagnostics.json",
+        diagnostics,
     )
 
 
@@ -1784,44 +1714,39 @@ def copy_public_data() -> None:
         exist_ok=True,
     )
 
-    shutil.copy2(
-        INCIDENTS_PATH,
-        PUBLIC_DATA_DIR
-        / "incidents.json",
-    )
-
-    shutil.copy2(
-        REPORT_PATH,
-        PUBLIC_DATA_DIR
-        / "latest_report.json",
-    )
-
-    if DIAGNOSTICS_PATH.exists():
-        shutil.copy2(
-            DIAGNOSTICS_PATH,
-            PUBLIC_DATA_DIR
-            / "run_diagnostics.json",
-        )
+    for source_path, target_name in (
+        (INCIDENTS_PATH, "incidents.json"),
+        (REPORT_PATH, "latest_report.json"),
+        (DIAGNOSTICS_PATH, "run_diagnostics.json"),
+        (UNKNOWN_SOURCES_PATH, "unknown_sources.json"),
+    ):
+        if source_path.exists():
+            shutil.copy2(
+                source_path,
+                PUBLIC_DATA_DIR / target_name,
+            )
 
 
 def main() -> None:
-    settings = load_json(
-        SETTINGS_PATH
-    )
+    settings = load_json(SETTINGS_PATH)
+    scoring = load_json(SCORING_PATH)
 
-    scoring = load_json(
-        SCORING_PATH
-    )
-
-    database = (
-        load_json(
-            INCIDENTS_PATH
-        )
-        or {
-            "schema_version": 3,
+    database = load_json(
+        INCIDENTS_PATH,
+        {
+            "schema_version": 4,
             "last_run": None,
             "incidents": [],
-        }
+        },
+    )
+
+    unknown_sources = load_json(
+        UNKNOWN_SOURCES_PATH,
+        {
+            "schema_version": 1,
+            "last_run": None,
+            "sources": {},
+        },
     )
 
     incidents = database.setdefault(
@@ -1829,57 +1754,50 @@ def main() -> None:
         [],
     )
 
+    migrate_existing_incidents(
+        incidents,
+        settings,
+    )
+
     run_time = iso_now()
 
     print(
-        "Process Safety Incident Watch v0.3"
+        "Process Safety Incident Watch v0.4",
+        flush=True,
     )
 
     print(
-        f"Run started: {run_time}"
+        f"Run started: {run_time}",
+        flush=True,
     )
 
-    print(
-        f"GDELT maximum records per query: {GDELT_MAX_RECORDS}"
-    )
-
-    # Reset transient labels before processing the latest run.
     for incident in incidents:
-        if incident.get(
-            "status"
-        ) in {
+        if incident.get("status") in {
             "New",
             "Updated",
         }:
-            incident[
-                "status"
-            ] = "Active"
+            incident["status"] = "Active"
 
-    # Discovery happens before anything is saved.
-    # If every query fails, collect_candidates raises an error and the existing
-    # database remains untouched.
+    # Collect everything before changing the stored database.
+    # A total provider failure therefore cannot wipe or reset the dashboard.
     candidates, diagnostics = collect_candidates(
         settings,
         scoring,
+        run_time,
+        unknown_sources,
     )
 
-    diagnostics[
-        "generated_at"
-    ] = run_time
-
     print(
-        "\nDiscovery diagnostics:"
+        "\nDiscovery diagnostics:",
+        flush=True,
     )
 
     print(
         json.dumps(
             diagnostics,
             indent=2,
-        )
-    )
-
-    print(
-        f"\nPublishable candidates found: {len(candidates)}"
+        ),
+        flush=True,
     )
 
     new_ids = []
@@ -1890,36 +1808,29 @@ def main() -> None:
             candidate,
             incidents,
             run_time,
+            settings,
         )
 
         if result == "new":
             new_ids.append(
-                incident[
-                    "incident_id"
-                ]
+                incident["incident_id"]
             )
 
         elif result == "updated":
             updated_ids.append(
-                incident[
-                    "incident_id"
-                ]
+                incident["incident_id"]
             )
 
     archived_ids = archive_old_incidents(
         incidents,
-        settings[
-            "lookback_days"
-        ],
+        settings["lookback_days"],
         run_time,
     )
 
     incidents.sort(
         key=lambda item: (
-            item.get(
-                "reported_at"
-            )
-            or "",
+            item.get("status") != "Archived",
+            item.get("review_status") == "Confirmed",
             item.get(
                 "scores",
                 {},
@@ -1927,39 +1838,23 @@ def main() -> None:
                 "watch_score",
                 0,
             ),
+            item.get("reported_at") or "",
         ),
         reverse=True,
     )
 
-    database[
-        "last_run"
-    ] = run_time
+    database["schema_version"] = 4
+    database["last_run"] = run_time
 
-    database[
-        "schema_version"
-    ] = 2
+    unknown_sources["last_run"] = run_time
 
     report = create_report(
         incidents,
         run_time,
-        settings[
-            "lookback_days"
-        ],
-        sorted(
-            set(
-                new_ids
-            )
-        ),
-        sorted(
-            set(
-                updated_ids
-            )
-        ),
-        sorted(
-            set(
-                archived_ids
-            )
-        ),
+        settings["lookback_days"],
+        new_ids,
+        updated_ids,
+        archived_ids,
     )
 
     save_json(
@@ -1977,28 +1872,36 @@ def main() -> None:
         diagnostics,
     )
 
+    save_json(
+        UNKNOWN_SOURCES_PATH,
+        unknown_sources,
+    )
+
     snapshot_history(
         database,
+        report,
+        diagnostics,
         run_time,
     )
 
     copy_public_data()
 
     print(
-        "\nIncident report counts:"
+        "\nFinal report counts:",
+        flush=True,
     )
 
     print(
         json.dumps(
-            report[
-                "counts"
-            ],
+            report["counts"],
             indent=2,
-        )
+        ),
+        flush=True,
     )
 
     print(
-        "\nRun completed successfully."
+        "\nRun completed successfully.",
+        flush=True,
     )
 
 

@@ -1,24 +1,29 @@
 {
   "lookback_days": 90,
-  "gdelt_max_records_per_query": 150,
-  "minimum_publish_reliability": 3,
-  "minimum_process_safety_relevance": 2,
-  "minimum_semiconductor_relevance": 2,
+  "minimum_confirmed_reliability": 3,
+  "minimum_process_safety_relevance": 1,
+  "minimum_semiconductor_relevance": 1,
+  "gdelt_enabled": true,
+  "gdelt_max_records_per_query": 50,
+  "google_news_rss_enabled": true,
+  "google_news_max_records_per_query": 50,
+  "enrichment_limit_per_query": 20,
+  "article_fetch_workers": 6,
   "queries": [
     {
-      "name": "semiconductor_general",
+      "name": "semiconductor_incidents",
       "stream": "Semiconductor",
-      "query": "(semiconductor OR chipmaker OR \"wafer fab\" OR foundry OR microelectronics) (fire OR explosion OR leak OR release OR toxic OR chemical OR gas OR rupture OR evacuation)"
+      "query": "(semiconductor OR \"wafer fab\" OR foundry OR chipmaker OR \"chip plant\" OR microelectronics) (fire OR explosion OR leak OR release OR toxic OR chemical OR gas OR rupture OR evacuation OR exposure)"
     },
     {
-      "name": "semiconductor_hazards",
+      "name": "semiconductor_hazard_systems",
       "stream": "Semiconductor",
-      "query": "(semiconductor OR \"chip factory\" OR \"chip plant\" OR \"wafer plant\") (\"hydrogen fluoride\" OR ammonia OR silane OR hydrogen OR chlorine OR fluorine OR arsine OR phosphine OR solvent OR scrubber OR abatement)"
+      "query": "(semiconductor OR \"wafer fab\" OR foundry OR \"chip plant\") (\"hydrogen fluoride\" OR \"hydrofluoric acid\" OR ammonia OR silane OR hydrogen OR chlorine OR fluorine OR arsine OR phosphine OR scrubber OR abatement OR exhaust)"
     },
     {
       "name": "cross_industry_process_safety",
       "stream": "Cross-Industry",
-      "query": "(\"chemical plant\" OR refinery OR petrochemical OR \"specialty chemicals\" OR \"industrial gas\") (explosion OR fire OR leak OR release OR toxic OR runaway OR rupture)"
+      "query": "(\"chemical plant\" OR refinery OR petrochemical OR \"specialty chemical\" OR \"industrial gas\" OR \"battery plant\") (explosion OR fire OR toxic OR leak OR release OR runaway OR rupture OR overpressure OR evacuation)"
     }
   ]
 }
