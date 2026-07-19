@@ -1,0 +1,14 @@
+{
+  "generated_at": null,
+  "window_days": 90,
+  "counts": {
+    "active": 0,
+    "new": 0,
+    "updated": 0,
+    "unchanged": 0,
+    "archived": 0
+  },
+  "new_incident_ids": [],
+  "updated_incident_ids": [],
+  "archived_incident_ids": []
+}

@@ -1,0 +1,24 @@
+{
+  "lookback_days": 90,
+  "gdelt_max_records_per_query": 150,
+  "minimum_publish_reliability": 3,
+  "minimum_process_safety_relevance": 2,
+  "minimum_semiconductor_relevance": 2,
+  "queries": [
+    {
+      "name": "semiconductor_general",
+      "stream": "Semiconductor",
+      "query": "(semiconductor OR chipmaker OR \"wafer fab\" OR foundry OR microelectronics) (fire OR explosion OR leak OR release OR toxic OR chemical OR gas OR rupture OR evacuation)"
+    },
+    {
+      "name": "semiconductor_hazards",
+      "stream": "Semiconductor",
+      "query": "(semiconductor OR \"chip factory\" OR \"chip plant\" OR \"wafer plant\") (\"hydrogen fluoride\" OR ammonia OR silane OR hydrogen OR chlorine OR fluorine OR arsine OR phosphine OR solvent OR scrubber OR abatement)"
+    },
+    {
+      "name": "cross_industry_process_safety",
+      "stream": "Cross-Industry",
+      "query": "(\"chemical plant\" OR refinery OR petrochemical OR \"specialty chemicals\" OR \"industrial gas\") (explosion OR fire OR leak OR release OR toxic OR runaway OR rupture)"
+    }
+  ]
+}

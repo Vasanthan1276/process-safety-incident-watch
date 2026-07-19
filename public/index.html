@@ -1,0 +1,381 @@
+\
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Rolling 90-day process safety incident intelligence for semiconductor and relevant cross-industry events.">
+  <title>Process Safety Incident Watch</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --ink: #16202a;
+      --muted: #637083;
+      --line: #dce2e8;
+      --accent: #173f67;
+      --high: #9b1c1c;
+      --mid: #9a5a00;
+      --low: #37633b;
+      --chip: #e9eef4;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 60px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #102d49, #1f547f);
+      color: white;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 22px;
+      box-shadow: 0 12px 32px rgba(19, 43, 65, 0.16);
+    }
+
+    h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 44px); }
+    header p { margin: 0; opacity: 0.88; max-width: 780px; line-height: 1.6; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .stat .value { font-size: 30px; font-weight: 800; }
+    .stat .label { color: var(--muted); margin-top: 4px; }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 18px 0 24px;
+    }
+
+    select, input {
+      padding: 11px 13px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: white;
+      color: var(--ink);
+      min-height: 42px;
+    }
+
+    input { flex: 1; min-width: 230px; }
+
+    .section-title {
+      margin: 30px 0 12px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .section-title h2 { margin: 0; }
+    .section-title span { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .incident {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .incident-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .incident h3 { margin: 0 0 7px; font-size: 20px; line-height: 1.35; }
+    .meta { color: var(--muted); font-size: 14px; }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 13px 0;
+    }
+
+    .badge {
+      background: var(--chip);
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .new { background: #dff4e7; color: #1f653d; }
+    .updated { background: #fff0c7; color: #7b5600; }
+
+    .score {
+      min-width: 74px;
+      text-align: center;
+      border-radius: 14px;
+      padding: 10px 8px;
+      background: #eef2f6;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .score small {
+      display: block;
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .incident p { line-height: 1.62; }
+
+    .concern {
+      padding: 12px 14px;
+      border-left: 4px solid var(--accent);
+      background: #f3f7fa;
+      border-radius: 8px;
+    }
+
+    .sources {
+      margin-top: 13px;
+      padding-top: 13px;
+      border-top: 1px solid var(--line);
+    }
+
+    .sources a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .sources a:hover { text-decoration: underline; }
+
+    .change {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .empty {
+      background: white;
+      border: 1px dashed var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 760px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .incident-top { flex-direction: column; }
+      .score { align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <h1>Process Safety Incident Watch</h1>
+      <p>
+        Rolling 90-day monitoring of semiconductor-related process safety incidents
+        and significant cross-industry events with potential learning value.
+      </p>
+    </header>
+
+    <div class="stats">
+      <div class="stat"><div class="value" id="activeCount">–</div><div class="label">Active incidents</div></div>
+      <div class="stat"><div class="value" id="newCount">–</div><div class="label">New this run</div></div>
+      <div class="stat"><div class="value" id="updatedCount">–</div><div class="label">Updated this run</div></div>
+      <div class="stat"><div class="value" id="highCount">–</div><div class="label">Watch score ≥ 4.0</div></div>
+    </div>
+
+    <div class="toolbar">
+      <input id="searchBox" type="search" placeholder="Search incidents, hazards or sources…">
+      <select id="streamFilter">
+        <option value="all">All streams</option>
+        <option value="Semiconductor">Semiconductor</option>
+        <option value="Cross-Industry">Cross-Industry</option>
+      </select>
+      <select id="statusFilter">
+        <option value="active">Current 90-day view</option>
+        <option value="all">Include archive</option>
+        <option value="New">New</option>
+        <option value="Updated">Updated</option>
+      </select>
+    </div>
+
+    <div id="content"></div>
+
+    <footer>
+      Automated discovery is a screening tool, not a substitute for incident investigation
+      or source verification. Scores reflect the configured source and keyword rules and
+      should be reviewed before formal internal distribution.
+    </footer>
+  </div>
+
+  <script>
+    let incidents = [];
+    let report = {};
+
+    function formatDate(value) {
+      if (!value) return "Date not confirmed";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return new Intl.DateTimeFormat("en-SG", {
+        day: "numeric", month: "short", year: "numeric"
+      }).format(date);
+    }
+
+    function escapeHtml(value = "") {
+      return value.replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      }[char]));
+    }
+
+    function incidentCard(item) {
+      const scores = item.scores || {};
+      const sources = (item.sources || []).slice(0, 4).map(source => `
+        <div>
+          <a href="${escapeHtml(source.url || "#")}" target="_blank" rel="noopener noreferrer">
+            ${escapeHtml(source.domain || source.title || "Source")}
+          </a>
+          · Reliability ${source.reliability ?? "–"}/5
+        </div>
+      `).join("");
+
+      const latestChange = (item.change_history || []).at(-1);
+      const changeText = latestChange
+        ? `<div class="change">Latest change: ${escapeHtml((latestChange.changes || []).join("; "))}</div>`
+        : "";
+
+      const statusClass = (item.status || "").toLowerCase();
+
+      return `
+        <article class="incident">
+          <div class="incident-top">
+            <div>
+              <h3>${escapeHtml(item.title || "Untitled incident")}</h3>
+              <div class="meta">
+                ${escapeHtml(item.incident_id || "")}
+                · Reported ${escapeHtml(formatDate(item.reported_at))}
+                · ${escapeHtml(item.stream || "")}
+              </div>
+            </div>
+            <div class="score">
+              ${Number(scores.watch_score || 0).toFixed(1)}
+              <small>WATCH / 5</small>
+            </div>
+          </div>
+
+          <div class="badge-row">
+            <span class="badge ${statusClass}">${escapeHtml(item.status || "Active")}</span>
+            <span class="badge">Reliability ${scores.source_reliability ?? "–"}/5</span>
+            <span class="badge">PSM ${scores.process_safety_relevance ?? "–"}/5</span>
+            <span class="badge">Semi ${scores.semiconductor_relevance ?? "–"}/5</span>
+            <span class="badge">Severity ${scores.severity_potential ?? "–"}/5</span>
+            <span class="badge">Confidence ${scores.confidence ?? "–"}/5</span>
+          </div>
+
+          <p>${escapeHtml(item.summary || "Summary unavailable.")}</p>
+          <div class="concern"><strong>Process safety concern:</strong> ${escapeHtml(item.process_safety_concern || "")}</div>
+          <div class="sources"><strong>Sources</strong>${sources || "<div>No source listed.</div>"}</div>
+          ${changeText}
+        </article>
+      `;
+    }
+
+    function render() {
+      const query = document.getElementById("searchBox").value.trim().toLowerCase();
+      const stream = document.getElementById("streamFilter").value;
+      const status = document.getElementById("statusFilter").value;
+
+      const filtered = incidents.filter(item => {
+        if (stream !== "all" && item.stream !== stream) return false;
+        if (status === "active" && item.status === "Archived") return false;
+        if (!["all", "active"].includes(status) && item.status !== status) return false;
+
+        if (query) {
+          const haystack = JSON.stringify(item).toLowerCase();
+          if (!haystack.includes(query)) return false;
+        }
+        return true;
+      });
+
+      const semiconductor = filtered.filter(item => item.stream === "Semiconductor");
+      const crossIndustry = filtered.filter(item => item.stream === "Cross-Industry");
+
+      const section = (title, items) => `
+        <div class="section-title">
+          <h2>${title}</h2><span>${items.length} incident${items.length === 1 ? "" : "s"}</span>
+        </div>
+        <div class="grid">
+          ${items.length ? items.map(incidentCard).join("") : '<div class="empty">No matching incidents.</div>'}
+        </div>
+      `;
+
+      document.getElementById("content").innerHTML =
+        section("Semiconductor Incidents", semiconductor) +
+        section("Cross-Industry Process Safety Watch", crossIndustry);
+    }
+
+    async function load() {
+      const [incidentResponse, reportResponse] = await Promise.all([
+        fetch("./data/incidents.json", { cache: "no-store" }),
+        fetch("./data/latest_report.json", { cache: "no-store" })
+      ]);
+
+      const incidentData = await incidentResponse.json();
+      report = await reportResponse.json();
+      incidents = incidentData.incidents || [];
+
+      document.getElementById("activeCount").textContent = report.counts?.active ?? 0;
+      document.getElementById("newCount").textContent = report.counts?.new ?? 0;
+      document.getElementById("updatedCount").textContent = report.counts?.updated ?? 0;
+      document.getElementById("highCount").textContent =
+        incidents.filter(item => item.status !== "Archived" && (item.scores?.watch_score || 0) >= 4).length;
+
+      render();
+    }
+
+    document.getElementById("searchBox").addEventListener("input", render);
+    document.getElementById("streamFilter").addEventListener("change", render);
+    document.getElementById("statusFilter").addEventListener("change", render);
+
+    load().catch(error => {
+      console.error(error);
+      document.getElementById("content").innerHTML =
+        '<div class="empty">The incident data could not be loaded. Run the update workflow first.</div>';
+    });
+  </script>
+</body>
+</html>
