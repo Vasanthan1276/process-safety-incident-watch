@@ -7,22 +7,62 @@
   "gdelt_max_records_per_query": 50,
   "google_news_rss_enabled": true,
   "google_news_max_records_per_query": 50,
-  "enrichment_limit_per_query": 20,
+  "enrichment_limit_per_query": 18,
   "article_fetch_workers": 6,
   "queries": [
     {
       "name": "semiconductor_incidents",
       "stream": "Semiconductor",
+      "priority": "normal",
+      "providers": [
+        "GDELT",
+        "Google News RSS"
+      ],
+      "enrichment_limit": 18,
       "query": "(semiconductor OR \"wafer fab\" OR foundry OR chipmaker OR \"chip plant\" OR microelectronics) (fire OR explosion OR leak OR release OR toxic OR chemical OR gas OR rupture OR evacuation OR exposure)"
     },
     {
       "name": "semiconductor_hazard_systems",
       "stream": "Semiconductor",
+      "priority": "normal",
+      "providers": [
+        "GDELT",
+        "Google News RSS"
+      ],
+      "enrichment_limit": 18,
       "query": "(semiconductor OR \"wafer fab\" OR foundry OR \"chip plant\") (\"hydrogen fluoride\" OR \"hydrofluoric acid\" OR ammonia OR silane OR hydrogen OR chlorine OR fluorine OR arsine OR phosphine OR scrubber OR abatement OR exhaust)"
+    },
+    {
+      "name": "major_semiconductor_company_incidents",
+      "stream": "Semiconductor",
+      "priority": "high",
+      "providers": [
+        "Google News RSS"
+      ],
+      "google_news_max_records": 75,
+      "enrichment_limit": 30,
+      "query": "(\"SK hynix\" OR \"SK Hynix\" OR Micron OR TSMC OR \"Samsung Electronics\" OR Intel OR GlobalFoundries OR UMC OR SMIC OR Infineon OR Nexperia OR \"Texas Instruments\" OR onsemi) (fire OR explosion OR leak OR release OR toxic OR gas OR chemical OR exposure OR evacuation OR rupture)"
+    },
+    {
+      "name": "semiconductor_fluorine_hf_watch",
+      "stream": "Semiconductor",
+      "priority": "high",
+      "providers": [
+        "Google News RSS"
+      ],
+      "google_news_max_records": 75,
+      "enrichment_limit": 30,
+      "query": "(\"SK hynix\" OR \"SK Hynix\" OR semiconductor OR \"wafer fab\" OR \"chip plant\") (fluorine OR \"hydrogen fluoride\" OR \"hydrofluoric acid\") (leak OR release OR fire OR exposure OR evacuation)"
     },
     {
       "name": "cross_industry_process_safety",
       "stream": "Cross-Industry",
+      "priority": "normal",
+      "providers": [
+        "GDELT",
+        "Google News RSS"
+      ],
+      "enrichment_limit": 18,
       "query": "(\"chemical plant\" OR refinery OR petrochemical OR \"specialty chemical\" OR \"industrial gas\" OR \"battery plant\") (explosion OR fire OR toxic OR leak OR release OR runaway OR rupture OR overpressure OR evacuation)"
     }
   ]
