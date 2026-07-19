@@ -1,15 +1,29 @@
 {
+  "generated_at": "2026-07-19T13:19:02+00:00",
   "queries_total": 3,
-  "queries_succeeded": 2,
-  "queries_failed": 1,
-  "articles_returned": 12,
-  "unique_articles": 11,
-  "articles_selected_for_enrichment": 0,
-  "article_pages_enriched": 0,
-  "candidates_after_initial_screen": 0,
-  "publishable_candidates": 0,
-  "failures": [
-    "cross_industry_process_safety: GDELT returned HTTP 429 after 4 attempts."
-  ],
-  "generated_at": "2026-07-19T13:04:07+00:00"
+  "articles_discovered": 161,
+  "unique_articles": 161,
+  "quick_screened_in": 134,
+  "selected_for_enrichment": 60,
+  "article_pages_enriched": 60,
+  "confirmed_candidates": 18,
+  "under_review_candidates": 42,
+  "rejected_after_analysis": 0,
+  "providers": {
+    "GDELT": {
+      "queries_succeeded": 1,
+      "queries_failed": 2,
+      "articles_returned": 12,
+      "failures": [
+        "GDELT semiconductor_hazard_systems: HTTP 429",
+        "GDELT cross_industry_process_safety: HTTP 429"
+      ]
+    },
+    "Google News RSS": {
+      "queries_succeeded": 3,
+      "queries_failed": 0,
+      "articles_returned": 150,
+      "failures": []
+    }
+  }
 }

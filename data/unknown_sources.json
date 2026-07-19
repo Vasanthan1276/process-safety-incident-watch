@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "last_run": "2026-07-19T13:19:02+00:00",
+  "sources": {
+    "eletimes.ai": {
+      "domain": "eletimes.ai",
+      "source_name": "ELE Times",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Texas Instruments India reports 33% rise in women seeking semiconductor career exposure through its WiSH program - ELE Times"
+      ]
+    },
+    "finance.yahoo.com": {
+      "domain": "finance.yahoo.com",
+      "source_name": "Yahoo Finance",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Air Liquide Deepens SK Hynix Ties And Semiconductor Exposure In Korea - Yahoo Finance"
+      ]
+    },
+    "tradingview.com": {
+      "domain": "tradingview.com",
+      "source_name": "TradingView",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Hedging semiconductor exposure is getting harder - TradingView"
+      ]
+    },
+    "chosun.com": {
+      "domain": "chosun.com",
+      "source_name": "조선일보",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Morgan Stanley Advises Reducing Semiconductor Stock Exposure as Earnings Peak - 조선일보"
+      ]
+    },
+    "theedgemalaysia.com": {
+      "domain": "theedgemalaysia.com",
+      "source_name": "The Edge Malaysia",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "AMS Advanced Material surges to new record high; Kenanga flags rising semiconductor exposure - The Edge Malaysia"
+      ]
+    },
+    "economic-research.bnpparibas.com": {
+      "domain": "economic-research.bnpparibas.com",
+      "source_name": "Etudes Economiques – BNP Paribas",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Malaysia: Strong growth, high exposure to the semiconductor sector - Etudes Economiques – BNP Paribas"
+      ]
+    },
+    "thelec.net": {
+      "domain": "thelec.net",
+      "source_name": "thelec.net",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 4,
+      "sample_titles": [
+        "AI Chip Boom Signals Structural Demand Explosion, Not Just Another Semiconductor Cycle - thelec.net",
+        "Synopex Begins Samsung Electronics Validation Test for Semiconductor Chemical Filters - thelec.net",
+        "PKC to Expand Semiconductor Chlorine Output by 50% at Samsung's Request - thelec.net",
+        "YEST Ships First 75-Wafer High-Pressure Hydrogen Annealing Tool, Begins Production Validation - thelec.net"
+      ]
+    },
+    "indexbox.io": {
+      "domain": "indexbox.io",
+      "source_name": "IndexBox",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 3,
+      "sample_titles": [
+        "Gas Purging System Market Forecast Points Higher Toward 2035, Driven by Semiconductor Fab Expansions - IndexBox",
+        "PTFE Ball Valve Market Forecast Points Higher Toward 2035, Driven by Semiconductor Capacity Expansion - IndexBox",
+        "World Semiconductor Gade Silane Gas - Market Analysis, Forecast, Size, Trends and Insights - IndexBox"
+      ]
+    },
+    "pluang.com": {
+      "domain": "pluang.com",
+      "source_name": "Pluang",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 2,
+      "sample_titles": [
+        "SK Hynix debuts on Nasdaq, shares jump 14%, ETFs adjust exposure to the chipmaker. - Pluang",
+        "Semiconductor stocks trade low despite strong AI-driven growth, signaling a potential rebound opportunity. - Pluang"
+      ]
+    },
+    "oracle.com": {
+      "domain": "oracle.com",
+      "source_name": "Oracle",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Oracle Java to Power Samsung Electronics’ Global Semiconductor Development - Oracle"
+      ]
+    },
+    "pr.tsmc.com": {
+      "domain": "pr.tsmc.com",
+      "source_name": "pr.tsmc.com",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Sony Semiconductor Solutions and TSMC Enter Preliminary Agreement for Next-Generation Image Sensor Strategic Partnership|Taiwan Semiconductor Manufacturing Company Limited - pr.tsmc.com"
+      ]
+    },
+    "news.siemens.com": {
+      "domain": "news.siemens.com",
+      "source_name": "Siemens Newsroom",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Siemens collaborates with TSMC to advance AI for semiconductor design - Siemens Newsroom"
+      ]
+    },
+    "esg.tsmc.com": {
+      "domain": "esg.tsmc.com",
+      "source_name": "TSMC",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 2,
+      "sample_titles": [
+        "TSMC Strengthens the Local Semiconductor Assembly and Test Supply Chain, Achieving a Win-Win in Efficiency and Resilience - TSMC",
+        "TSMC Introduces Blue Ammonia, a First for Taiwan's Semiconductor Industry - TSMC"
+      ]
+    },
+    "fool.com": {
+      "domain": "fool.com",
+      "source_name": "fool.com",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Earnings From Taiwan Semiconductor and ASML Show Soaring Demand , So Why Are AI Stocks Falling ? ( And Here What Investors Should Do Next .)"
+      ]
+    },
+    "fuelcellsworks.com": {
+      "domain": "fuelcellsworks.com",
+      "source_name": "Fuel Cells Works",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Air Liquide Builds Arizona Blue Hydrogen Plant for Semiconductor Industry - Fuel Cells Works"
+      ]
+    },
+    "wccftech.com": {
+      "domain": "wccftech.com",
+      "source_name": "Wccftech",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Hydrofluoric Acid Prices Climb as AI Chip Demand Outpaces a Strained Semiconductor Materials Supply - Wccftech"
+      ]
+    },
+    "globenewswire.com": {
+      "domain": "globenewswire.com",
+      "source_name": "GlobeNewswire",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Electronic Hydrofluoric Acid Market to Reach $1.87 Billion by 2030 as Controlled Semiconductor Capacity Expands - GlobeNewswire"
+      ]
+    },
+    "theborneopost.com": {
+      "domain": "theborneopost.com",
+      "source_name": "Borneo Post",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Federal urged to offer better incentives to boost hydrogen, semiconductor investments in Sarawak - Borneo Post"
+      ]
+    },
+    "dongascience.com": {
+      "domain": "dongascience.com",
+      "source_name": "동아사이언스",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "KIER produces high-purity deuterated ammonia domestically for semiconductor materials - 동아사이언스"
+      ]
+    },
+    "newsonprojects.com": {
+      "domain": "newsonprojects.com",
+      "source_name": "News on Projects",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "GACL to Establish Gujarat Facility for Semiconductor-Grade Hydrogen Peroxide Production. - News on Projects"
+      ]
+    },
+    "thehindubusinessline.com": {
+      "domain": "thehindubusinessline.com",
+      "source_name": "BusinessLine",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "GACL to set up high-purity hydrogen peroxide plant in Gujarat for semiconductor, solar applications - BusinessLine"
+      ]
+    },
+    "hydrogeninsight.com": {
+      "domain": "hydrogeninsight.com",
+      "source_name": "Hydrogen Insight",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Air Products could pivot capital away from $4.5bn US blue hydrogen project into Samsung semiconductor plant - Hydrogen Insight"
+      ]
+    },
+    "gasworld.com": {
+      "domain": "gasworld.com",
+      "source_name": "gasworld",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "HyET and Nippon Sanso advance UHP hydrogen tech for semiconductors - gasworld"
+      ]
+    },
+    "dayakdaily.com": {
+      "domain": "dayakdaily.com",
+      "source_name": "DayakDaily",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "S’wak seeks stronger Bumiputera role in hydrogen, semiconductor industries - DayakDaily"
+      ]
+    },
+    "thebrighterside.news": {
+      "domain": "thebrighterside.news",
+      "source_name": "The Brighter Side of News",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Introducing the world’s first AI semiconductor that thinks with hydrogen - The Brighter Side of News"
+      ]
+    },
+    "asiaresearchnews.com": {
+      "domain": "asiaresearchnews.com",
+      "source_name": "Asia Research News |",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "DGIST Developed World’s First AI Semiconductor That Uses Hydrogen to Remember and Learn - Asia Research News |"
+      ]
+    },
+    "whyy.org": {
+      "domain": "whyy.org",
+      "source_name": "WHYY",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Delaware City Refinery faces nearly $1 million penalty for toxic gas release in May - WHYY"
+      ]
+    },
+    "ukranews.com": {
+      "domain": "ukranews.com",
+      "source_name": "ukranews.com",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Drones attacked Gazprom Neftekhim Salavat refinery in Bashkortostan: fire broke out after explosions - ukranews.com"
+      ]
+    },
+    "theaustralian.com.au": {
+      "domain": "theaustralian.com.au",
+      "source_name": "The Australian",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Viva’s Geelong refinery nears full production after fire - The Australian"
+      ]
+    },
+    "news.chemnet.com": {
+      "domain": "news.chemnet.com",
+      "source_name": "ChemNet",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "4 dead in flash fire during maintenance work at Sinopec Yangzi Petrochemical - ChemNet"
+      ]
+    },
+    "businesstimes.com.sg": {
+      "domain": "businesstimes.com.sg",
+      "source_name": "The Business Times",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Australia says refinery fire may hit petrol production more than diesel, jet fuel - The Business Times"
+      ]
+    },
+    "journal-news.com": {
+      "domain": "journal-news.com",
+      "source_name": "Journal-News.com",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Germany Refinery Fire - Journal-News.com"
+      ]
+    },
+    "hjnews.com": {
+      "domain": "hjnews.com",
+      "source_name": "The Herald Journal",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Germany Refinery Fire - The Herald Journal"
+      ]
+    },
+    "aa.com.tr": {
+      "domain": "aa.com.tr",
+      "source_name": "Anadolu Ajansı",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Russia claims Ukrainian drone debris injures 1, sparks fire at oil refinery - Anadolu Ajansı"
+      ]
+    },
+    "militarnyi.com": {
+      "domain": "militarnyi.com",
+      "source_name": "Мілітарний",
+      "first_seen": "2026-07-19T13:19:02+00:00",
+      "last_seen": "2026-07-19T13:19:02+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "The Salavat Oil Refinery is on Fire After Being Hit by Ukrainian UAVs - Мілітарний"
+      ]
+    }
+  }
+}
