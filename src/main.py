@@ -5,6 +5,7 @@ import random
 import re
 import shutil
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
@@ -30,8 +31,8 @@ USER_AGENT = (
 )
 
 # Keep GDELT requests deliberately modest.
-GDELT_MAX_RECORDS = 75
-GDELT_RETRY_DELAYS = [20, 45, 90, 180]
+GDELT_MAX_RECORDS = 50
+GDELT_RETRY_DELAYS = [10, 20, 40]
 
 TRACKING_PARAMS = {
     "utm_source",
@@ -290,7 +291,7 @@ def fetch_gdelt(
             response = SESSION.get(
                 GDELT_ENDPOINT,
                 params=params,
-                timeout=60,
+                timeout=30,
             )
         except requests.RequestException as exc:
             if attempt == total_attempts - 1:
@@ -383,7 +384,7 @@ def fetch_article_context(url: str) -> dict:
     try:
         response = SESSION.get(
             url,
-            timeout=15,
+            timeout=8,
             allow_redirects=True,
         )
 
@@ -1432,154 +1433,253 @@ def collect_candidates(
     scoring: dict,
 ) -> tuple[list[dict], dict]:
     candidates = []
-
     seen_urls = set()
 
     diagnostics = {
-        "queries_total": len(
-            settings[
-                "queries"
-            ]
-        ),
+        "queries_total": len(settings["queries"]),
         "queries_succeeded": 0,
         "queries_failed": 0,
         "articles_returned": 0,
         "unique_articles": 0,
+        "articles_selected_for_enrichment": 0,
+        "article_pages_enriched": 0,
         "candidates_after_initial_screen": 0,
         "publishable_candidates": 0,
         "failures": [],
     }
 
-    query_configs = settings[
-        "queries"
-    ]
+    query_configs = settings["queries"]
 
-    for query_index, query_config in enumerate(
-        query_configs
-    ):
-        query_name = query_config[
-            "name"
-        ]
+    for query_index, query_config in enumerate(query_configs):
+        query_name = query_config["name"]
+        stream = query_config["stream"]
 
-        print(
-            f"\nSearching: {query_name}"
-        )
+        print(f"\\nSearching: {query_name}", flush=True)
 
         try:
             articles = fetch_gdelt(
-                query_config[
-                    "query"
-                ],
+                query_config["query"],
                 settings.get(
                     "gdelt_max_records_per_query",
                     GDELT_MAX_RECORDS,
                 ),
                 query_name,
             )
-
-            diagnostics[
-                "queries_succeeded"
-            ] += 1
-
-            diagnostics[
-                "articles_returned"
-            ] += len(
-                articles
-            )
+            diagnostics["queries_succeeded"] += 1
+            diagnostics["articles_returned"] += len(articles)
 
         except GDELTQueryError as exc:
-            diagnostics[
-                "queries_failed"
-            ] += 1
-
-            diagnostics[
-                "failures"
-            ].append(
-                str(
-                    exc
-                )
-            )
-
-            print(
-                f"ERROR: {exc}"
-            )
-
+            diagnostics["queries_failed"] += 1
+            diagnostics["failures"].append(str(exc))
+            print(f"ERROR: {exc}", flush=True)
             articles = []
 
-        for article in articles:
-            url = canonicalize_url(
-                article.get(
-                    "url",
-                    "",
-                )
-            )
+        shortlisted = []
 
-            if (
-                not url
-                or url in seen_urls
-            ):
+        for article in articles:
+            url = canonicalize_url(article.get("url", ""))
+
+            if not url or url in seen_urls:
                 continue
 
-            seen_urls.add(
-                url
+            seen_urls.add(url)
+
+            title = article.get("title", "").strip()
+            domain = domain_from_url(url)
+            reliability = score_reliability(domain, scoring)
+
+            metadata_text = " ".join(
+                [
+                    title,
+                    str(article.get("domain", "")),
+                    str(article.get("sourcecountry", "")),
+                ]
             )
 
-            candidate = candidate_from_article(
-                article,
-                query_config[
-                    "stream"
-                ],
+            pre_semiconductor, _ = score_semiconductor(
+                metadata_text,
+                scoring,
+            )
+            pre_process, _ = score_process_safety(
+                metadata_text,
                 scoring,
             )
 
-            if candidate is None:
+            if reliability < settings["minimum_publish_reliability"]:
                 continue
 
-            diagnostics[
-                "candidates_after_initial_screen"
-            ] += 1
+            if stream == "Semiconductor":
+                if pre_semiconductor == 0 and pre_process == 0:
+                    continue
+            elif pre_process == 0:
+                continue
 
-            if publishable(
-                candidate,
-                settings,
-            ):
-                candidates.append(
-                    candidate
+            shortlisted.append(
+                {
+                    "article": article,
+                    "reliability": reliability,
+                    "pre_semiconductor": pre_semiconductor,
+                    "pre_process": pre_process,
+                }
+            )
+
+        shortlisted.sort(
+            key=lambda item: (
+                item["pre_process"],
+                item["pre_semiconductor"],
+                item["reliability"],
+                item["article"].get("seendate", ""),
+            ),
+            reverse=True,
+        )
+
+        enrichment_limit = 15
+        selected = shortlisted[:enrichment_limit]
+        diagnostics["articles_selected_for_enrichment"] += len(selected)
+
+        print(
+            f"{query_name}: {len(articles)} returned, "
+            f"{len(shortlisted)} passed quick screening, "
+            f"{len(selected)} selected for article enrichment.",
+            flush=True,
+        )
+
+        contexts_by_url = {}
+
+        if selected:
+            with ThreadPoolExecutor(max_workers=6) as executor:
+                future_map = {
+                    executor.submit(
+                        fetch_article_context,
+                        canonicalize_url(item["article"].get("url", "")),
+                    ): item
+                    for item in selected
+                }
+
+                for future in as_completed(future_map):
+                    item = future_map[future]
+                    url = canonicalize_url(
+                        item["article"].get("url", "")
+                    )
+
+                    try:
+                        context = future.result()
+                    except Exception:
+                        context = {"description": "", "text": ""}
+
+                    contexts_by_url[url] = context
+
+                    if context.get("description") or context.get("text"):
+                        diagnostics["article_pages_enriched"] += 1
+
+        for item in selected:
+            article = item["article"]
+            url = canonicalize_url(article.get("url", ""))
+            context = contexts_by_url.get(
+                url,
+                {"description": "", "text": ""},
+            )
+
+            title = article.get("title", "").strip()
+            reliability = item["reliability"]
+
+            combined = " ".join(
+                [
+                    title,
+                    context.get("description", ""),
+                    context.get("text", ""),
+                ]
+            )
+
+            semiconductor_score, semiconductor_hits = score_semiconductor(
+                combined,
+                scoring,
+            )
+            process_score, process_hits = score_process_safety(
+                combined,
+                scoring,
+            )
+            severity, severity_hits = score_severity(
+                combined,
+                scoring,
+            )
+
+            if stream == "Semiconductor":
+                semiconductor_score = max(
+                    semiconductor_score,
+                    min(2, item["pre_semiconductor"] + 1),
                 )
 
-                diagnostics[
-                    "publishable_candidates"
-                ] += 1
-
-        # Space each separate GDELT search out, even after a failure.
-        if query_index < len(
-            query_configs
-        ) - 1:
-            delay = random.uniform(
-                25,
-                40,
+            process_score = max(
+                process_score,
+                min(2, item["pre_process"] + 1),
             )
 
+            confidence = max(1, min(5, reliability))
+
+            watch_score = weighted_watch_score(
+                reliability,
+                process_score,
+                semiconductor_score,
+                severity,
+                confidence,
+                stream,
+            )
+
+            candidate = {
+                "stream": stream,
+                "title": title,
+                "reported_at": parse_gdelt_date(
+                    article.get("seendate")
+                ),
+                "summary": make_summary(
+                    title,
+                    context.get("description", ""),
+                    context.get("text", ""),
+                ),
+                "process_safety_concern": process_safety_concern(
+                    process_hits,
+                    severity_hits,
+                ),
+                "scores": {
+                    "source_reliability": reliability,
+                    "process_safety_relevance": process_score,
+                    "semiconductor_relevance": semiconductor_score,
+                    "severity_potential": severity,
+                    "confidence": confidence,
+                    "watch_score": watch_score,
+                },
+                "keyword_evidence": {
+                    "semiconductor": semiconductor_hits,
+                    "process_safety": process_hits,
+                    "severity": severity_hits,
+                },
+                "sources": [
+                    source_record(
+                        article,
+                        reliability,
+                        context,
+                    )
+                ],
+            }
+
+            diagnostics["candidates_after_initial_screen"] += 1
+
+            if publishable(candidate, settings):
+                candidates.append(candidate)
+                diagnostics["publishable_candidates"] += 1
+
+        if query_index < len(query_configs) - 1:
+            delay = random.uniform(8, 12)
             print(
-                f"Waiting {delay:.0f} seconds "
-                f"before the next GDELT search."
+                f"Waiting {delay:.0f} seconds before the next GDELT search.",
+                flush=True,
             )
+            time.sleep(delay)
 
-            time.sleep(
-                delay
-            )
+    diagnostics["unique_articles"] = len(seen_urls)
 
-    diagnostics[
-        "unique_articles"
-    ] = len(
-        seen_urls
-    )
-
-    # Critical safety check:
-    # Never treat total GDELT failure as a genuine zero-incident result.
-    if diagnostics[
-        "queries_succeeded"
-    ] == 0:
+    if diagnostics["queries_succeeded"] == 0:
         raise RuntimeError(
             "All GDELT discovery queries failed. "
             "The incident database and dashboard have NOT been updated. "
@@ -1588,23 +1688,13 @@ def collect_candidates(
 
     candidates.sort(
         key=lambda item: (
-            item[
-                "scores"
-            ][
-                "watch_score"
-            ],
-            item.get(
-                "reported_at"
-            )
-            or "",
+            item["scores"]["watch_score"],
+            item.get("reported_at") or "",
         ),
         reverse=True,
     )
 
-    return (
-        candidates,
-        diagnostics,
-    )
+    return candidates, diagnostics
 
 
 def create_report(
@@ -1728,7 +1818,7 @@ def main() -> None:
             INCIDENTS_PATH
         )
         or {
-            "schema_version": 2,
+            "schema_version": 3,
             "last_run": None,
             "incidents": [],
         }
@@ -1742,7 +1832,7 @@ def main() -> None:
     run_time = iso_now()
 
     print(
-        "Process Safety Incident Watch v0.2"
+        "Process Safety Incident Watch v0.3"
     )
 
     print(
