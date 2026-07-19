@@ -1,0 +1,15 @@
+{
+  "queries_total": 3,
+  "queries_succeeded": 2,
+  "queries_failed": 1,
+  "articles_returned": 12,
+  "unique_articles": 11,
+  "articles_selected_for_enrichment": 0,
+  "article_pages_enriched": 0,
+  "candidates_after_initial_screen": 0,
+  "publishable_candidates": 0,
+  "failures": [
+    "cross_industry_process_safety: GDELT returned HTTP 429 after 4 attempts."
+  ],
+  "generated_at": "2026-07-19T13:04:07+00:00"
+}
