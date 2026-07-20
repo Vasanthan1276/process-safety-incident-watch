@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-07-19T13:33:27+00:00",
+  "generated_at": "2026-07-20T00:13:45+00:00",
   "queries_total": 5,
-  "articles_discovered": 284,
-  "unique_articles": 277,
-  "quick_screened_in": 174,
-  "selected_for_enrichment": 110,
-  "article_pages_enriched": 110,
+  "articles_discovered": 269,
+  "unique_articles": 262,
+  "quick_screened_in": 167,
+  "selected_for_enrichment": 109,
+  "article_pages_enriched": 109,
   "confirmed_candidates": 17,
   "under_review_candidates": 72,
-  "rejected_after_analysis": 21,
-  "outside_lookback_window": 72,
+  "rejected_after_analysis": 20,
+  "outside_lookback_window": 76,
   "query_details": [
     {
       "name": "semiconductor_incidents",
       "stream": "Semiconductor",
       "priority": "normal",
-      "discovered": 62,
-      "quick_screened_in": 41,
+      "discovered": 60,
+      "quick_screened_in": 38,
       "selected_for_enrichment": 18,
       "selected_titles": [
         "Texas Instruments India reports 33% rise in women seeking semiconductor career exposure through its WiSH program - ELE Times",
@@ -28,27 +28,28 @@
         "Malaysia: Strong growth, high exposure to the semiconductor sector - Etudes Economiques – BNP Paribas",
         "AI Chip Boom Signals Structural Demand Explosion, Not Just Another Semiconductor Cycle - thelec.net",
         "Gas Purging System Market Forecast Points Higher Toward 2035, Driven by Semiconductor Fab Expansions - IndexBox",
-        "SK Hynix debuts on Nasdaq, shares jump 14%, ETFs adjust exposure to the chipmaker. - Pluang",
         "Synopex Begins Samsung Electronics Validation Test for Semiconductor Chemical Filters - thelec.net",
         "Oracle Java to Power Samsung Electronics’ Global Semiconductor Development - Oracle",
         "Sony Semiconductor Solutions and TSMC Enter Preliminary Agreement for Next-Generation Image Sensor Strategic Partnership|Taiwan Semiconductor Manufacturing Company Limited - pr.tsmc.com",
         "Siemens collaborates with TSMC to advance AI for semiconductor design - Siemens Newsroom",
         "Department of Commerce Announces Direct Funding Agreement with Bosch for a $225 Million CHIPS Program Award to Support Domestic Production of Silicon Carbide Semiconductors - National Institute of Standards and Technology (.gov)",
         "[News] Key Semiconductor Gas WF₆ Prices Reportedly Surge Over 200% as Supply Tightens Ahead of Japan Output Cuts - TrendForce",
-        "Earnings From Taiwan Semiconductor and ASML Show Soaring Demand , So Why Are AI Stocks Falling ? ( And Here What Investors Should Do Next .)",
-        "PTFE Ball Valve Market Forecast Points Higher Toward 2035, Driven by Semiconductor Capacity Expansion - IndexBox"
+        "Semiconductor stocks trade low despite strong AI-driven growth, signaling a potential rebound opportunity. - Pluang",
+        "World Semiconductor Grade Ethylene Glycol - Market Analysis, Forecast, Size, Trends and Insights - IndexBox",
+        "Are semiconductor manufacturers asking more from specialty gas producers? - gasworld"
       ]
     },
     {
       "name": "semiconductor_hazard_systems",
       "stream": "Semiconductor",
       "priority": "normal",
-      "discovered": 52,
+      "discovered": 50,
       "quick_screened_in": 16,
       "selected_for_enrichment": 16,
       "selected_titles": [
         "Hybrid bio-semiconductor nanosheets for hydrogen peroxide production - anl.gov",
         "Singapore using AI to hasten the discovery of recipes for next-gen semiconductors, clean hydrogen - The Straits Times",
+        "Formosa Chemicals to showcase low-carbon 5N5 hydrogen and semiconductor materials at COMPUTEX 2026 - digitimes",
         "Formosa Chemicals maps turnaround through hydrogen, AI, and semiconductor materials - digitimes",
         "Air Liquide Builds Arizona Blue Hydrogen Plant for Semiconductor Industry - Fuel Cells Works",
         "Hydrofluoric Acid Prices Climb as AI Chip Demand Outpaces a Strained Semiconductor Materials Supply - Wccftech",
@@ -61,8 +62,7 @@
         "PKC to Expand Semiconductor Chlorine Output by 50% at Samsung's Request - thelec.net",
         "Air Products could pivot capital away from $4.5bn US blue hydrogen project into Samsung semiconductor plant - Hydrogen Insight",
         "ENF Technology Begins First Hydrofluoric Acid Supply to SK hynix - thelec.net",
-        "South Korea develops key semiconductor gas technology - upi.com",
-        "Weekly current affairs : India hydrogen train , Skyroot space milestone and more"
+        "South Korea develops key semiconductor gas technology - upi.com"
       ]
     },
     {
@@ -70,7 +70,7 @@
       "stream": "Semiconductor",
       "priority": "high",
       "discovered": 75,
-      "quick_screened_in": 57,
+      "quick_screened_in": 55,
       "selected_for_enrichment": 30,
       "selected_titles": [
         "SK Hynix evacuates 3,600 workers after fire and toxic gas leak at South Korean chip plant - Crypto Briefing",
@@ -83,7 +83,6 @@
         "Breakingviews - SK Hynix rally lobs retail investors into AI fire - Reuters",
         "SK Hynix Cheongju plant fire triggers HF leak - digitimes",
         "Fire crews responded to TSMC after reports of a technical rescue involving a construction worker - 12News",
-        "Second Fire at SK Hynix Sparks Safety Management Questions - 조선일보",
         "Trump Orders His New Intel Chief to Fire More People - The New Republic",
         "Trump urges Pulte to fire intelligence community employees, WSJ reports - Yahoo",
         "Samsung Electronics Performance Bonus System Under Fire - 조선일보",
@@ -99,10 +98,11 @@
         "Intel Core Ultra 400 'Nova Lake' Series details leak, CPU naming and release dates - TweakTown",
         "Shin Bet starts investigation into wartime intelligence leak - The Jerusalem Post",
         "Intel x86 with NVIDIA RTX: Roadmap Leak Names 2028 for “Serpent Canyon” - igor´sLAB",
-        "Intel Nova Lake Leak Reveals Mid-Range CPUs With Massive Cache - HotHardware",
         "Intel Q970 motherboard specs leak with LGA-1954 and \"Core Ultra 300S\" support - VideoCardz.com",
         "Intel leak predicts upcoming Nova Lake Edge processors with an odd core layout - Yahoo Tech",
-        "Intel Nova Lake Edge Leak Suggests 8 E-Cores With A Powerful 12-Core Xe3 GPU - HotHardware"
+        "Intel Nova Lake Edge Leak Suggests 8 E-Cores With A Powerful 12-Core Xe3 GPU - HotHardware",
+        "Intel leak predicts upcoming Nova Lake Edge processors with an odd core layout - Digital Trends",
+        "AMD Zen 7 Details Leak – “Grimlock” to use TSMC A14 node - OC3D"
       ]
     },
     {
@@ -111,15 +111,15 @@
       "priority": "high",
       "discovered": 35,
       "quick_screened_in": 34,
-      "selected_for_enrichment": 28,
+      "selected_for_enrichment": 27,
       "selected_titles": [
         "Breaking! Fire breaks out at SK Hynix plant, leaking toxic gas; 7 people hospitalized. - ChemNet",
+        "On the 1st, a fire broke out at SK Hynix's plant in Cheongju, causing toxic gas to leak. This caused.. - 매일경제",
+        "SK hynix contains Cheongju plant fire and gas leak, keeps production stable - CHOSUNBIZ - Chosunbiz",
         "SK Hynix factory gas leak injures six after fire at South Korea chip plant - Moneycontrol.com",
-        "Memory makers brace for hydrogen fluoride pricing shock as Hormuz blockade impacts supply chain — key etching and cleaning material faces sharp cost increase amid trade disruption - Tom's Hardware",
         "SK Hynix Cheongju Plant Fire Injures 7, Production Not Interrupted, Shares Fall Over 4% in Early Trading - TradingKey",
         "Fire and Fluorine Leak Occur at SK Hynix Cheongju Plant Gas Facility - thelec.net",
         "SK Hynix Factory Fire Triggers Gas Leak, Injures 11 - 조선일보",
-        "Fire at SK hynix Cheongju Plant Injures Six in Fluorine Leak - Seoul Economic Daily",
         "SK hynix Cheongju Plant Fire Quickly Extinguished, No Production Disruption - Seoul Economic Daily",
         "Fluorine Scrubbers Market to Reach USD 1,775.0 Million by 2036 as - openPR.com",
         "Ministry Inspects 25 Semiconductor Sites Including SK Hynix - 조선일보",
@@ -139,7 +139,6 @@
         "Fujifilm Develops First Fluorine-Free ArF Immersion Resist for AI Chip Fabs - International Business Times",
         "Hydrofluoric Acid Market Size, Share | Growth Forecast [2034] - Fortune Business Insights",
         "Explosion at Hanwha Aerospace Plant in South Korea Kills Five, Injures Two - visiontimes.com",
-        "Iran-Linked Supply Shock Hits South Korea's Hydrofluoric Acid Market - thelec.net",
         "Repeated incidents at SK hynix Cheongju stoke safety concerns in South Korea - CHOSUNBIZ - Chosunbiz"
       ]
     },
@@ -147,37 +146,39 @@
       "name": "cross_industry_process_safety",
       "stream": "Cross-Industry",
       "priority": "normal",
-      "discovered": 60,
-      "quick_screened_in": 26,
+      "discovered": 49,
+      "quick_screened_in": 24,
       "selected_for_enrichment": 18,
       "selected_titles": [
         "Delaware City Refinery faces nearly $1 million penalty for toxic gas release in May - WHYY",
-        "Drones attacked Gazprom Neftekhim Salavat refinery in Bashkortostan: fire broke out after explosions - ukranews.com",
         "Viva’s Geelong refinery nears full production after fire - The Australian",
         "4 dead in flash fire during maintenance work at Sinopec Yangzi Petrochemical - ChemNet",
-        "Russia's Ilsky oil refinery catches fire, Taganrog evacuates after drone attacks - Reuters",
         "Fire at petrochemical plant in eastern India injures at least 20 people - AP News",
+        "Fire at Moscow oil refinery extinguished, emergency services say - Reuters",
         "Explosion at MOL's Tiszaujvaros petrochemical plant in Hungary kills one - Reuters",
         "Russian city faces toxic aftermath of refinery attack - The Straits Times",
         "Fire after Ukrainian attack at Russia's Tuapse refinery hits air quality - The Straits Times",
-        "Germany Refinery Fire - Journal-News.com",
         "Germany Refinery Fire - The Herald Journal",
-        "Russia claims Ukrainian drone debris injures 1, sparks fire at oil refinery - Anadolu Ajansı",
-        "The Salavat Oil Refinery is on Fire After Being Hit by Ukrainian UAVs - Мілітарний",
         "Fire reported near Moscow oil refinery after drone attack on city - Українська правда",
+        "Russia's Ilsky oil refinery catches fire, Taganrog evacuates afte - Global Banking & Finance Review",
         "Details emerge of Chalmette refinery blast that shook surrounding area - NOLA.com",
+        "Crews respond to Pulaski County refinery fire - WKYT",
         "Ukrainian Strike Kills 1 in Southern Russia, Refinery on Fire - The Moscow Times",
-        "Drones attacked Krasnodar oil refinery, fire killed one and injured others - Межа. Новини України.",
-        "3 injured after fire at Delaware County refinery; shelter-in-place order lifted - WHYY"
+        "3 injured after fire at Delaware County refinery; shelter-in-place order lifted - WHYY",
+        "Crews extinguish fire at Delaware County refinery; 4 employees injured - NBC10 Philadelphia",
+        "3 injured in fire at Trainer Refinery in Marcus Hook, Pennsylvania; shelter-in-place lifted - CBS News",
+        "Qatar: explosion at oil refinery, at least 13 Indians and Pakistanis dead - AsiaNews"
       ]
     }
   ],
   "providers": {
     "GDELT": {
-      "queries_succeeded": 3,
-      "queries_failed": 0,
-      "articles_returned": 25,
-      "failures": []
+      "queries_succeeded": 2,
+      "queries_failed": 1,
+      "articles_returned": 10,
+      "failures": [
+        "GDELT cross_industry_process_safety: HTTP 429"
+      ]
     },
     "Google News RSS": {
       "queries_succeeded": 5,

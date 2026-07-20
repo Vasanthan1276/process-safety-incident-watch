@@ -1,6 +1,6 @@
 {
   "schema_version": 5,
-  "last_run": "2026-07-19T13:33:27+00:00",
+  "last_run": "2026-07-20T00:13:45+00:00",
   "incidents": [
     {
       "incident_id": "PSI-2026-0059",
@@ -10,7 +10,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Confirmed",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response.",
@@ -295,7 +295,7 @@
       "reported_at": "2026-06-05T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "Updated",
+      "status": "Active",
       "review_status": "Confirmed",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -373,7 +373,7 @@
       "reported_at": "2026-06-05T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Confirmed",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -430,7 +430,7 @@
       "reported_at": "2026-05-27T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Confirmed",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -590,6 +590,61 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0103",
+      "stream": "Cross-Industry",
+      "title": "Fire at Moscow oil refinery extinguished, emergency services say - Reuters",
+      "incident_date": null,
+      "reported_at": "2026-06-16T07:00:00+00:00",
+      "first_detected": "2026-07-20T00:13:45+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "New",
+      "review_status": "Confirmed",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 4,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 4,
+        "watch_score": 1.85
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Fire at Moscow oil refinery extinguished, emergency services say - Reuters",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOcU9Od0FVR3dhbnk4V1R5WmNic0x6VWFFbGdXTGpVdURtSzRrQ3hPVWxELWtuTGM2S2pDWk5HRkJOLTFYQzhEREhMbFZBRURlbmVPNUZuYkFUZHlKODlYSjZtSEpGU1hGUFk2Tl9pYkV5SW42R3VVU0tsd2VKa2YxOUtLdkdpOEhJbjI1R3oyRld4TTNybTN6YXUteld3Y3NWdVpQQmJqWGJMbWtZSm03Q0FR?oc=5",
+          "domain": "reuters.com",
+          "source_name": "Reuters",
+          "published_at": "2026-06-16T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 4,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0008",
       "stream": "Cross-Industry",
       "title": "Explosion at MOL's Tiszaujvaros petrochemical plant in Hungary kills one - Reuters",
@@ -707,7 +762,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Confirmed",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -877,7 +932,7 @@
       "reported_at": "2026-05-20T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Confirmed",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response.",
@@ -1041,7 +1096,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response.",
@@ -1102,7 +1157,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response.",
@@ -1214,6 +1269,126 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0104",
+      "stream": "Semiconductor",
+      "title": "On the 1st, a fire broke out at SK Hynix's plant in Cheongju, causing toxic gas to leak. This caused.. - 매일경제",
+      "incident_date": null,
+      "reported_at": "2026-06-01T07:00:00+00:00",
+      "first_detected": "2026-07-20T00:13:45+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 3,
+        "semiconductor_relevance": 1,
+        "severity_potential": 2,
+        "confidence": 2,
+        "watch_score": 2.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "sk hynix"
+        ],
+        "process_safety": [
+          "fire",
+          "toxic",
+          "toxic gas"
+        ],
+        "severity": [
+          "fire",
+          "leak"
+        ]
+      },
+      "sources": [
+        {
+          "title": "On the 1st, a fire broke out at SK Hynix's plant in Cheongju, causing toxic gas to leak. This caused.. - 매일경제",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5SbnM5MjlPRTc3bHZsZ2hPdkVyRV9KeGlkQTE5ZTVzRUFjUDcwWjRjZ1dMMnk3dVRRa2lRLXFtNFVubFpkNDcxS05tbXlITnhrQmc?oc=5",
+          "domain": "mk.co.kr",
+          "source_name": "매일경제",
+          "published_at": "2026-06-01T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0105",
+      "stream": "Semiconductor",
+      "title": "SK hynix contains Cheongju plant fire and gas leak, keeps production stable - CHOSUNBIZ - Chosunbiz",
+      "incident_date": null,
+      "reported_at": "2026-06-01T07:00:00+00:00",
+      "first_detected": "2026-07-20T00:13:45+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response; exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 3,
+        "semiconductor_relevance": 1,
+        "severity_potential": 2,
+        "confidence": 2,
+        "watch_score": 2.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "sk hynix"
+        ],
+        "process_safety": [
+          "duct",
+          "fire",
+          "gas leak"
+        ],
+        "severity": [
+          "fire",
+          "leak"
+        ]
+      },
+      "sources": [
+        {
+          "title": "SK hynix contains Cheongju plant fire and gas leak, keeps production stable - CHOSUNBIZ - Chosunbiz",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1GcmNUUnJWenh0X3RWU1BBcmVrSlI4OWIzdkQ1aUxoOTBiWnp2a3pNT2Q0MHZ3TWxfS1phVjlBZEg0ZEFSbVozamE1YjJmQXRQUllhZWZsdk5BVFZDZDdoWTlINGl5Y0JMZm1jbk4xRWZEUG9UUFVYOGNB0gGOAUFVX3lxTE9XVVhGUHlRY09zS1RmY1dzekx5eVdfX01saFJQSmR6S0ZMZl9DTlExVjg1N3JXT2JZeTJJYlJBZmlDaGI0WGNWcWhOSm9Db3M3WUI5TWZ6QXZDYWpYQWZyRXBSbWRsTGNIZm1IYmllVUN6a1pxMkM1YW5TRDd1SWNDbUxjbUpiZ0dPU2xtX3c?oc=5",
+          "domain": "biz.chosun.com",
+          "source_name": "Chosunbiz",
+          "published_at": "2026-06-01T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0020",
       "stream": "Semiconductor",
       "title": "Earnings From Taiwan Semiconductor and ASML Show Soaring Demand , So Why Are AI Stocks Falling ? ( And Here What Investors Should Do Next .)",
@@ -1282,7 +1457,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response.",
@@ -1456,7 +1631,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -1514,7 +1689,7 @@
       "reported_at": "2026-06-28T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -1689,7 +1864,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response.",
@@ -1748,7 +1923,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response.",
@@ -1807,7 +1982,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response.",
@@ -1866,7 +2041,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation; fire and explosion prevention, ignition control and emergency response.",
@@ -2213,7 +2388,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation.",
@@ -2271,7 +2446,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response; exhaust and abatement-system reliability.",
@@ -2329,7 +2504,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response; exhaust and abatement-system reliability.",
@@ -2496,6 +2671,83 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0035",
+      "stream": "Semiconductor",
+      "title": "World Semiconductor Gade Silane Gas - Market Analysis, Forecast, Size, Trends and Insights - IndexBox",
+      "incident_date": null,
+      "reported_at": "2026-07-05T22:31:06+00:00",
+      "first_detected": "2026-07-19T13:19:02+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "Updated",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response; exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 2,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 3,
+        "watch_score": 1.5
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct",
+          "silane"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "World Semiconductor Gade Silane Gas - Market Analysis, Forecast, Size, Trends and Insights - IndexBox",
+          "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNd2x5UDJaRmY1bGZzREFMNUdYdkpBRnB5cUtlX0Fsd3pRZWFRc1h4Vk9HcjdWVmVMMlVxZmNmSTlZdGxZQTI0TnZvVU5QQ0dkWlhxMHFEWGxqdHZJMHZoTTVqajhjaFJ1NzlYY1dmZW5QSVQ5cHA4NnJ6VHFib0ZqR2FLek1hX1JDWFdLaVB0Ymx0VUgza2lzUkZYc0NLLTM2bE1sQTZPN01Cc2h5ek1HX1FKdlNmMm1PRS1BUVhwbnlxNHBCOVNlQ3RHem5FcV9YY1I5VGExWUU5dXh0Ni00NV83TXN1NkVkNERz?oc=5",
+          "domain": "indexbox.io",
+          "source_name": "IndexBox",
+          "published_at": "2026-07-05T22:31:06+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        },
+        {
+          "title": "World Semiconductor Grade Ethylene Glycol - Market Analysis, Forecast, Size, Trends and Insights - IndexBox",
+          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQTWlKLWpad2FzTDVlUkk5Y0VrOTlJVFBKMzNkcnBoRElQeWNxRERxZHVIejUxOXB4QkFmRElpTFVJOG1tcGs4a2R1NXhUWFplNTMtZFI5YmVHQ3FPYjAxdUVBZ1FITVg1MXJEX05ENExOdXVZSVhNdmZQY3ZCclFFWE9WUTA0bjhhXzBHMjJkd0lpelFMREVCbTBSajNiZjVEbEFITkRvZGZ6RTAtSmZBVnNxckQ4SVNjcjU4SmJvMnhMNFdHQTIwVkVtQ2JKdXNRbmpFR2x4Zi1mMjA?oc=5",
+          "domain": "indexbox.io",
+          "source_name": "IndexBox",
+          "published_at": "2026-07-18T07:21:14+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-19T13:19:02+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
+          "type": "updated",
+          "changes": [
+            "Added source: indexbox.io"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0077",
       "stream": "Semiconductor",
       "title": "South Korea inspects 25 chip plants after fluorine leaks at SK hynix - CHOSUNBIZ - Chosunbiz",
@@ -2503,7 +2755,7 @@
       "reported_at": "2026-06-26T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation.",
@@ -2561,7 +2813,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation.",
@@ -2619,7 +2871,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation.",
@@ -2677,7 +2929,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -2735,7 +2987,7 @@
       "reported_at": "2026-06-26T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -2776,6 +3028,118 @@
       "change_history": [
         {
           "timestamp": "2026-07-19T13:33:27+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0106",
+      "stream": "Cross-Industry",
+      "title": "Crews extinguish fire at Delaware County refinery; 4 employees injured - NBC10 Philadelphia",
+      "incident_date": null,
+      "reported_at": "2026-06-25T07:00:00+00:00",
+      "first_detected": "2026-07-20T00:13:45+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 2,
+        "confidence": 2,
+        "watch_score": 1.45
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire",
+          "injured"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Crews extinguish fire at Delaware County refinery; 4 employees injured - NBC10 Philadelphia",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPMVFLYzRVbkhBSzJWNDhZMFJaZllCX3BYYXg3VUJoblN1UWh5S3M0NXRyUkk2a1B6N3F3cF82V1RlMC1jMG9XT25maHhSM2tRa2NQNW5zWGRFNjRoSkYyaE1xb19PYkpnY29uM3ZzcTFEZ0VhYlNNeFg0V2hlZUUzOVR4aDZnc3FjRlhWcl83c0RPYmpQNWtuQVZ4WFhQRnA4UGtoWkFDVmfSAbABQVVfeXFMTVE0VnU5anJFaTlhMEN5TzZHclRFVFh0cEdMQm1hMGJQV0Zwb2hlZ1ZlaEpYNWxaTkpmU3d0bEpSWHMxUTl3aUZDNklfSmsyeF9mX2dSSFpZdHRNaGZjUTNKSXFCdG94dE03d0w3aTdfc3N5OXdXa2tWdXY2TFI4X0NxUUJKTVVHS3FxZWVfUVhMbl9aOUVYcXdZSUdvTzJYVS1SVVVGZHVzcW1iN3BJSWw?oc=5",
+          "domain": "nbcphiladelphia.com",
+          "source_name": "NBC10 Philadelphia",
+          "published_at": "2026-06-25T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0107",
+      "stream": "Cross-Industry",
+      "title": "3 injured in fire at Trainer Refinery in Marcus Hook, Pennsylvania; shelter-in-place lifted - CBS News",
+      "incident_date": null,
+      "reported_at": "2026-06-25T07:00:00+00:00",
+      "first_detected": "2026-07-20T00:13:45+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 2,
+        "confidence": 2,
+        "watch_score": 1.45
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire",
+          "injured"
+        ]
+      },
+      "sources": [
+        {
+          "title": "3 injured in fire at Trainer Refinery in Marcus Hook, Pennsylvania; shelter-in-place lifted - CBS News",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPT3RnS1NDbXdRT3I3N2RJOWk2ejJiWnN4MVFQQ0FmcmdwRy1wbUtyTkJ0UkZSYjNKZDZOYzdwLTFxYk0zWmVkS2NfWGRzeENEeEc0Tmt4dTZVYUNUWHlmamN2NFNJbU1ZLWdHVjlqZURhQ0tpTXZIbFIyNUdiVURjc2ZCTTRaS0ZnNGpHaTRoLWpXbWd0d3VuTDNFOA?oc=5",
+          "domain": "cbsnews.com",
+          "source_name": "CBS News",
+          "published_at": "2026-06-25T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
           "type": "new",
           "changes": [
             "Incident first detected by monitoring workflow"
@@ -2953,62 +3317,6 @@
           "domain": "wccftech.com",
           "source_name": "Wccftech",
           "published_at": "2026-07-15T23:43:54+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 2,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-07-19T13:19:02+00:00",
-          "type": "new",
-          "changes": [
-            "Incident first detected by monitoring workflow"
-          ]
-        }
-      ]
-    },
-    {
-      "incident_id": "PSI-2026-0035",
-      "stream": "Semiconductor",
-      "title": "World Semiconductor Gade Silane Gas - Market Analysis, Forecast, Size, Trends and Insights - IndexBox",
-      "incident_date": null,
-      "reported_at": "2026-07-05T22:31:06+00:00",
-      "first_detected": "2026-07-19T13:19:02+00:00",
-      "last_updated": "2026-07-19T13:19:02+00:00",
-      "status": "Active",
-      "review_status": "Under Review",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response; exhaust and abatement-system reliability.",
-      "scores": {
-        "source_reliability": 2,
-        "process_safety_relevance": 2,
-        "semiconductor_relevance": 1,
-        "severity_potential": 0,
-        "confidence": 2,
-        "watch_score": 1.4
-      },
-      "keyword_evidence": {
-        "semiconductor": [
-          "semiconductor"
-        ],
-        "process_safety": [
-          "duct",
-          "silane"
-        ],
-        "severity": []
-      },
-      "sources": [
-        {
-          "title": "World Semiconductor Gade Silane Gas - Market Analysis, Forecast, Size, Trends and Insights - IndexBox",
-          "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNd2x5UDJaRmY1bGZzREFMNUdYdkpBRnB5cUtlX0Fsd3pRZWFRc1h4Vk9HcjdWVmVMMlVxZmNmSTlZdGxZQTI0TnZvVU5QQ0dkWlhxMHFEWGxqdHZJMHZoTTVqajhjaFJ1NzlYY1dmZW5QSVQ5cHA4NnJ6VHFib0ZqR2FLek1hX1JDWFdLaVB0Ymx0VUgza2lzUkZYc0NLLTM2bE1sQTZPN01Cc2h5ek1HX1FKdlNmMm1PRS1BUVhwbnlxNHBCOVNlQ3RHem5FcV9YY1I5VGExWUU5dXh0Ni00NV83TXN1NkVkNERz?oc=5",
-          "domain": "indexbox.io",
-          "source_name": "IndexBox",
-          "published_at": "2026-07-05T22:31:06+00:00",
           "source_country": null,
           "language": "English",
           "reliability": 2,
@@ -3421,6 +3729,82 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0055",
+      "stream": "Cross-Industry",
+      "title": "Germany Refinery Fire - The Herald Journal",
+      "incident_date": null,
+      "reported_at": "2026-07-15T17:52:53+00:00",
+      "first_detected": "2026-07-19T13:19:02+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "Updated",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 3,
+        "watch_score": 1.35
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Germany Refinery Fire - The Herald Journal",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQa2VnQlRnbUlDSjBTLXZKUlp2eXo2V19SVXBkTUNHbDZudHlkbXZ3VnMzMzFIeDE3WnZfalA4QXlMLUpfZnhmdDJxZHRnTV8weHJJelpwTVRPQjRXVDdxWThkZUNMMkxVTHJYNENNS2tOQTJfY055aElMbzVOaERyVDZKSjROYzFuMkJEWVV4eWpya1F1bWFZcGNoaWNjaWM?oc=5",
+          "domain": "hjnews.com",
+          "source_name": "The Herald Journal",
+          "published_at": "2026-07-15T17:52:53+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        },
+        {
+          "title": "Germany Refinery Fire - The Herald Journal",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQTW82QjRKZUlTQkk4bUk3ODhrSGZGeEFKTE1zWUJjbXd4Um5qSHRXNXYtMVVOaEZYRUp4eUFRTmRCU3Ywck04cTNHTG9QSFc2YnFQdUhQYWo5Szd3UU5IUm1qNUFxaGRKSHZYWFJnZFZmUnd5amRSTlJxd0ZHRFMwbDJ6SXpBd1FFVUtZcmVPRng0c09LQ19pTkhpUE80NEk?oc=5",
+          "domain": "hjnews.com",
+          "source_name": "The Herald Journal",
+          "published_at": "2026-07-15T17:58:18+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-19T13:19:02+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
+          "type": "updated",
+          "changes": [
+            "Added source: hjnews.com"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0082",
       "stream": "Semiconductor",
       "title": "Ministry Inspects 25 Semiconductor Sites Including SK Hynix - 조선일보",
@@ -3428,7 +3812,7 @@
       "reported_at": "2026-06-26T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -3484,7 +3868,7 @@
       "reported_at": "2026-06-18T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -3541,7 +3925,7 @@
       "reported_at": "2026-06-16T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -3598,7 +3982,7 @@
       "reported_at": "2026-06-12T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -3655,7 +4039,7 @@
       "reported_at": "2026-06-12T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -3712,7 +4096,7 @@
       "reported_at": "2026-06-12T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -3769,7 +4153,7 @@
       "reported_at": "2026-06-12T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -3826,7 +4210,7 @@
       "reported_at": "2026-06-12T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -3883,7 +4267,7 @@
       "reported_at": "2026-06-10T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation.",
@@ -3940,7 +4324,7 @@
       "reported_at": "2026-06-05T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -3997,7 +4381,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -4054,7 +4438,7 @@
       "reported_at": "2026-06-01T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation.",
@@ -4167,7 +4551,7 @@
       "reported_at": "2026-05-28T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -4280,7 +4664,7 @@
       "reported_at": "2026-05-12T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -4497,61 +4881,6 @@
       ]
     },
     {
-      "incident_id": "PSI-2026-0055",
-      "stream": "Cross-Industry",
-      "title": "Germany Refinery Fire - The Herald Journal",
-      "incident_date": null,
-      "reported_at": "2026-07-15T17:52:53+00:00",
-      "first_detected": "2026-07-19T13:19:02+00:00",
-      "last_updated": "2026-07-19T13:19:02+00:00",
-      "status": "Active",
-      "review_status": "Under Review",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
-      "scores": {
-        "source_reliability": 2,
-        "process_safety_relevance": 1,
-        "semiconductor_relevance": 0,
-        "severity_potential": 1,
-        "confidence": 2,
-        "watch_score": 1.25
-      },
-      "keyword_evidence": {
-        "semiconductor": [],
-        "process_safety": [
-          "fire"
-        ],
-        "severity": [
-          "fire"
-        ]
-      },
-      "sources": [
-        {
-          "title": "Germany Refinery Fire - The Herald Journal",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQa2VnQlRnbUlDSjBTLXZKUlp2eXo2V19SVXBkTUNHbDZudHlkbXZ3VnMzMzFIeDE3WnZfalA4QXlMLUpfZnhmdDJxZHRnTV8weHJJelpwTVRPQjRXVDdxWThkZUNMMkxVTHJYNENNS2tOQTJfY055aElMbzVOaERyVDZKSjROYzFuMkJEWVV4eWpya1F1bWFZcGNoaWNjaWM?oc=5",
-          "domain": "hjnews.com",
-          "source_name": "The Herald Journal",
-          "published_at": "2026-07-15T17:52:53+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 2,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-07-19T13:19:02+00:00",
-          "type": "new",
-          "changes": [
-            "Incident first detected by monitoring workflow"
-          ]
-        }
-      ]
-    },
-    {
       "incident_id": "PSI-2026-0056",
       "stream": "Cross-Industry",
       "title": "Russia claims Ukrainian drone debris injures 1, sparks fire at oil refinery - Anadolu Ajansı",
@@ -4669,7 +4998,7 @@
       "reported_at": "2026-07-10T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -4717,6 +5046,61 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0108",
+      "stream": "Cross-Industry",
+      "title": "Russia's Ilsky oil refinery catches fire, Taganrog evacuates afte - Global Banking & Finance Review",
+      "incident_date": null,
+      "reported_at": "2026-07-10T05:58:02+00:00",
+      "first_detected": "2026-07-20T00:13:45+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Russia's Ilsky oil refinery catches fire, Taganrog evacuates afte - Global Banking & Finance Review",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNenl3ZkRkUWlfRnBDSjJDYnd1Qm9sbFBNQkNaTG00VWNJZ0F6bktmM2FTbDJzUWZiY05xOVpOalNXbjlBMmMySUkyQXJoaUFackU5V1AwQXVQVzl0c0hMY0ZITHl5dVFLQzhmUnF0LXFrdmJpeE5RVjdiR2xGQW4yOEl5TWpLclRtUjBXMlJYLUowTmtmLVJjaGdYZzAwQ3hF?oc=5",
+          "domain": "globalbankingandfinance.com",
+          "source_name": "Global Banking & Finance Review",
+          "published_at": "2026-07-10T05:58:02+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0097",
       "stream": "Cross-Industry",
       "title": "Details emerge of Chalmette refinery blast that shook surrounding area - NOLA.com",
@@ -4724,7 +5108,7 @@
       "reported_at": "2026-07-06T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -4772,6 +5156,61 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0109",
+      "stream": "Cross-Industry",
+      "title": "Crews respond to Pulaski County refinery fire - WKYT",
+      "incident_date": null,
+      "reported_at": "2026-07-06T07:00:00+00:00",
+      "first_detected": "2026-07-20T00:13:45+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Crews respond to Pulaski County refinery fire - WKYT",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPbnlMcHlPckc0bHQ3YWFXX2RmZ3JfSDBVM1lwRm1PRFhUcmN0d1lXOWhnMGZMdnE3Um5xa0JvWFlOUkpTb21aanhJNFJ0RVl3VWVkNTdXeHNval9Hal92VEdIMHVuX09jTHVzQ3RRQy0xVTZ6bkFPV2VwM01MVkRIdQ?oc=5",
+          "domain": "wkyt.com",
+          "source_name": "WKYT",
+          "published_at": "2026-07-06T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0098",
       "stream": "Cross-Industry",
       "title": "Ukrainian Strike Kills 1 in Southern Russia, Refinery on Fire - The Moscow Times",
@@ -4779,7 +5218,7 @@
       "reported_at": "2026-06-28T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -4819,6 +5258,61 @@
       "change_history": [
         {
           "timestamp": "2026-07-19T13:33:27+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0110",
+      "stream": "Cross-Industry",
+      "title": "Qatar: explosion at oil refinery, at least 13 Indians and Pakistanis dead - AsiaNews",
+      "incident_date": null,
+      "reported_at": "2026-06-23T07:00:00+00:00",
+      "first_detected": "2026-07-20T00:13:45+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "explosion"
+        ],
+        "severity": [
+          "explosion"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Qatar: explosion at oil refinery, at least 13 Indians and Pakistanis dead - AsiaNews",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNGZsMGE5UEJERkNmTzRtUEx6N3ZPU3lQWnhLRDlTTzFidUc1MjMtb1NYZjEybVNBcDF0clBSaVlkMjZ6RXBnUWQ1YTdWTlE0YU9VQ2JHUkRIalZOM1hOZktPZ2szUUlaOTg4UHdmejR5Q3o1ZUR5M1ZaX2RuUk0tVThCb0NXSFVQeGNJYl93NjVaMS1VVnlhTnNzVnJVQVdTek9Ka01IX2pWVDg?oc=5",
+          "domain": "asianews.it",
+          "source_name": "AsiaNews",
+          "published_at": "2026-06-23T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
           "type": "new",
           "changes": [
             "Incident first detected by monitoring workflow"
@@ -4882,6 +5376,61 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0111",
+      "stream": "Semiconductor",
+      "title": "Are semiconductor manufacturers asking more from specialty gas producers? - gasworld",
+      "incident_date": null,
+      "reported_at": "2026-07-17T16:01:56+00:00",
+      "first_detected": "2026-07-20T00:13:45+00:00",
+      "last_updated": "2026-07-20T00:13:45+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 2,
+        "watch_score": 1.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "Are semiconductor manufacturers asking more from specialty gas producers? - gasworld",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRnk3YTZWOEwxWDl4NWpFM0t3MnBYWjY5c09rWU1Yd3IxV2psc2VwZEVnYWYwX3FVaEJnb19YdDduU1NXWHNIc05XaVlUUjh3NGRmX18zcVU2TTJYb2tLbUdCZzlWalBQNmpoNGIydVc5TUxLOU9vempEODA0QlFHbjZGeThaUmJ1SG93ZWF1aE1aR0toaE5Nd0F2b1ljV2xQRHFBcWFsUDA3UmQ5TWh4aUlNX0JObmRXWWV2Tw?oc=5",
+          "domain": "gasworld.com",
+          "source_name": "gasworld",
+          "published_at": "2026-07-17T16:01:56+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0099",
       "stream": "Semiconductor",
       "title": "ENF Technology Begins First Hydrofluoric Acid Supply to SK hynix - thelec.net",
@@ -4889,7 +5438,7 @@
       "reported_at": "2026-06-16T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation.",
@@ -4944,7 +5493,7 @@
       "reported_at": "2026-06-11T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -4999,7 +5548,7 @@
       "reported_at": "2026-06-02T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -5054,7 +5603,7 @@
       "reported_at": "2026-04-23T07:00:00+00:00",
       "first_detected": "2026-07-19T13:33:27+00:00",
       "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Toxic-gas or hazardous-material containment, detection and emergency isolation.",
