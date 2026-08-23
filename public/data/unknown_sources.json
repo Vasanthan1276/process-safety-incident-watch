@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_run": "2026-08-16T23:34:38+00:00",
+  "last_run": "2026-08-23T23:36:22+00:00",
   "sources": {
     "eletimes.ai": {
       "domain": "eletimes.ai",
@@ -16,8 +16,8 @@
       "domain": "finance.yahoo.com",
       "source_name": "Yahoo Finance",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 11,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 12,
       "sample_titles": [
         "Air Liquide Deepens SK Hynix Ties And Semiconductor Exposure In Korea - Yahoo Finance",
         "Why Micron Technology (MU) Was One of the Top “Blue Chip” Stocks Suddenly on Fire in April - Yahoo Finance",
@@ -42,8 +42,8 @@
       "domain": "chosun.com",
       "source_name": "조선일보",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 27,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 33,
       "sample_titles": [
         "Morgan Stanley Advises Reducing Semiconductor Stock Exposure as Earnings Peak - 조선일보",
         "Second Fire at SK Hynix Sparks Safety Management Questions - 조선일보",
@@ -67,8 +67,8 @@
       "domain": "economic-research.bnpparibas.com",
       "source_name": "Etudes Economiques – BNP Paribas",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 7,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 8,
       "sample_titles": [
         "Malaysia: Strong growth, high exposure to the semiconductor sector - Etudes Economiques – BNP Paribas"
       ]
@@ -77,8 +77,8 @@
       "domain": "thelec.net",
       "source_name": "thelec.net",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 28,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 31,
       "sample_titles": [
         "AI Chip Boom Signals Structural Demand Explosion, Not Just Another Semiconductor Cycle - thelec.net",
         "Synopex Begins Samsung Electronics Validation Test for Semiconductor Chemical Filters - thelec.net",
@@ -91,8 +91,8 @@
       "domain": "indexbox.io",
       "source_name": "IndexBox",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 19,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 20,
       "sample_titles": [
         "Gas Purging System Market Forecast Points Higher Toward 2035, Driven by Semiconductor Fab Expansions - IndexBox",
         "PTFE Ball Valve Market Forecast Points Higher Toward 2035, Driven by Semiconductor Capacity Expansion - IndexBox",
@@ -105,11 +105,12 @@
       "domain": "pluang.com",
       "source_name": "Pluang",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-07-20T00:13:45+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "SK Hynix debuts on Nasdaq, shares jump 14%, ETFs adjust exposure to the chipmaker. - Pluang",
-        "Semiconductor stocks trade low despite strong AI-driven growth, signaling a potential rebound opportunity. - Pluang"
+        "Semiconductor stocks trade low despite strong AI-driven growth, signaling a potential rebound opportunity. - Pluang",
+        "First Trust Nasdaq Semiconductor ETF surges 134% in a year, but retirees should size exposure carefully. - Pluang"
       ]
     },
     "oracle.com": {
@@ -168,8 +169,8 @@
       "domain": "fuelcellsworks.com",
       "source_name": "Fuel Cells Works",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-09T23:48:20+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "Air Liquide Builds Arizona Blue Hydrogen Plant for Semiconductor Industry - Fuel Cells Works"
       ]
@@ -178,8 +179,8 @@
       "domain": "wccftech.com",
       "source_name": "Wccftech",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 7,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 8,
       "sample_titles": [
         "Hydrofluoric Acid Prices Climb as AI Chip Demand Outpaces a Strained Semiconductor Materials Supply - Wccftech",
         "Intel CEO Lip-Bu Tan Threatens to Fire Anyone Whose Chip Exceeds B0 Stepping, as 14A’s ‘Holy Grail’ PDK 0.9 Lands October 2026 - Wccftech"
@@ -189,8 +190,8 @@
       "domain": "globenewswire.com",
       "source_name": "GlobeNewswire",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 7,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 8,
       "sample_titles": [
         "Electronic Hydrofluoric Acid Market to Reach $1.87 Billion by 2030 as Controlled Semiconductor Capacity Expands - GlobeNewswire",
         "Electronic Hydrofluoric Acid Market to Reach $1.87 Billion by 2030 as Controlled Semiconductor Capacity Expands - globenewswire.com"
@@ -200,8 +201,8 @@
       "domain": "theborneopost.com",
       "source_name": "Borneo Post",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 7,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 8,
       "sample_titles": [
         "Federal urged to offer better incentives to boost hydrogen, semiconductor investments in Sarawak - Borneo Post"
       ]
@@ -210,8 +211,8 @@
       "domain": "dongascience.com",
       "source_name": "동아사이언스",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 8,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 9,
       "sample_titles": [
         "KIER produces high-purity deuterated ammonia domestically for semiconductor materials - 동아사이언스",
         "KRISS establishes domestic quality evaluation for 15 semiconductor process gases - 동아사이언스",
@@ -223,8 +224,8 @@
       "domain": "newsonprojects.com",
       "source_name": "News on Projects",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 7,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 8,
       "sample_titles": [
         "GACL to Establish Gujarat Facility for Semiconductor-Grade Hydrogen Peroxide Production. - News on Projects"
       ]
@@ -233,8 +234,8 @@
       "domain": "thehindubusinessline.com",
       "source_name": "BusinessLine",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-03T00:13:50+00:00",
-      "times_seen": 5,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 6,
       "sample_titles": [
         "GACL to set up high-purity hydrogen peroxide plant in Gujarat for semiconductor, solar applications - BusinessLine"
       ]
@@ -326,8 +327,8 @@
       "domain": "news.chemnet.com",
       "source_name": "ChemNet",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 12,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 13,
       "sample_titles": [
         "4 dead in flash fire during maintenance work at Sinopec Yangzi Petrochemical - ChemNet",
         "Breaking! Fire breaks out at SK Hynix plant, leaking toxic gas; 7 people hospitalized. - ChemNet",
@@ -351,10 +352,11 @@
       "domain": "journal-news.com",
       "source_name": "Journal-News.com",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-07-19T13:33:27+00:00",
-      "times_seen": 2,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 3,
       "sample_titles": [
-        "Germany Refinery Fire - Journal-News.com"
+        "Germany Refinery Fire - Journal-News.com",
+        "Libya Refinery Fire - Journal-News.com"
       ]
     },
     "hjnews.com": {
@@ -392,8 +394,8 @@
       "domain": "upi.com",
       "source_name": "upi.com",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "South Korea develops key semiconductor gas technology - upi.com"
       ]
@@ -402,8 +404,8 @@
       "domain": "cryptobriefing.com",
       "source_name": "Crypto Briefing",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "SK Hynix evacuates 3,600 workers after fire and toxic gas leak at South Korean chip plant - Crypto Briefing"
       ]
@@ -412,8 +414,8 @@
       "domain": "datacenterdynamics.com",
       "source_name": "Data Center Dynamics",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "Small number of workers exposed to fluorine gas leak at SK Hynix Cheongju campus – report - Data Center Dynamics",
         "Small number of workers exposed to fluorine gas leak at SK Hynix Cheongju campus – report - datacenterdynamics.com"
@@ -423,8 +425,8 @@
       "domain": "asiae.co.kr",
       "source_name": "아시아경제",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 13,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 15,
       "sample_titles": [
         "Fire at SK hynix Cheongju Plant... 3,600 Evacuated Due to Fluorine Leak - 아시아경제",
         "\"Surge in Contract Volumes\"... Government to Conduct Emergency Safety Inspections of Semiconductor and Defense Industries - 아시아경제",
@@ -435,8 +437,8 @@
       "domain": "thestar.com.my",
       "source_name": "The Star",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "Gas leak at SK Hynix chip factory injures six people, Yonhap reports - The Star"
       ]
@@ -465,8 +467,8 @@
       "domain": "yahoo.com",
       "source_name": "Yahoo",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "Trump urges Pulte to fire intelligence community employees, WSJ reports - Yahoo",
         "Reports of commercial fire prompt emergency response at Micron - Yahoo",
@@ -487,8 +489,8 @@
       "domain": "tradingkey.com",
       "source_name": "TradingKey",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 7,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 8,
       "sample_titles": [
         "SK Hynix Cheongju Plant Fire Injures 7, Production Not Interrupted, Shares Fall Over 4% in Early Trading - TradingKey",
         "Tower Semiconductor Ltd Stock (TSEM) Moved Up by 8.78% on Aug 6: What Signal Does It Send? - TradingKey"
@@ -498,8 +500,8 @@
       "domain": "en.sedaily.com",
       "source_name": "Seoul Economic Daily",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 10,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 12,
       "sample_titles": [
         "Fire at SK hynix Cheongju Plant Injures Six in Fluorine Leak - Seoul Economic Daily",
         "SK hynix Cheongju Plant Fire Quickly Extinguished, No Production Disruption - Seoul Economic Daily"
@@ -509,8 +511,8 @@
       "domain": "biz.chosun.com",
       "source_name": "Chosunbiz",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 18,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 19,
       "sample_titles": [
         "South Korea inspects 25 chip plants after fluorine leaks at SK hynix - CHOSUNBIZ - Chosunbiz",
         "Fires recur at SK hynix Cheongju gas rooms, spotlighting process flaws - CHOSUNBIZ - Chosunbiz",
@@ -532,8 +534,8 @@
       "domain": "ajupress.com",
       "source_name": "Aju Press",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "Another fire breaks out at SK hynixs plant in Cheongju - Aju Press",
         "Fire and toxic gas leak at SK hynix plant force 3,600 workers to evacuate - Aju Press"
@@ -543,8 +545,8 @@
       "domain": "businesskorea.co.kr",
       "source_name": "Businesskorea",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "Fire Hits SK Hynix Cheongju Plant - Businesskorea"
       ]
@@ -553,8 +555,8 @@
       "domain": "koreajoongangdaily.com",
       "source_name": "Korea JoongAng Daily",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 14,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 17,
       "sample_titles": [
         "Fire at SK hynix plant sends 8 to hospital, 4,000 workers evacuated - Korea JoongAng Daily",
         "Fire at SK hynix's Cheongju complex leaves seven injured - Korea JoongAng Daily",
@@ -565,8 +567,8 @@
       "domain": "globaltimes.cn",
       "source_name": "Global Times",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 10,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 12,
       "sample_titles": [
         "7 taken to hospital after fire breaks out at S. Korean plant of SK hynix - Global Times",
         "China’s Binzhou Group produces high-purity hydrogen fluoride, needed in advanced semiconductor manufacturing - Global Times"
@@ -576,8 +578,8 @@
       "domain": "news.az",
       "source_name": "Latest news from Azerbaijan",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-07-20T00:13:45+00:00",
-      "times_seen": 2,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 3,
       "sample_titles": [
         "At least 7 hospitalized after fire at SK hynix plant - Latest news from Azerbaijan"
       ]
@@ -606,13 +608,14 @@
       "domain": "pravda.com.ua",
       "source_name": "Українська правда",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 5,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "Fire reported near Moscow oil refinery after drone attack on city - Українська правда",
         "Ukraine hits Lukoil refinery in Russia's Perm: fire raging– video - Українська правда",
         "Oil refinery in Russia's Bashkortostan and Wildberries hub reportedly catch fire after drone attack – photos, - Українська правда",
-        "Russia's Syzran oil refinery attacked again: fire breaks out – photos, videos - Українська правда"
+        "Russia's Syzran oil refinery attacked again: fire breaks out – photos, videos - Українська правда",
+        "Drones attack Novokuibyshevsk oil refinery in Russia's Samara Oblast – photo, videos - Українська правда"
       ]
     },
     "nola.com": {
@@ -639,11 +642,12 @@
       "domain": "mezha.net",
       "source_name": "Межа. Новини України.",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-07-27T00:13:40+00:00",
-      "times_seen": 2,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 3,
       "sample_titles": [
         "Drones attacked Krasnodar oil refinery, fire killed one and injured others - Межа. Новини України.",
-        "Ukrainian special forces struck Tyumen refinery, fire reported - Межа. Новини України."
+        "Ukrainian special forces struck Tyumen refinery, fire reported - Межа. Новини України.",
+        "Ukraine Strikes Russian Oil Refinery, Fire Erupts at Ozon Logistics Complex - Межа. Новини України."
       ]
     },
     "mk.co.kr": {
@@ -710,8 +714,8 @@
       "domain": "pandaily.com",
       "source_name": "Pandaily",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-08-09T23:48:20+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "China Chip Etching Breakthrough: Binhua Group Mass Produces 6N Grade High-Purity Hydrogen Fluoride, Breaking Overseas Monopoly on Semiconductor Chemical Etchant - Pandaily"
       ]
@@ -730,10 +734,11 @@
       "domain": "etfdb.com",
       "source_name": "ETF Database",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-07-27T00:13:40+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Semiconductor ETFs Surge Ahead of Intel Earnings - ETF Database"
+        "Semiconductor ETFs Surge Ahead of Intel Earnings - ETF Database",
+        "Why PSI is Outperforming Traditional Semiconductor ETFs in 2026 - ETF Database"
       ]
     },
     "chemengonline.com": {
@@ -784,8 +789,8 @@
       "domain": "ktvb.com",
       "source_name": "KTVB",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "Vegetation fire contained near Micron facility on Federal Way - KTVB",
         "Vegetation fire contained near Micron facility on Federal Way - ktvb.com"
@@ -795,8 +800,8 @@
       "domain": "tradebrains.in",
       "source_name": "Trade Brains",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "3 Chemical Stocks That Are Quietly Becoming India’s Biggest Semiconductor Chip Supply Chain Winners - Trade Brains",
         "3 Chemical Stocks That Are Quietly Becoming India’s Biggest Semiconductor Chip Supply Chain Winners - tradebrains.in"
@@ -806,8 +811,8 @@
       "domain": "finance.biggo.com",
       "source_name": "finance.biggo.com",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 9,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 11,
       "sample_titles": [
         "SK Hynix Cheongju Plant Hit by Another Fire in 11 Days; 3,600 Evacuated - finance.biggo.com",
         "Microsoft Cloud Explosion Sends Stock Soaring 15% in a Day; Philadelphia Semiconductor Index Surges 8%, Taiwan Index Futures Rocket Over 1,500 Points in After-Hours Trading - finance.biggo.com",
@@ -931,10 +936,11 @@
       "domain": "businesswire.com",
       "source_name": "Business Wire",
       "first_seen": "2026-08-03T00:13:50+00:00",
-      "last_seen": "2026-08-03T00:13:50+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "ChipAgents Expands Series A Funding to $134 Million as Demand Grows for Agentic AI in Semiconductor Design - Business Wire"
+        "ChipAgents Expands Series A Funding to $134 Million as Demand Grows for Agentic AI in Semiconductor Design - Business Wire",
+        "xETFs Launches ETF to Capture Leading Firms Across the Full Korea AI Semiconductor Ecosystem: KSMH - Business Wire"
       ]
     },
     "bitget.com": {
@@ -971,20 +977,22 @@
       "domain": "english.nv.ua",
       "source_name": "The New Voice of Ukraine",
       "first_seen": "2026-08-03T00:13:50+00:00",
-      "last_seen": "2026-08-03T00:13:50+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Major fire erupts at Saratov oil refinery after drone attack - The New Voice of Ukraine"
+        "Major fire erupts at Saratov oil refinery after drone attack - The New Voice of Ukraine",
+        "Fire breaks out at Ufa refinery after drone attack damages unit under repair - The New Voice of Ukraine"
       ]
     },
     "unn.ua": {
       "domain": "unn.ua",
       "source_name": "unn.ua",
       "first_seen": "2026-08-03T00:13:50+00:00",
-      "last_seen": "2026-08-03T00:13:50+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Drones attacked Russian Saratov: fire at oil refinery and Engels airfield - media - unn.ua"
+        "Drones attacked Russian Saratov: fire at oil refinery and Engels airfield - media - unn.ua",
+        "In Russia’s Samara region, the Novokuybyshevsk oil refinery caught fire following a UAV attack - Українські Національні Новини (УНН)"
       ]
     },
     "hawarnews.com": {
@@ -1011,11 +1019,12 @@
       "domain": "kalkine.com.au",
       "source_name": "Kalkine",
       "first_seen": "2026-08-03T00:13:50+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 2,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 3,
       "sample_titles": [
         "Viva Energy (ASX:VEA) Restarts Geelong Petrol Unit After Refinery Fire—Can Retail Growth Offset the Operational Shock? - Kalkine",
-        "Global X Semiconductor ETF (ASX:SEMI) to Consider for Semiconductor Exposure - Kalkine"
+        "Global X Semiconductor ETF (ASX:SEMI) to Consider for Semiconductor Exposure - Kalkine",
+        "Semiconductor Sector Exposure: Technology-Focused Income Strategy Through Global Chip Manufacturing and Design (ASX:SEMI) - Kalkine"
       ]
     },
     "euronews.com": {
@@ -1074,10 +1083,11 @@
       "domain": "chemanalyst.com",
       "source_name": "ChemAnalyst",
       "first_seen": "2026-08-09T23:48:20+00:00",
-      "last_seen": "2026-08-09T23:48:20+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Linde Invests $1 Billion to Expand US Semiconductor Gas Supply - ChemAnalyst"
+        "Linde Invests $1 Billion to Expand US Semiconductor Gas Supply - ChemAnalyst",
+        "Messer Boosts Vietnam Gas Capacity to Support Semiconductor Growth - ChemAnalyst"
       ]
     },
     "portsmouth.co.uk": {
@@ -1204,18 +1214,19 @@
       "domain": "marketgrowthreports.com",
       "source_name": "marketgrowthreports.com",
       "first_seen": "2026-08-16T23:34:38+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Gas Scrubbers for Semiconductor Market Overview - marketgrowthreports.com"
+        "Gas Scrubbers for Semiconductor Market Overview - marketgrowthreports.com",
+        "Gas Scrubbers for Semiconductor Market Overview - Market Growth Reports"
       ]
     },
     "equitymaster.com": {
       "domain": "equitymaster.com",
       "source_name": "Equitymaster",
       "first_seen": "2026-08-16T23:34:38+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 2,
       "sample_titles": [
         "4 Semiconductor Proxy Stocks with Strong Expansion Plans - Equitymaster"
       ]
@@ -1224,8 +1235,8 @@
       "domain": "calmatters.org",
       "source_name": "CalMatters",
       "first_seen": "2026-08-16T23:34:38+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 2,
       "sample_titles": [
         "After refinery explosions, California lawmakers move to preserve safety rules - CalMatters"
       ]
@@ -1289,6 +1300,129 @@
       "times_seen": 1,
       "sample_titles": [
         "Oil refinery's fuel tank in W. Libya targeted, catches fire -- national oil firm - Xinhua"
+      ]
+    },
+    "ffnews.com": {
+      "domain": "ffnews.com",
+      "source_name": "FF News",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "xETFs Launches KSMH to Provide Targeted Exposure to Korea’s AI Semiconductor Ecosystem - FF News"
+      ]
+    },
+    "marketsandmarkets.com": {
+      "domain": "marketsandmarkets.com",
+      "source_name": "MarketsandMarkets",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 3,
+      "sample_titles": [
+        "Vietnam Semiconductor Chemicals Market Size, Share,Trends, Growth Analysis Report, 2030 - MarketsandMarkets",
+        "Netherlands Semiconductor Chemicals Market Size, Share,Trends, Growth Analysis Report, 2030 - MarketsandMarkets",
+        "North-America Semiconductor Chemicals Market Size, Share,Trends, Growth Analysis Report, 2030 - MarketsandMarkets"
+      ]
+    },
+    "dig.watch": {
+      "domain": "dig.watch",
+      "source_name": "Digital Watch Observatory",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Vietnam semiconductor industry to benefit from $40 million Messer investment in industrial gas - Digital Watch Observatory"
+      ]
+    },
+    "engineerlive.com": {
+      "domain": "engineerlive.com",
+      "source_name": "Engineer Live",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Precision Micro reports 43% growth as semiconductor supply chains scale - Engineer Live"
+      ]
+    },
+    "business-standard.com": {
+      "domain": "business-standard.com",
+      "source_name": "Business Standard",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "UP-Japan investment meet to focus on green hydrogen, semiconductor push - Business Standard"
+      ]
+    },
+    "devdiscourse.com": {
+      "domain": "devdiscourse.com",
+      "source_name": "Devdiscourse",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Toxic Gas Leak at SK Hynix Factory: Six Injured - Devdiscourse"
+      ]
+    },
+    "internazionale.it": {
+      "domain": "internazionale.it",
+      "source_name": "Internazionale",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Some workers at SK Hynix chip plant in South Korea exposed to gas leak, Yonhap says - Internazionale"
+      ]
+    },
+    "geelongadvertiser.com.au": {
+      "domain": "geelongadvertiser.com.au",
+      "source_name": "Geelong Advertiser",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Emergency response following chemical leak at Viva Refinery - Geelong Advertiser"
+      ]
+    },
+    "newsukraine.rbc.ua": {
+      "domain": "newsukraine.rbc.ua",
+      "source_name": "RBC-Ukraine",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 2,
+      "sample_titles": [
+        "Fire Point confirms strikes on oil refinery and Ozon warehouse in Russia's Samara region - RBC-Ukraine",
+        "Drone strike sparks huge fire at Russian Novokuibyshevsk oil refinery - RBC-Ukraine"
+      ]
+    },
+    "ukrmedia.news": {
+      "domain": "ukrmedia.news",
+      "source_name": "UkrMedia News",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Drones attacked the Novokuybyshevsk oil refinery in Russia; a fire has broken out at the plant - UkrMedia News"
+      ]
+    },
+    "inquirer.com": {
+      "domain": "inquirer.com",
+      "source_name": "Inquirer.com",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Eight firefighters were killed battling a massive refinery blaze on this week in Philly history - Inquirer.com"
+      ]
+    },
+    "oilprice.com": {
+      "domain": "oilprice.com",
+      "source_name": "Crude Oil Prices Today | OilPrice.com",
+      "first_seen": "2026-08-23T23:36:22+00:00",
+      "last_seen": "2026-08-23T23:36:22+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Fire Breaks Out at Rosneft-Owned Refinery After Ukrainian Drone Strike - Crude Oil Prices Today | OilPrice.com"
       ]
     }
   }
