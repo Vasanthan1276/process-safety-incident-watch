@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_run": "2026-08-31T01:23:08+00:00",
+  "last_run": "2026-09-07T01:02:45+00:00",
   "sources": {
     "eletimes.ai": {
       "domain": "eletimes.ai",
@@ -42,8 +42,8 @@
       "domain": "chosun.com",
       "source_name": "조선일보",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 36,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 41,
       "sample_titles": [
         "Morgan Stanley Advises Reducing Semiconductor Stock Exposure as Earnings Peak - 조선일보",
         "Second Fire at SK Hynix Sparks Safety Management Questions - 조선일보",
@@ -105,8 +105,8 @@
       "domain": "pluang.com",
       "source_name": "Pluang",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "SK Hynix debuts on Nasdaq, shares jump 14%, ETFs adjust exposure to the chipmaker. - Pluang",
         "Semiconductor stocks trade low despite strong AI-driven growth, signaling a potential rebound opportunity. - Pluang",
@@ -137,10 +137,11 @@
       "domain": "news.siemens.com",
       "source_name": "Siemens Newsroom",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-07-20T00:13:45+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 4,
       "sample_titles": [
-        "Siemens collaborates with TSMC to advance AI for semiconductor design - Siemens Newsroom"
+        "Siemens collaborates with TSMC to advance AI for semiconductor design - Siemens Newsroom",
+        "NanoBridge Semiconductor adopts Siemens’ Precision FPGA - Siemens Newsroom"
       ]
     },
     "esg.tsmc.com": {
@@ -169,8 +170,8 @@
       "domain": "fuelcellsworks.com",
       "source_name": "Fuel Cells Works",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 8,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 9,
       "sample_titles": [
         "Air Liquide Builds Arizona Blue Hydrogen Plant for Semiconductor Industry - Fuel Cells Works"
       ]
@@ -179,8 +180,8 @@
       "domain": "wccftech.com",
       "source_name": "Wccftech",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 9,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 10,
       "sample_titles": [
         "Hydrofluoric Acid Prices Climb as AI Chip Demand Outpaces a Strained Semiconductor Materials Supply - Wccftech",
         "Intel CEO Lip-Bu Tan Threatens to Fire Anyone Whose Chip Exceeds B0 Stepping, as 14A’s ‘Holy Grail’ PDK 0.9 Lands October 2026 - Wccftech"
@@ -190,8 +191,8 @@
       "domain": "globenewswire.com",
       "source_name": "GlobeNewswire",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 9,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 10,
       "sample_titles": [
         "Electronic Hydrofluoric Acid Market to Reach $1.87 Billion by 2030 as Controlled Semiconductor Capacity Expands - GlobeNewswire",
         "Electronic Hydrofluoric Acid Market to Reach $1.87 Billion by 2030 as Controlled Semiconductor Capacity Expands - globenewswire.com"
@@ -201,8 +202,8 @@
       "domain": "theborneopost.com",
       "source_name": "Borneo Post",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 9,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 10,
       "sample_titles": [
         "Federal urged to offer better incentives to boost hydrogen, semiconductor investments in Sarawak - Borneo Post"
       ]
@@ -211,8 +212,8 @@
       "domain": "dongascience.com",
       "source_name": "동아사이언스",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 10,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 11,
       "sample_titles": [
         "KIER produces high-purity deuterated ammonia domestically for semiconductor materials - 동아사이언스",
         "KRISS establishes domestic quality evaluation for 15 semiconductor process gases - 동아사이언스",
@@ -255,12 +256,13 @@
       "domain": "gasworld.com",
       "source_name": "gasworld",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-08-09T23:48:20+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "HyET and Nippon Sanso advance UHP hydrogen tech for semiconductors - gasworld",
         "Are semiconductor manufacturers asking more from specialty gas producers? - gasworld",
-        "Linde invests $1bn in Arizona semiconductor gas project - gasworld"
+        "Linde invests $1bn in Arizona semiconductor gas project - gasworld",
+        "Japan’s Air Water buys 35% stake in Taiwan semiconductor gas supplier - gasworld"
       ]
     },
     "dayakdaily.com": {
@@ -396,8 +398,8 @@
       "domain": "upi.com",
       "source_name": "upi.com",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 8,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 9,
       "sample_titles": [
         "South Korea develops key semiconductor gas technology - upi.com"
       ]
@@ -513,8 +515,8 @@
       "domain": "biz.chosun.com",
       "source_name": "Chosunbiz",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 21,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 22,
       "sample_titles": [
         "South Korea inspects 25 chip plants after fluorine leaks at SK hynix - CHOSUNBIZ - Chosunbiz",
         "Fires recur at SK hynix Cheongju gas rooms, spotlighting process flaws - CHOSUNBIZ - Chosunbiz",
@@ -547,8 +549,8 @@
       "domain": "businesskorea.co.kr",
       "source_name": "Businesskorea",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 8,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 9,
       "sample_titles": [
         "Fire Hits SK Hynix Cheongju Plant - Businesskorea"
       ]
@@ -557,8 +559,8 @@
       "domain": "koreajoongangdaily.com",
       "source_name": "Korea JoongAng Daily",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 18,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 19,
       "sample_titles": [
         "Fire at SK hynix plant sends 8 to hospital, 4,000 workers evacuated - Korea JoongAng Daily",
         "Fire at SK hynix's Cheongju complex leaves seven injured - Korea JoongAng Daily",
@@ -569,8 +571,8 @@
       "domain": "globaltimes.cn",
       "source_name": "Global Times",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 13,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 14,
       "sample_titles": [
         "7 taken to hospital after fire breaks out at S. Korean plant of SK hynix - Global Times",
         "China’s Binzhou Group produces high-purity hydrogen fluoride, needed in advanced semiconductor manufacturing - Global Times"
@@ -610,8 +612,8 @@
       "domain": "pravda.com.ua",
       "source_name": "Українська правда",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 9,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 12,
       "sample_titles": [
         "Fire reported near Moscow oil refinery after drone attack on city - Українська правда",
         "Ukraine hits Lukoil refinery in Russia's Perm: fire raging– video - Українська правда",
@@ -634,8 +636,8 @@
       "domain": "themoscowtimes.com",
       "source_name": "The Moscow Times",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "Ukrainian Strike Kills 1 in Southern Russia, Refinery on Fire - The Moscow Times",
         "Ukrainian Drone Attack Kills One, Sparks Fire at Yaroslavl Oil Refinery - The Moscow Times"
@@ -645,8 +647,8 @@
       "domain": "mezha.net",
       "source_name": "Межа. Новини України.",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 5,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 6,
       "sample_titles": [
         "Drones attacked Krasnodar oil refinery, fire killed one and injured others - Межа. Новини України.",
         "Ukrainian special forces struck Tyumen refinery, fire reported - Межа. Новини України.",
@@ -718,8 +720,8 @@
       "domain": "pandaily.com",
       "source_name": "Pandaily",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 5,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 6,
       "sample_titles": [
         "China Chip Etching Breakthrough: Binhua Group Mass Produces 6N Grade High-Purity Hydrogen Fluoride, Breaking Overseas Monopoly on Semiconductor Chemical Etchant - Pandaily"
       ]
@@ -770,31 +772,33 @@
       "domain": "moomoo.com",
       "source_name": "Moomoo",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 5,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 6,
       "sample_titles": [
         "MagnaChip Semiconductor (MX.US) will release its earnings report after market close on July 29. - Moomoo",
         "Press Release: Valens Semiconductor Appoints Dean Martin to Lead the Automotive Business Unit - Moomoo",
         "Press Release: GCT Semiconductor Holding, Inc. to Give Business Update and Announce Second Quarter 2026 Financial Results on August 10, 2026 - Moomoo",
-        "Press Release: Valens Semiconductor Reports Strong Second Quarter 2026 Results and Raises Full-Year Revenue Guidance - moomoo.com"
+        "Press Release: Valens Semiconductor Reports Strong Second Quarter 2026 Results and Raises Full-Year Revenue Guidance - moomoo.com",
+        "Press Release: Diodes Completes Acquisition of ElevATE Semiconductor, Expanding Presence in High-Growth ATE Market - Moomoo"
       ]
     },
     "simplywall.st": {
       "domain": "simplywall.st",
       "source_name": "simplywall.st",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-07-27T00:13:40+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Air Products And Chemicals (APD) Could Be 12% Undervalued After Taiwan Semiconductor Gas Deal - simplywall.st"
+        "Air Products And Chemicals (APD) Could Be 12% Undervalued After Taiwan Semiconductor Gas Deal - simplywall.st",
+        "Air Water (TSE:4088) Deepens Taiwan Semiconductor Gas Ties Through Hong-Kuang Deal – What Changes? - simplywall.st"
       ]
     },
     "ktvb.com": {
       "domain": "ktvb.com",
       "source_name": "KTVB",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "Vegetation fire contained near Micron facility on Federal Way - KTVB",
         "Vegetation fire contained near Micron facility on Federal Way - ktvb.com"
@@ -804,8 +808,8 @@
       "domain": "tradebrains.in",
       "source_name": "Trade Brains",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "3 Chemical Stocks That Are Quietly Becoming India’s Biggest Semiconductor Chip Supply Chain Winners - Trade Brains",
         "3 Chemical Stocks That Are Quietly Becoming India’s Biggest Semiconductor Chip Supply Chain Winners - tradebrains.in"
@@ -815,13 +819,14 @@
       "domain": "finance.biggo.com",
       "source_name": "finance.biggo.com",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 13,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 17,
       "sample_titles": [
         "SK Hynix Cheongju Plant Hit by Another Fire in 11 Days; 3,600 Evacuated - finance.biggo.com",
         "Microsoft Cloud Explosion Sends Stock Soaring 15% in a Day; Philadelphia Semiconductor Index Surges 8%, Taiwan Index Futures Rocket Over 1,500 Points in After-Hours Trading - finance.biggo.com",
         "Semiconductor-Grade Hydrofluoric Acid Price Surge Ignites Rally; Do-Fluoride Hits Limit Up for Second Day, Market Cap Nears 60 Billion Yuan - finance.biggo.com",
-        "Painting Rosy Picture Before Dropping the Hammer? Do-Fluoride's Semiconductor Revenue Under 2%, Shenzhen Exchange Finds Major Disclosure Omissions - finance.biggo.com"
+        "Painting Rosy Picture Before Dropping the Hammer? Do-Fluoride's Semiconductor Revenue Under 2%, Shenzhen Exchange Finds Major Disclosure Omissions - finance.biggo.com",
+        "Jumao Launches IPO Advisory Process; Semiconductor Gas Order Visibility Extends to 2030 - finance.biggo.com"
       ]
     },
     "divyabhaskar.co.in": {
@@ -982,8 +987,8 @@
       "domain": "english.nv.ua",
       "source_name": "The New Voice of Ukraine",
       "first_seen": "2026-08-03T00:13:50+00:00",
-      "last_seen": "2026-08-23T23:36:22+00:00",
-      "times_seen": 2,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 3,
       "sample_titles": [
         "Major fire erupts at Saratov oil refinery after drone attack - The New Voice of Ukraine",
         "Fire breaks out at Ufa refinery after drone attack damages unit under repair - The New Voice of Ukraine"
@@ -1037,8 +1042,8 @@
       "domain": "euronews.com",
       "source_name": "Euronews.com",
       "first_seen": "2026-08-03T00:13:50+00:00",
-      "last_seen": "2026-08-16T23:34:38+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "‘If Ukraine burns, so will Moscow,’ Zelenskyy says after refinery fire - Euronews.com",
         "Video. One dead, several injured in Rotterdam port blast at Gunvor refinery - Euronews.com",
@@ -1231,8 +1236,8 @@
       "domain": "equitymaster.com",
       "source_name": "Equitymaster",
       "first_seen": "2026-08-16T23:34:38+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "4 Semiconductor Proxy Stocks with Strong Expansion Plans - Equitymaster"
       ]
@@ -1241,8 +1246,8 @@
       "domain": "calmatters.org",
       "source_name": "CalMatters",
       "first_seen": "2026-08-16T23:34:38+00:00",
-      "last_seen": "2026-08-23T23:36:22+00:00",
-      "times_seen": 2,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 3,
       "sample_titles": [
         "After refinery explosions, California lawmakers move to preserve safety rules - CalMatters"
       ]
@@ -1291,8 +1296,8 @@
       "domain": "aljazeera.com",
       "source_name": "Al Jazeera",
       "first_seen": "2026-08-16T23:34:38+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "Huge fire breaks out at Libya’s Zawiya refinery after drone attack - Al Jazeera",
         "Fire rages after drone strikes Libya’s largest oil refinery - Al Jazeera",
@@ -1355,8 +1360,8 @@
       "domain": "business-standard.com",
       "source_name": "Business Standard",
       "first_seen": "2026-08-23T23:36:22+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 2,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 3,
       "sample_titles": [
         "UP-Japan investment meet to focus on green hydrogen, semiconductor push - Business Standard"
       ]
@@ -1426,8 +1431,8 @@
       "domain": "oilprice.com",
       "source_name": "Crude Oil Prices Today | OilPrice.com",
       "first_seen": "2026-08-23T23:36:22+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "Fire Breaks Out at Rosneft-Owned Refinery After Ukrainian Drone Strike - Crude Oil Prices Today | OilPrice.com",
         "Ukraine Drones Spark Fire at Russian Refinery as Fuel Crisis Worsens - Crude Oil Prices Today | OilPrice.com"
@@ -1447,8 +1452,8 @@
       "domain": "einpresswire.com",
       "source_name": "EIN Presswire",
       "first_seen": "2026-08-31T01:23:08+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 2,
       "sample_titles": [
         "Shanghai Chengwei Semiconductor Equipment Launches UHP Gas and Chemical Delivery Systems for Advanced Manufacturing - EIN Presswire"
       ]
@@ -1457,8 +1462,8 @@
       "domain": "quantumcomputingreport.com",
       "source_name": "Quantum Computing Report",
       "first_seen": "2026-08-31T01:23:08+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 2,
       "sample_titles": [
         "Canada-Japan Binational Funding Advances Xanadu and Mitsubishi Chemical Quantum Semiconductor Partnership - Quantum Computing Report"
       ]
@@ -1477,10 +1482,11 @@
       "domain": "xanadu.ai",
       "source_name": "Xanadu Quantum",
       "first_seen": "2026-08-31T01:23:08+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Canada-Japan Support Advances Xanadu and Mitsubishi Chemical Partnership on Quantum Semiconductor Research - Xanadu Quantum"
+        "Canada-Japan Support Advances Xanadu and Mitsubishi Chemical Partnership on Quantum Semiconductor Research - Xanadu Quantum",
+        "Canada-Japan Support Advances Xanadu and Mitsubishi Chemical Partnership on Quantum Semiconductor Research - Xanadu AI"
       ]
     },
     "newsroom.lamresearch.com": {
@@ -1497,8 +1503,8 @@
       "domain": "lgcorp.com",
       "source_name": "LG Corp",
       "first_seen": "2026-08-31T01:23:08+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 2,
       "sample_titles": [
         "LG Chem to Showcase Advanced Packaging Material Solutions for AI Semiconductors at SEMICON Taiwan 2026 - LG Corp"
       ]
@@ -1517,10 +1523,11 @@
       "domain": "techtimes.com",
       "source_name": "Tech Times",
       "first_seen": "2026-08-31T01:23:08+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Semiconductor Supply Chain Closes Fluoropolymer Gap: Nichias Builds PFA Tube Plant in Hsinchu - Tech Times"
+        "Semiconductor Supply Chain Closes Fluoropolymer Gap: Nichias Builds PFA Tube Plant in Hsinchu - Tech Times",
+        "Semiconductor Supply Chain Closes Fluoropolymer Gap: Nichias Builds PFA Tube Plant in Hsinchu - techtimes.com"
       ]
     },
     "investing.com": {
@@ -1567,10 +1574,90 @@
       "domain": "abc7.com",
       "source_name": "ABC7 Los Angeles",
       "first_seen": "2026-08-31T01:23:08+00:00",
-      "last_seen": "2026-08-31T01:23:08+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 2,
       "sample_titles": [
         "Auto body shop fire spreads to Newhall Refinery restaurant in Santa Clarita, other businesses - ABC7 Los Angeles"
+      ]
+    },
+    "barchart.com": {
+      "domain": "barchart.com",
+      "source_name": "Barchart.com",
+      "first_seen": "2026-09-07T01:02:45+00:00",
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Chengwei Semiconductor Launches Laboratory Gas Pipeline System and Laboratory Gas Scrubber for High-Purity Specialty Gases - Barchart.com"
+      ]
+    },
+    "phys.org": {
+      "domain": "phys.org",
+      "source_name": "Phys.org",
+      "first_seen": "2026-09-07T01:02:45+00:00",
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "'Power of disorder' tames CF₄, a semiconductor greenhouse gas that can persist for 50,000 years - Phys.org"
+      ]
+    },
+    "azom.com": {
+      "domain": "azom.com",
+      "source_name": "AZoM",
+      "first_seen": "2026-09-07T01:02:45+00:00",
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Bruker Drives Major Advances in Detector Technology for Semiconductor and Nanostructure Analysis - AZoM"
+      ]
+    },
+    "247wallst.com": {
+      "domain": "247wallst.com",
+      "source_name": "24/7 Wall St.",
+      "first_seen": "2026-09-07T01:02:45+00:00",
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Micron’s Insane Productivity Explosion: Revenue Per Employee Doubled to $1.7 Million in Just 9 Months - 24/7 Wall St."
+      ]
+    },
+    "idahostatesman.com": {
+      "domain": "idahostatesman.com",
+      "source_name": "Idaho Statesman",
+      "first_seen": "2026-09-07T01:02:45+00:00",
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Reports of commercial fire prompt emergency response at Micron - Idaho Statesman"
+      ]
+    },
+    "hazardexonthenet.net": {
+      "domain": "hazardexonthenet.net",
+      "source_name": "HazardEx",
+      "first_seen": "2026-09-07T01:02:45+00:00",
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Brazil chemical plant fire involves multiple explosions - HazardEx"
+      ]
+    },
+    "english.aawsat.com": {
+      "domain": "english.aawsat.com",
+      "source_name": "ASHARQ AL-AWSAT English",
+      "first_seen": "2026-09-07T01:02:45+00:00",
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Production Resumes at Iraq Refinery after Fire - ASHARQ AL-AWSAT English"
+      ]
+    },
+    "misbar.com": {
+      "domain": "misbar.com",
+      "source_name": "موقع مسبار",
+      "first_seen": "2026-09-07T01:02:45+00:00",
+      "last_seen": "2026-09-07T01:02:45+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Does the Video Show a Russian Oil Refinery on Fire Following a Recent Ukrainian Attack? - موقع مسبار"
       ]
     }
   }
