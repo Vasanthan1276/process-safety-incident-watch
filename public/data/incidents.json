@@ -1,6 +1,6 @@
 {
   "schema_version": 5,
-  "last_run": "2026-10-05T02:02:15+00:00",
+  "last_run": "2026-10-12T02:26:12+00:00",
   "incidents": [
     {
       "incident_id": "PSI-2026-0244",
@@ -70,7 +70,7 @@
       "reported_at": "2026-09-17T07:00:00+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Confirmed",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -175,14 +175,70 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0383",
+      "stream": "Cross-Industry",
+      "title": "2 workers seriously injured in an explosion at oil refinery near Athens, officials say - AP News",
+      "incident_date": null,
+      "reported_at": "2026-10-09T12:52:00+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Confirmed",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 4,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 2,
+        "confidence": 4,
+        "watch_score": 2.05
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "explosion"
+        ],
+        "severity": [
+          "explosion",
+          "injured"
+        ]
+      },
+      "sources": [
+        {
+          "title": "2 workers seriously injured in an explosion at oil refinery near Athens, officials say - AP News",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ2o4UHhHaW9hSS14RER5SUd3ZWRoZGdYeC1Day1IdFI5S1lvaTVtUERDSFRyXzRfc1Vod215Y2NfMUZBMURiZkZGYkYxbHVUY2xXZVV4VnE3eE1TMjBibnRTU2h1ak55SXlKY3IzWnlEamNDRDlpWjZhQzBqWUZQcl9QUjg0WEZubi1jc2ZfOFVfWHMxZjFaR3hLMzM?oc=5",
+          "domain": "apnews.com",
+          "source_name": "AP News",
+          "published_at": "2026-10-09T12:52:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 4,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0288",
       "stream": "Semiconductor",
       "title": "Silicon Box launches world’s most advanced semiconductor interconnection facility in Singapore - edb.gov.sg",
       "incident_date": null,
       "reported_at": "2026-08-30T07:00:00+00:00",
       "first_detected": "2026-09-14T01:08:14+00:00",
-      "last_updated": "2026-09-14T01:08:14+00:00",
-      "status": "Active",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Updated",
       "review_status": "Confirmed",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -217,6 +273,20 @@
             "Google News RSS"
           ],
           "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        },
+        {
+          "title": "Silicon Box launches world’s most advanced semiconductor interconnection facility in Singapore - Singapore Economic Development Board (EDB)",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVnN5bnZOanN3TllaT01kaFRKV2tkZ29vT2FnUl8tX2hGSDFvZ25KVUNzcmN4dEpZajZINVdIc0d1T1ZidU1FRHVhS0dHd2JkWUNBS05TRU1ZN0p0VnRNNDFPOWdHUWVSLW5XdjhuVENjVWJwLW1UVnJVMU5GcGFOZ1lOaFluQVg1ZkdmR0ZkU1hxM3g4bFhQQjBIbGFkVWc4RVZwcnMtbS1vdlA5THAyWmhIS2E5M1lWT3VVbjhIXzNxcm1iZGZvV0hOS2ljaEVmN2c?oc=5",
+          "domain": "edb.gov.sg",
+          "source_name": "Singapore Economic Development Board (EDB)",
+          "published_at": "2026-10-04T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 5,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
         }
       ],
       "change_history": [
@@ -225,6 +295,13 @@
           "type": "new",
           "changes": [
             "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "updated",
+          "changes": [
+            "Added source: edb.gov.sg"
           ]
         }
       ]
@@ -277,61 +354,6 @@
       "change_history": [
         {
           "timestamp": "2026-08-03T00:13:50+00:00",
-          "type": "new",
-          "changes": [
-            "Incident first detected by monitoring workflow"
-          ]
-        }
-      ]
-    },
-    {
-      "incident_id": "PSI-2026-0004",
-      "stream": "Semiconductor",
-      "title": "Department of Commerce Announces Direct Funding Agreement with Bosch for a $225 Million CHIPS Program Award to Support Domestic Production of Silicon Carbide Semiconductors - National Institute of Standards and Technology (.gov)",
-      "incident_date": null,
-      "reported_at": "2026-07-13T12:00:00+00:00",
-      "first_detected": "2026-07-19T13:19:02+00:00",
-      "last_updated": "2026-07-19T13:19:02+00:00",
-      "status": "Active",
-      "review_status": "Confirmed",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Exhaust and abatement-system reliability.",
-      "scores": {
-        "source_reliability": 5,
-        "process_safety_relevance": 1,
-        "semiconductor_relevance": 1,
-        "severity_potential": 0,
-        "confidence": 5,
-        "watch_score": 2.0
-      },
-      "keyword_evidence": {
-        "semiconductor": [
-          "semiconductor"
-        ],
-        "process_safety": [
-          "duct"
-        ],
-        "severity": []
-      },
-      "sources": [
-        {
-          "title": "Department of Commerce Announces Direct Funding Agreement with Bosch for a $225 Million CHIPS Program Award to Support Domestic Production of Silicon Carbide Semiconductors - National Institute of Standards and Technology (.gov)",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQNXI0ZlJta0NSbmgtcVR2WHZMaWNpbEZacy10M3VEUHBOcDF0ZmNZLWRIUmJZSHRTLU95dWxuc2NyZ1V1emdYMmROUlFmT0VGTEMyWEhhYndsX3hUbUNEZ3RTSVcyNi1fSzNSX0lzRFYwREViaTBXb0Fpc1BOUmJLRUJoNGZtWVY0T0V2VFNkUXhaclhsYTU4bEtGVGZUVllnRHpZVU1DWTFGODhJaGpYaV9pOGw2XzFQM3c?oc=5",
-          "domain": "nist.gov",
-          "source_name": "National Institute of Standards and Technology (.gov)",
-          "published_at": "2026-07-13T12:00:00+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 5,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-07-19T13:19:02+00:00",
           "type": "new",
           "changes": [
             "Incident first detected by monitoring workflow"
@@ -749,6 +771,61 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0384",
+      "stream": "Cross-Industry",
+      "title": "Fire at Russia's Ilsky oil refinery put out after Ukrainian drone attack - Reuters",
+      "incident_date": null,
+      "reported_at": "2026-08-08T07:00:00+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Confirmed",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 4,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 4,
+        "watch_score": 1.85
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Fire at Russia's Ilsky oil refinery put out after Ukrainian drone attack - Reuters",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZF9rMGhXdGhNYTJuckV5Z3VqRGIxT2VwbzhWNXlxU24yYlRBQ2Q0bUJhbnpRSkEwRWFRNXpWdFdGSGdRUjh0X1RYLWxsTXJ3STd5VWd3Qmd2VEtNQjZNTUU2d2hVRHo4aXBRa3FNSjVVVHF4SGRlV0tKc2JDUWxRNFNKUUk0eFNDbGVLOGFqeVpaRTZZQzJIenhmUmVBLUNVVUZ3ZDVPM1FyRUF3N0NVRDlXU2ZrUTlwd2ctcQ?oc=5",
+          "domain": "reuters.com",
+          "source_name": "Reuters",
+          "published_at": "2026-08-08T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 4,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0165",
       "stream": "Cross-Industry",
       "title": "Fire caused by drones at oil refinery in Russia's Yaroslavl has been extinguished, governor says - reuters.com",
@@ -969,61 +1046,6 @@
       ]
     },
     {
-      "incident_id": "PSI-2026-0006",
-      "stream": "Cross-Industry",
-      "title": "Russia's Ilsky oil refinery catches fire, Taganrog evacuates after drone attacks - Reuters",
-      "incident_date": null,
-      "reported_at": "2026-07-09T07:00:00+00:00",
-      "first_detected": "2026-07-19T13:19:02+00:00",
-      "last_updated": "2026-07-19T13:19:02+00:00",
-      "status": "Active",
-      "review_status": "Confirmed",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
-      "scores": {
-        "source_reliability": 4,
-        "process_safety_relevance": 1,
-        "semiconductor_relevance": 0,
-        "severity_potential": 1,
-        "confidence": 4,
-        "watch_score": 1.85
-      },
-      "keyword_evidence": {
-        "semiconductor": [],
-        "process_safety": [
-          "fire"
-        ],
-        "severity": [
-          "fire"
-        ]
-      },
-      "sources": [
-        {
-          "title": "Russia's Ilsky oil refinery catches fire, Taganrog evacuates after drone attacks - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPWkxtXy1vTHhfbERRTHloS3VqWWRZVHF0MFRmb19nWDFnOG5HYU9pai1zYWx4X0pSYWVXQUVjdVJfWlMwY3ozdUhGcHd5R25WWUpNWDN1dEFCS1paLTZhRjFzWkxLRDdWTDAxV1dlMGllWDY2OGRYLVVVU0VETVF1cDhkTzUxTnB0RGpfekdvSzlBNENyYUNSRDkycTE2T2xIU1VDWVlIMl9DV2MzWnl3RWtHZm1Ld0pWTG42X0QyeXhfYlpiRUE?oc=5",
-          "domain": "reuters.com",
-          "source_name": "Reuters",
-          "published_at": "2026-07-09T07:00:00+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 4,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-07-19T13:19:02+00:00",
-          "type": "new",
-          "changes": [
-            "Incident first detected by monitoring workflow"
-          ]
-        }
-      ]
-    },
-    {
       "incident_id": "PSI-2026-0333",
       "stream": "Semiconductor",
       "title": "Singapore’s semiconductor talent pipeline now starts in primary schools - The Straits Times",
@@ -1071,6 +1093,59 @@
       "change_history": [
         {
           "timestamp": "2026-09-28T01:41:20+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0385",
+      "stream": "Cross-Industry",
+      "title": "UK oil refinery broke toxic pollution limits dozens of times, documents reveal - BBC",
+      "incident_date": null,
+      "reported_at": "2026-10-06T06:01:12+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Confirmed",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Loss-of-containment prevention and emergency response.",
+      "scores": {
+        "source_reliability": 4,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 0,
+        "confidence": 4,
+        "watch_score": 1.65
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "toxic"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "UK oil refinery broke toxic pollution limits dozens of times, documents reveal - BBC",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1pdzlXTU0xc0o4TkxjTUgta21CcXNXM0Zua1V6OUlnTVBfdzVvX2Z4eTc2S2Z4cjhPZTRUOVFvRU9PdzFjUDVnOFNqRXp1TzR6S1dfcks3czhoNl9yYUE?oc=5",
+          "domain": "bbc.co.uk",
+          "source_name": "BBC",
+          "published_at": "2026-10-06T06:01:12+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 4,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
           "type": "new",
           "changes": [
             "Incident first detected by monitoring workflow"
@@ -1196,7 +1271,7 @@
       "reported_at": "2026-10-03T06:32:08+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -1255,7 +1330,7 @@
       "reported_at": "2026-09-30T12:21:56+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -1503,6 +1578,64 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0386",
+      "stream": "Cross-Industry",
+      "title": "'Flash fire' at southwest Louisville chemical plant leaves 2 injured - WLKY",
+      "incident_date": null,
+      "reported_at": "2026-10-06T21:31:00+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 2,
+        "semiconductor_relevance": 0,
+        "severity_potential": 2,
+        "confidence": 2,
+        "watch_score": 1.9
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire",
+          "flash fire"
+        ],
+        "severity": [
+          "fire",
+          "flash fire",
+          "injured"
+        ]
+      },
+      "sources": [
+        {
+          "title": "'Flash fire' at southwest Louisville chemical plant leaves 2 injured - WLKY",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQNEU5Y3pnMlpRSE1Kc2ZUWWo2UnRkWEh3bG10V3FESGlkN3lRcmxsbG5JZjJhaGNrRzZ0NkxFRVNGeHF6V0VkVWtJa05uYm83TFZmcnVYMGJCRTdJNEJxZUliMWVPT2cxTEtBcTlJX3lTSkVGQUx0WV9IMnlnY2NzTGphUzZyMGszQ0d2V25fX3Nac25kbmc?oc=5",
+          "domain": "wlky.com",
+          "source_name": "WLKY",
+          "published_at": "2026-10-06T21:31:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0362",
       "stream": "Cross-Industry",
       "title": "Explosion and Fire at Moscow-Area Chemical Plant, Leaving 7 Dead - UNITED24 Media",
@@ -1510,7 +1643,7 @@
       "reported_at": "2026-10-01T17:58:59+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -1567,7 +1700,7 @@
       "reported_at": "2026-10-01T16:08:47+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response; mechanical integrity, overpressure protection and loss-of-containment prevention.",
@@ -2252,7 +2385,7 @@
       "reported_at": "2026-09-15T14:31:21+00:00",
       "first_detected": "2026-09-21T01:08:28+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "Updated",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -2556,7 +2689,7 @@
       "reported_at": "2026-09-29T01:18:07+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -3266,160 +3399,42 @@
       ]
     },
     {
-      "incident_id": "PSI-2026-0026",
-      "stream": "Semiconductor",
-      "title": "Hedging semiconductor exposure is getting harder - TradingView",
+      "incident_id": "PSI-2026-0387",
+      "stream": "Cross-Industry",
+      "title": "2 workers seriously injured in an explosion at oil refinery near Corinth - eKathimerini.com",
       "incident_date": null,
-      "reported_at": "2026-07-07T14:05:15+00:00",
-      "first_detected": "2026-07-19T13:19:02+00:00",
-      "last_updated": "2026-07-19T13:19:02+00:00",
-      "status": "Active",
+      "reported_at": "2026-10-09T11:10:45+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Exhaust and abatement-system reliability.",
-      "scores": {
-        "source_reliability": 2,
-        "process_safety_relevance": 2,
-        "semiconductor_relevance": 1,
-        "severity_potential": 1,
-        "confidence": 2,
-        "watch_score": 1.6
-      },
-      "keyword_evidence": {
-        "semiconductor": [
-          "semiconductor"
-        ],
-        "process_safety": [
-          "duct",
-          "exposure"
-        ],
-        "severity": [
-          "exposure"
-        ]
-      },
-      "sources": [
-        {
-          "title": "Hedging semiconductor exposure is getting harder - TradingView",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQnhUd0V5M0tGMm9MTnB6dkJOZE1tT0ZjN1dtYXhZdXM5WWZxUEhLQlVhX0wxTDlfOUhCTTdmUWhKZGZlb1Z4LVZnQVFyS1FRZmpRSDBZMkNCaUkwb3BncWZIbXk2d3BrYnp3d0RxbmxZaTRwSjhnZWU4Q1AyYVppaDFqdmd6eVVXeHZHRjlOcVJfSTI1ZTI0cjVfUTJtNXNFVzAtOHNUYnNabnA3LTU1WGlfRXNESWZ5Q2c?oc=5",
-          "domain": "tradingview.com",
-          "source_name": "TradingView",
-          "published_at": "2026-07-07T14:05:15+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 2,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-07-19T13:19:02+00:00",
-          "type": "new",
-          "changes": [
-            "Incident first detected by monitoring workflow"
-          ]
-        }
-      ]
-    },
-    {
-      "incident_id": "PSI-2026-0027",
-      "stream": "Semiconductor",
-      "title": "Morgan Stanley Advises Reducing Semiconductor Stock Exposure as Earnings Peak - 조선일보",
-      "incident_date": null,
-      "reported_at": "2026-07-07T07:00:00+00:00",
-      "first_detected": "2026-07-19T13:19:02+00:00",
-      "last_updated": "2026-07-19T13:19:02+00:00",
-      "status": "Active",
-      "review_status": "Under Review",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Exhaust and abatement-system reliability.",
-      "scores": {
-        "source_reliability": 2,
-        "process_safety_relevance": 2,
-        "semiconductor_relevance": 1,
-        "severity_potential": 1,
-        "confidence": 2,
-        "watch_score": 1.6
-      },
-      "keyword_evidence": {
-        "semiconductor": [
-          "semiconductor"
-        ],
-        "process_safety": [
-          "duct",
-          "exposure"
-        ],
-        "severity": [
-          "exposure"
-        ]
-      },
-      "sources": [
-        {
-          "title": "Morgan Stanley Advises Reducing Semiconductor Stock Exposure as Earnings Peak - 조선일보",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVmIydFh2VU0tdU1uUUJ1N0VobUZ3QzVtSE1MVkltaDV3dVAzWjM2ekV2RERHenZGMkg5MkpINTVsVTUzQ2lVekZkYnQ5d2NUQ1lzNzEwT1NwS3RSUVNLMG5JQjhWcE05SlNaMGVOOTlFMk50YVA4cjlySElUWHlKN19NNE1fdmVuMmpiVm93?oc=5",
-          "domain": "chosun.com",
-          "source_name": "조선일보",
-          "published_at": "2026-07-07T07:00:00+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 2,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-07-19T13:19:02+00:00",
-          "type": "new",
-          "changes": [
-            "Incident first detected by monitoring workflow"
-          ]
-        }
-      ]
-    },
-    {
-      "incident_id": "PSI-2026-0032",
-      "stream": "Semiconductor",
-      "title": "SK Hynix debuts on Nasdaq, shares jump 14%, ETFs adjust exposure to the chipmaker. - Pluang",
-      "incident_date": null,
-      "reported_at": "2026-07-13T12:10:30+00:00",
-      "first_detected": "2026-07-19T13:19:02+00:00",
-      "last_updated": "2026-07-19T13:19:02+00:00",
-      "status": "Active",
-      "review_status": "Under Review",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Loss-of-containment prevention and emergency response.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
       "scores": {
         "source_reliability": 2,
         "process_safety_relevance": 1,
-        "semiconductor_relevance": 2,
-        "severity_potential": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 2,
         "confidence": 2,
-        "watch_score": 1.5
+        "watch_score": 1.45
       },
       "keyword_evidence": {
-        "semiconductor": [
-          "chipmaker",
-          "sk hynix"
-        ],
+        "semiconductor": [],
         "process_safety": [
-          "exposure"
+          "explosion"
         ],
         "severity": [
-          "exposure"
+          "explosion",
+          "injured"
         ]
       },
       "sources": [
         {
-          "title": "SK Hynix debuts on Nasdaq, shares jump 14%, ETFs adjust exposure to the chipmaker. - Pluang",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYTVtQ0JiTjY4bGdhTkJZRHRpX2ZzWEJLazdSRC1jWW5DTmpkcE5LMnBjY1pjUTJ4TlctdVJpQkJ1aWhQNHl5a1dITDBoVHVRa0kzbzZjdFF1RlNhZjRtVThtVmxYamVLUjJhOEdWSjdNSjFCdjNQbUJGVVFqS01IZktKb0hMXzRTZWln?oc=5",
-          "domain": "pluang.com",
-          "source_name": "Pluang",
-          "published_at": "2026-07-13T12:10:30+00:00",
+          "title": "2 workers seriously injured in an explosion at oil refinery near Corinth - eKathimerini.com",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNeXFjUzhVY1NtUHRoWURiT2FIeF9xNEVHandDYVpUbk5nMnJReWZnMkN3NVNxOHBIeTdmNlREVVdmbWVjUEhnWXB2N3d6TmkxZGdyV2JQNDA0am43ek1JMWNKMWh3U2kyN0M5ZUV0aV9LLVVQenNqWjdSam94YnBXcnZoY013NEF5VXFjVXVSYlhJR1ZnaDFDX3lldmtrY0h4NFJVYUtRNjBsSzNIMGFPYkZCYnp0T3JJLW1sQ0J3RV9yUHRSOXlZ?oc=5",
+          "domain": "ekathimerini.com",
+          "source_name": "eKathimerini.com",
+          "published_at": "2026-10-09T11:10:45+00:00",
           "source_country": null,
           "language": "English",
           "reliability": 2,
@@ -3431,7 +3446,7 @@
       ],
       "change_history": [
         {
-          "timestamp": "2026-07-19T13:19:02+00:00",
+          "timestamp": "2026-10-12T02:26:12+00:00",
           "type": "new",
           "changes": [
             "Incident first detected by monitoring workflow"
@@ -4700,7 +4715,7 @@
       "reported_at": "2026-10-02T04:45:53+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -6465,6 +6480,336 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0388",
+      "stream": "Cross-Industry",
+      "title": "explosion at Motor Oil’s refinery near Athens - News of Bahrain",
+      "incident_date": null,
+      "reported_at": "2026-10-11T19:15:06+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "explosion"
+        ],
+        "severity": [
+          "explosion"
+        ]
+      },
+      "sources": [
+        {
+          "title": "explosion at Motor Oil’s refinery near Athens - News of Bahrain",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdUUzODZta2VQa0pkU1pKMXlkamQyR3lGeHNqU1hxXzk4d2x2VTZHYnNaazd0WTBiQVI4R3J4M1doV2NFNXJETExIN0xyRUxMajN2dTZlWXYwNkg3Q2FkUE94TVpOLTFkazRfd1NmbmxxNUZtMjNRaGVDaXZoZzFEV1ozbnZaNGRXcVlLSUpjSTlvQ0I2b3JWeA?oc=5",
+          "domain": "newsofbahrain.com",
+          "source_name": "News of Bahrain",
+          "published_at": "2026-10-11T19:15:06+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0389",
+      "stream": "Cross-Industry",
+      "title": "Refinery explosion in Greece / Another Albanian dies - cna.al",
+      "incident_date": null,
+      "reported_at": "2026-10-11T13:26:00+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "explosion"
+        ],
+        "severity": [
+          "explosion"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Refinery explosion in Greece / Another Albanian dies - cna.al",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRHZpNVV3SkJOVEJHc09YTFlQc3NpSWJqUkVwT3kzTGNMWTBkbGt1c1UxV2NDTGhZSHBhLThVR1djMWJqNm9PVVpnb2tpSTRaMDY4dkxIdGZha2RrYS1pZzU5ZHp6bS16UE1pbDZ0UFVZTjdXY0dTV0JEQXVtTkNCTmZZbkJGLUJmY2Z0MWVRUW5NQVZMXzFEaHFnSUkxMHVQZWtkdUxjdk5YZE5rVDNZ?oc=5",
+          "domain": "cna.al",
+          "source_name": "cna.al",
+          "published_at": "2026-10-11T13:26:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0390",
+      "stream": "Cross-Industry",
+      "title": "Major fire reported at oil terminal linked to Russia's Novoshakhtinsk refinery after suspected drone strike - The Kyiv Independent",
+      "incident_date": null,
+      "reported_at": "2026-10-10T03:22:53+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Major fire reported at oil terminal linked to Russia's Novoshakhtinsk refinery after suspected drone strike - The Kyiv Independent",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxONWU2RWJiVUNmUUxzMHQwNm5DVjRmaVpYbVR1ME9GTW5SVzFnU04wRlVoeHFMSkRDbG1qR3JYOWZYZ1gxRTFPdGdGY2R2V3VYNWNPOVlSUHBMRjc1bFE0SFRxQzlERkYtRUFjbkh3X2NRRm5yWlhZUEpZREVuem9RSjBhRHhiaGN1YlhpM185M2NmQ09YeF9qdXNDaXhXVE0tNFZBRmRta1dTeTRBcWlEclE5RXZMVUg2Zng5bFdTRWh5WVhXb1R3Ty0ydEM0MWF0?oc=5",
+          "domain": "kyivindependent.com",
+          "source_name": "The Kyiv Independent",
+          "published_at": "2026-10-10T03:22:53+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0391",
+      "stream": "Cross-Industry",
+      "title": "Chemical Safety Board video on refinery fire urges facilities to plan ahead - Safety+Health Magazine",
+      "incident_date": null,
+      "reported_at": "2026-10-09T16:56:47+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Chemical Safety Board video on refinery fire urges facilities to plan ahead - Safety+Health Magazine",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQRmtWV2lGZ2NXSGFMZzBISVliT2xSeEItX3RMWTF5MGhYSExUSGFvNHV4SmxxVmduZWJHYWZiNlRTRmZTb0lMamxMdkZJX3dBN1BTQWxCWmdoQmw4Wkp6MFFkdmwwLXRFbmoxY3B2NlB0S0oxTXB2T2hDZUtJLXNFcnJMczFPSVlqcXo0cmtSWk1CTnBXR2doT1Y5Yy15bXRxaFZnUnBRdFV5Q2FhRTJoZGE5SkFMYUE?oc=5",
+          "domain": "safetyandhealthmagazine.com",
+          "source_name": "Safety+Health Magazine",
+          "published_at": "2026-10-09T16:56:47+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0392",
+      "stream": "Cross-Industry",
+      "title": "How Venezuela's Simultaneous Refinery Explosion and Blackout Crisis Are Testing the U.S. Oil Deal - Latin Times",
+      "incident_date": null,
+      "reported_at": "2026-10-08T17:32:35+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "explosion"
+        ],
+        "severity": [
+          "explosion"
+        ]
+      },
+      "sources": [
+        {
+          "title": "How Venezuela's Simultaneous Refinery Explosion and Blackout Crisis Are Testing the U.S. Oil Deal - Latin Times",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPYWJGM0M2LXJuczFpTFJ2X1B2QkVsajhoX3BvZVBHalBMUjJKM2hSbmJoSUFxeTFsUzVvMGZ3UmRZVVNZTFFNaGV4a28wWTdmd0c5eFRpLW5iQkc0V1JHSXM1ZGxfMVJIWEtfbjB4QVE0X0RuUUZMN0dHUmhjdUotVmw2Z2NGTDFsdFh3dUVBSTdIRUdwX0hISkFMaDVJNnU5SnNEWXVWUC1sTUFOMVVXUzdxM01EaXpZTHVlWQ?oc=5",
+          "domain": "latintimes.com",
+          "source_name": "Latin Times",
+          "published_at": "2026-10-08T17:32:35+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0393",
+      "stream": "Cross-Industry",
+      "title": "Drones Strike Salavat Oil Refinery in Bashkortostan, Fire Erupts - Мілітарний",
+      "incident_date": null,
+      "reported_at": "2026-10-08T08:11:02+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Drones Strike Salavat Oil Refinery in Bashkortostan, Fire Erupts - Мілітарний",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPaWloTVVsOGQ2OXl1aUZhTGhhMjhfYW5JT3M0c2R5S29qQ2FPOE1rZlVBRVY5NF9zbnh2TnVZN3NHNk1neXphRE55LTFDOHZSY0diNnZjV1R6aWM1bDRiQU1WaW13NXNKMHB3d1VnSndaSnlOYURlX0JlRHhjX1VncWlYbDhJektRUWl2ZF9fQWtkYjU1WmZ5d1Mtaw?oc=5",
+          "domain": "militarnyi.com",
+          "source_name": "Мілітарний",
+          "published_at": "2026-10-08T08:11:02+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0366",
       "stream": "Cross-Industry",
       "title": "THREE-REFINERY SHOWDOWN! Museveni Holds Fire on Dangote’s Lamu Plant, Says Uganda, Kenya & Tanzania Can All Refine—Won’t Kill Each Other - redpepper.co.ug",
@@ -6472,7 +6817,7 @@
       "reported_at": "2026-10-04T23:14:05+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -6527,7 +6872,7 @@
       "reported_at": "2026-10-04T17:41:54+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -6582,7 +6927,7 @@
       "reported_at": "2026-10-04T17:28:00+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -6637,7 +6982,7 @@
       "reported_at": "2026-10-03T16:04:00+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -6692,7 +7037,7 @@
       "reported_at": "2026-10-03T14:53:00+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -6747,7 +7092,7 @@
       "reported_at": "2026-10-03T13:38:00+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -6802,7 +7147,7 @@
       "reported_at": "2026-10-02T10:06:37+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -6857,7 +7202,7 @@
       "reported_at": "2026-10-02T07:29:54+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -6912,7 +7257,7 @@
       "reported_at": "2026-10-02T05:26:34+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
@@ -10920,41 +11265,55 @@
       ]
     },
     {
-      "incident_id": "PSI-2026-0133",
-      "stream": "Cross-Industry",
-      "title": "Fire under control at Marathon’s Catlettsburg refinery - WSAZ",
+      "incident_id": "PSI-2026-0376",
+      "stream": "Semiconductor",
+      "title": "Nippon Sanso expands South Korea semiconductor gas capacity - gasworld",
       "incident_date": null,
-      "reported_at": "2026-07-11T07:00:00+00:00",
-      "first_detected": "2026-07-27T00:13:40+00:00",
-      "last_updated": "2026-07-27T00:13:40+00:00",
-      "status": "Active",
+      "reported_at": "2026-10-01T12:32:33+00:00",
+      "first_detected": "2026-10-05T02:02:15+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Updated",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
       "scores": {
         "source_reliability": 2,
         "process_safety_relevance": 1,
-        "semiconductor_relevance": 0,
-        "severity_potential": 1,
-        "confidence": 2,
-        "watch_score": 1.25
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 3,
+        "watch_score": 1.2
       },
       "keyword_evidence": {
-        "semiconductor": [],
-        "process_safety": [
-          "fire"
+        "semiconductor": [
+          "semiconductor"
         ],
-        "severity": [
-          "fire"
-        ]
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
       },
       "sources": [
         {
-          "title": "Fire under control at Marathon’s Catlettsburg refinery - WSAZ",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUzJ2cFFiOWFpNDZxN1d5RFZ5WDZHNTJxQXFLNzZjMldZdjdVblhWQVloMnlONHFrWlZ3ampBdElkYVExanF0d3ZJTmdzcVlSTnB4ZGpPX1ZjWVc0dkpvYVl5THpMTHpJTlBJNTBfbmE2aDRoNXp5T0oxa2lmY0xDMUlHUTBvQmlMSURF0gGfAUFVX3lxTFBFRnZiaEt1Z0VWMVFpVWEwdUVhcmQwQS1SRk1iZlItdklfWHNpNWl2d0szclFXQVdCY192dHlLR2E3VDBTMi0xdzUxSUpERExGdjNrME9hUUN0dlJ1M3UxcDlBX1JKZmNTRkw4SnF0RzFuSFRKNXVuT0xFTE9IR1dXcGNEXzJEZ2piVVRod056MW9DOG85WDNvNnB5VDNIUQ?oc=5",
-          "domain": "wsaz.com",
-          "source_name": "WSAZ",
-          "published_at": "2026-07-11T07:00:00+00:00",
+          "title": "Nippon Sanso expands South Korea semiconductor gas capacity - gasworld",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNUpOZmlRLTNWOTBmdkJ5YS04X1JIN1FRbU00dUhiZnV2YnJkd1M0dm80NEFmXzRFM3ExSktOdmQ0bHJla3Z2ckpEMlZualpvTzFsZ0RvTmt3X3Bsb1FFd0RobE9WWUlkWi1YNndFU1pCY0VlQmlNcE5XVHFtRTZYdk1NRFdqN3o0MXozUm16eldDMmZvUHJXSkY0SFp0alpOMUtZTjhTb0tmZw?oc=5",
+          "domain": "gasworld.com",
+          "source_name": "gasworld",
+          "published_at": "2026-10-01T12:32:33+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        },
+        {
+          "title": "Nippon Sanso expands South Korea semiconductor gas capacity - gasworld",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRzQ0YUhuLTZ6RzdJQU9iVERIekJCaEEtbVY3ck1Lbl9lSzNLNkpDVWhQNGhDczgxaUxtanBGcVlidHR6ajk0cEFXOEZES0xSWkZuWUFYZDd0SUpXTFkwdWFheEg2b1h2Si1ibHRxX2pYcE5Ra0ZFcEFvcGE1S04yYk5ralFSWEprM0JJRkJEeENpY3ZmaC1WbGZ5VGdvLTJtS3FSRkZHbzNMLTQ?oc=5",
+          "domain": "gasworld.com",
+          "source_name": "gasworld",
+          "published_at": "2026-10-01T12:32:33+00:00",
           "source_country": null,
           "language": "English",
           "reliability": 2,
@@ -10966,175 +11325,17 @@
       ],
       "change_history": [
         {
-          "timestamp": "2026-07-27T00:13:40+00:00",
+          "timestamp": "2026-10-05T02:02:15+00:00",
           "type": "new",
           "changes": [
             "Incident first detected by monitoring workflow"
           ]
-        }
-      ]
-    },
-    {
-      "incident_id": "PSI-2026-0096",
-      "stream": "Cross-Industry",
-      "title": "Fire reported near Moscow oil refinery after drone attack on city - Українська правда",
-      "incident_date": null,
-      "reported_at": "2026-07-10T07:00:00+00:00",
-      "first_detected": "2026-07-19T13:33:27+00:00",
-      "last_updated": "2026-07-19T13:33:27+00:00",
-      "status": "Active",
-      "review_status": "Under Review",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
-      "scores": {
-        "source_reliability": 2,
-        "process_safety_relevance": 1,
-        "semiconductor_relevance": 0,
-        "severity_potential": 1,
-        "confidence": 2,
-        "watch_score": 1.25
-      },
-      "keyword_evidence": {
-        "semiconductor": [],
-        "process_safety": [
-          "fire"
-        ],
-        "severity": [
-          "fire"
-        ]
-      },
-      "sources": [
+        },
         {
-          "title": "Fire reported near Moscow oil refinery after drone attack on city - Українська правда",
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBWV1NGMkZoUUg0TU9OcGJnZXZ2V1BOV3ZtcC1wcm92cEt6aFQ2N1RWenp3VEpCUlpSLUpqRUdoMDFNQWFzYS1PYjd0RFZSUWxVVW5jbEJSMHZJWDhpODQtY1pFMDLSAXBBVV95cUxNX2VCOGdSN25pOVhUZXdrX1VUaGtta1RrZzFGXzRfMGJad0owMGx3MkZDeHd1a1lXWmEyU09YNjJDSlVzU3VQdXpuLWNLWFlLT2NIVnQ2UDhXUGJGeTR4M0dZdEpodFNFZl9JMkkzZlpj?oc=5",
-          "domain": "pravda.com.ua",
-          "source_name": "Українська правда",
-          "published_at": "2026-07-10T07:00:00+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 2,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-07-19T13:33:27+00:00",
-          "type": "new",
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "updated",
           "changes": [
-            "Incident first detected by monitoring workflow"
-          ]
-        }
-      ]
-    },
-    {
-      "incident_id": "PSI-2026-0134",
-      "stream": "Cross-Industry",
-      "title": "Moscow Oil Refinery reportedly on fire again - The Kyiv Independent",
-      "incident_date": null,
-      "reported_at": "2026-07-10T07:00:00+00:00",
-      "first_detected": "2026-07-27T00:13:40+00:00",
-      "last_updated": "2026-07-27T00:13:40+00:00",
-      "status": "Active",
-      "review_status": "Under Review",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
-      "scores": {
-        "source_reliability": 2,
-        "process_safety_relevance": 1,
-        "semiconductor_relevance": 0,
-        "severity_potential": 1,
-        "confidence": 2,
-        "watch_score": 1.25
-      },
-      "keyword_evidence": {
-        "semiconductor": [],
-        "process_safety": [
-          "fire"
-        ],
-        "severity": [
-          "fire"
-        ]
-      },
-      "sources": [
-        {
-          "title": "Moscow Oil Refinery reportedly on fire again - The Kyiv Independent",
-          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1tV2llTzYzb2J4eGNsX3VUVFVFVHhpX2I5aDV5SGtIUFRGNC11VjVsbTBtX0VMdklxenYwcmJ4aG9KeDdfb3dXbXJFeU9SYV8xYWVDOWJydTROY2hMTzBLamViX1Fyci01UlVGTzVIM0Z2OTg?oc=5",
-          "domain": "kyivindependent.com",
-          "source_name": "The Kyiv Independent",
-          "published_at": "2026-07-10T07:00:00+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 2,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-07-27T00:13:40+00:00",
-          "type": "new",
-          "changes": [
-            "Incident first detected by monitoring workflow"
-          ]
-        }
-      ]
-    },
-    {
-      "incident_id": "PSI-2026-0108",
-      "stream": "Cross-Industry",
-      "title": "Russia's Ilsky oil refinery catches fire, Taganrog evacuates afte - Global Banking & Finance Review",
-      "incident_date": null,
-      "reported_at": "2026-07-10T05:58:02+00:00",
-      "first_detected": "2026-07-20T00:13:45+00:00",
-      "last_updated": "2026-07-20T00:13:45+00:00",
-      "status": "Active",
-      "review_status": "Under Review",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
-      "scores": {
-        "source_reliability": 2,
-        "process_safety_relevance": 1,
-        "semiconductor_relevance": 0,
-        "severity_potential": 1,
-        "confidence": 2,
-        "watch_score": 1.25
-      },
-      "keyword_evidence": {
-        "semiconductor": [],
-        "process_safety": [
-          "fire"
-        ],
-        "severity": [
-          "fire"
-        ]
-      },
-      "sources": [
-        {
-          "title": "Russia's Ilsky oil refinery catches fire, Taganrog evacuates afte - Global Banking & Finance Review",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNenl3ZkRkUWlfRnBDSjJDYnd1Qm9sbFBNQkNaTG00VWNJZ0F6bktmM2FTbDJzUWZiY05xOVpOalNXbjlBMmMySUkyQXJoaUFackU5V1AwQXVQVzl0c0hMY0ZITHl5dVFLQzhmUnF0LXFrdmJpeE5RVjdiR2xGQW4yOEl5TWpLclRtUjBXMlJYLUowTmtmLVJjaGdYZzAwQ3hF?oc=5",
-          "domain": "globalbankingandfinance.com",
-          "source_name": "Global Banking & Finance Review",
-          "published_at": "2026-07-10T05:58:02+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 2,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-07-20T00:13:45+00:00",
-          "type": "new",
-          "changes": [
-            "Incident first detected by monitoring workflow"
+            "Added source: gasworld.com"
           ]
         }
       ]
@@ -11299,7 +11500,7 @@
       "reported_at": "2026-09-18T07:00:00+00:00",
       "first_detected": "2026-09-28T01:41:20+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "Updated",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -11368,6 +11569,391 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0394",
+      "stream": "Semiconductor",
+      "title": "Is Nissan Chemical (TSE:4021) Quietly Redrawing Its Semiconductor Strategy With a China-Based Materials Hub? - Yahoo Finance Singapore",
+      "incident_date": null,
+      "reported_at": "2026-10-10T19:15:40+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 2,
+        "watch_score": 1.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "Is Nissan Chemical (TSE:4021) Quietly Redrawing Its Semiconductor Strategy With a China-Based Materials Hub? - Yahoo Finance Singapore",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPOUdNajZGamZlMUZwM1g4X1hlTDJUTk8yaDFrWHBaeDBXcjdaNktMSUVLZ2doN0xkNXRmUXVUbXkzM3VhOWdjZzNCZGRGNEx6ZTFCNWxSSXEwRFNBZXdMZy1tZ2FrTU8tZU4tZHpsb0E0WU5tOTZ0UzNqdkxRZ3E0UEdPRmJwVlBJ?oc=5",
+          "domain": "sg.finance.yahoo.com",
+          "source_name": "Yahoo Finance Singapore",
+          "published_at": "2026-10-10T19:15:40+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0395",
+      "stream": "Semiconductor",
+      "title": "Tata Electronics And Sumitomo Chemical Strengthen India’s Semiconductor Supply Chain - SNS Insider",
+      "incident_date": null,
+      "reported_at": "2026-10-09T11:39:04+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 2,
+        "watch_score": 1.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "Tata Electronics And Sumitomo Chemical Strengthen India’s Semiconductor Supply Chain - SNS Insider",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1VOHBzZ3hMemxnTlFVNW44ckJYOEdDbEtwR3MwZnlhNlI2YWdLZ0VvelV6ZE4zZzdjb1RQbXB0dHdDMjlveF8yZWgzOFc3UWxTcHRhMFN1M0JESkN0bHM2RlROSld2RnhuWlAw?oc=5",
+          "domain": "snsinsider.com",
+          "source_name": "SNS Insider",
+          "published_at": "2026-10-09T11:39:04+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0396",
+      "stream": "Semiconductor",
+      "title": "Chengwei Semiconductor Launches Laboratory Gas Piping - GlobeNewswire",
+      "incident_date": null,
+      "reported_at": "2026-10-08T21:48:19+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 2,
+        "watch_score": 1.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "Chengwei Semiconductor Launches Laboratory Gas Piping - GlobeNewswire",
+          "url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNcHlBMVg1ZWJLbDBSYkM1UTJXdDVHTnFheVR4YXpndXNnanNReTAyOEFKMi16NkdyYkxqeG5nZkNLMnoyd3RvV3RyUTkxRVdVaTVKMWtPaGxWZmM3UVFtZnRjX2R3WDJVaUdFWmRocVhIb3BlNVVXNy1IanNpVDd4RVV6Mm1ISEd0SUpiTWJSOTdjamtkOFdkV0E1VVNIZzZVVEJ3c2dSNXZXNGhPVk11RUktckhibFdMckNHLTFqLTVlLXhoX3N1Mnh5dGVkR1RzVm54QTRCeWIxejVFN3FkcTVkRnhWaXhrVjUyWE9zbmlvRW9GXzBPMmlCNmJnSVJIVlg4WnVTMVNSV205RnBsZ1dvZkV0SHVhQTUwVi1jby1weDEtV3c?oc=5",
+          "domain": "globenewswire.com",
+          "source_name": "GlobeNewswire",
+          "published_at": "2026-10-08T21:48:19+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0397",
+      "stream": "Semiconductor",
+      "title": "Chengwei Semiconductor Launches Laboratory Gas Piping System And Gas Delivery Equipment For Full-Stack Laboratory Gas Solutions - Bluefield Daily Telegraph",
+      "incident_date": null,
+      "reported_at": "2026-10-08T14:04:43+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 2,
+        "watch_score": 1.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "Chengwei Semiconductor Launches Laboratory Gas Piping System And Gas Delivery Equipment For Full-Stack Laboratory Gas Solutions - Bluefield Daily Telegraph",
+          "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxQc3ZydmhYbWpIaFR3UWpja3NIaEhjMXo3UlZKM3JNVmhHMWR6TnVHeXduODRzMTBNM2U0c3k2TXBiRFdLYUVRYXhaT1pSZzlPNFZCNmJTVF9kZ2R2M09lV1hVcFk1OVVKMnh2VmhwRkpIMlFOMGFNQVQ0SW1jSFVaXzVhTVhLelpvTldDSEdQcGhCZHNTRnU4b2hZZGpPRjBlc0lhcEwwMzktNE1xTi1zQXVBWEpOREhNZXhDOTNpQmxUSUVEQ3c2YVFHMFp6ZG5lNV9ZdHpZVnFRLURRZGxsS1VDNGc0eHBSOXMxcUI0RE9iQ25LWVZMSnpVZl9ZU1BGX0t1V2xmSE81d1VPZExaMmxpek15dGppNk5YcnQ3TkRGZw?oc=5",
+          "domain": "bdtonline.com",
+          "source_name": "Bluefield Daily Telegraph",
+          "published_at": "2026-10-08T14:04:43+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0398",
+      "stream": "Semiconductor",
+      "title": "ProShares Ultra Semiconductors ETF offers 2x ex... - Pluang",
+      "incident_date": null,
+      "reported_at": "2026-10-07T18:55:19+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 2,
+        "watch_score": 1.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "ProShares Ultra Semiconductors ETF offers 2x ex... - Pluang",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQR3RIb0NxLW8wdkFTcXZWbVJJN3RTVFVPYjI4S1R1WGJUNDd3QVM0YW5vUUFIeWFkdlkyMDNuN0xNVWZSaXRMZVkzck1aOW1tV0R5YTZpRXd6cmdBblZmNVl3TDRnbVp5bC1EVjhjZHVNY2d3SlBlYVhMOHFOOXlSS3lVMHlsRTdBNThOZ0ZFcGRLMVpTS1VNZEJSdU9POVk?oc=5",
+          "domain": "pluang.com",
+          "source_name": "Pluang",
+          "published_at": "2026-10-07T18:55:19+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0399",
+      "stream": "Semiconductor",
+      "title": "Sumitomo Chemical Signs India Semiconductor MoU - CHEManager",
+      "incident_date": null,
+      "reported_at": "2026-10-06T14:55:02+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 2,
+        "watch_score": 1.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "Sumitomo Chemical Signs India Semiconductor MoU - CHEManager",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNLW9LUm5VWU9hdHVIdTZQbFVoRDNIVDBvNmFyWVBnY0gzMEtibVZYbnExMzIyUGU4bmhUamdlVmI1RHRZN2t0ZU5Cemo2Q1dneUl1OTlhU1MzeTdaSFlaOE1PM2tha044eVpnRTYxWVBZdnlJUmlmY0lLNlJPNl9tSnRQdlNWZmRmak96RWJB?oc=5",
+          "domain": "chemanager-online.com",
+          "source_name": "CHEManager",
+          "published_at": "2026-10-06T14:55:02+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0400",
+      "stream": "Semiconductor",
+      "title": "Year-to-Date Global Semiconductor Sales Top $1 Trillion Through August - Semiconductor Industry Association | SIA",
+      "incident_date": null,
+      "reported_at": "2026-10-05T13:28:58+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 2,
+        "watch_score": 1.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "Year-to-Date Global Semiconductor Sales Top $1 Trillion Through August - Semiconductor Industry Association | SIA",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcFNrVUdsNGV5T3ZDa3B6TWMzRlRsVFZEV2lxeWtRNVBKWUVYNEJyd1FRbmtOLTNmSTVYM00wTFk5SzRsMmVZR3JFOGVlQmNFVGRmRHJCNjBsRWlsNHRDSHQ1anB1bmY0VnMyWU8yVGNpdEp1NDU0S2ZPanBSRmcydUFGX1FCQVZ2U003aVpzbXhCRHJBanFNWDZtc05odU5Qckk0?oc=5",
+          "domain": "semiconductors.org",
+          "source_name": "Semiconductor Industry Association | SIA",
+          "published_at": "2026-10-05T13:28:58+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0375",
       "stream": "Semiconductor",
       "title": "On Semiconductor Climbs 8%, Synaptics Surges 14% as $5.7B Cash Bid Replaces $7B Stock Deal - 24/7 Wall St.",
@@ -11375,7 +11961,7 @@
       "reported_at": "2026-10-02T13:13:00+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -11423,61 +12009,6 @@
       ]
     },
     {
-      "incident_id": "PSI-2026-0376",
-      "stream": "Semiconductor",
-      "title": "Nippon Sanso expands South Korea semiconductor gas capacity - gasworld",
-      "incident_date": null,
-      "reported_at": "2026-10-01T12:32:33+00:00",
-      "first_detected": "2026-10-05T02:02:15+00:00",
-      "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
-      "review_status": "Under Review",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Exhaust and abatement-system reliability.",
-      "scores": {
-        "source_reliability": 2,
-        "process_safety_relevance": 1,
-        "semiconductor_relevance": 1,
-        "severity_potential": 0,
-        "confidence": 2,
-        "watch_score": 1.1
-      },
-      "keyword_evidence": {
-        "semiconductor": [
-          "semiconductor"
-        ],
-        "process_safety": [
-          "duct"
-        ],
-        "severity": []
-      },
-      "sources": [
-        {
-          "title": "Nippon Sanso expands South Korea semiconductor gas capacity - gasworld",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNUpOZmlRLTNWOTBmdkJ5YS04X1JIN1FRbU00dUhiZnV2YnJkd1M0dm80NEFmXzRFM3ExSktOdmQ0bHJla3Z2ckpEMlZualpvTzFsZ0RvTmt3X3Bsb1FFd0RobE9WWUlkWi1YNndFU1pCY0VlQmlNcE5XVHFtRTZYdk1NRFdqN3o0MXozUm16eldDMmZvUHJXSkY0SFp0alpOMUtZTjhTb0tmZw?oc=5",
-          "domain": "gasworld.com",
-          "source_name": "gasworld",
-          "published_at": "2026-10-01T12:32:33+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 2,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-10-05T02:02:15+00:00",
-          "type": "new",
-          "changes": [
-            "Incident first detected by monitoring workflow"
-          ]
-        }
-      ]
-    },
-    {
       "incident_id": "PSI-2026-0377",
       "stream": "Semiconductor",
       "title": "KORU: The Victim Of South Korea’s Semiconductor Bottleneck (NYSEARCA:KORU) - Seeking Alpha",
@@ -11485,7 +12016,7 @@
       "reported_at": "2026-10-01T10:42:57+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -11540,7 +12071,7 @@
       "reported_at": "2026-10-01T08:06:56+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -11595,7 +12126,7 @@
       "reported_at": "2026-10-01T05:04:26+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -11650,7 +12181,7 @@
       "reported_at": "2026-09-29T20:44:30+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -11705,7 +12236,7 @@
       "reported_at": "2026-09-29T10:55:00+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -11760,7 +12291,7 @@
       "reported_at": "2026-09-29T01:37:27+00:00",
       "first_detected": "2026-10-05T02:02:15+00:00",
       "last_updated": "2026-10-05T02:02:15+00:00",
-      "status": "New",
+      "status": "Active",
       "review_status": "Under Review",
       "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
       "process_safety_concern": "Exhaust and abatement-system reliability.",
@@ -12185,6 +12716,61 @@
       "change_history": [
         {
           "timestamp": "2026-09-28T01:41:20+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0401",
+      "stream": "Semiconductor",
+      "title": "Sunlit Fluo & Chemical: The Critical, Under-the-Radar Cog in Taiwan's Semiconductor Sector - 天下雜誌",
+      "incident_date": null,
+      "reported_at": "2026-09-23T07:17:11+00:00",
+      "first_detected": "2026-10-12T02:26:12+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "New",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 2,
+        "watch_score": 1.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "Sunlit Fluo & Chemical: The Critical, Under-the-Radar Cog in Taiwan's Semiconductor Sector - 天下雜誌",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9wWDZhSVVZTW9tcWhPV3F4WGlvT0lrWmw3M01CQmJBblVqb2dLSVNNYVNVSi1Ja3VWX19GcXZiSDVHejFaeWg5M3AyNjVBQTJvcU1HX0pqLXBwc2IwWmVvajR4cEE0VEk?oc=5",
+          "domain": "english.cw.com.tw",
+          "source_name": "天下雜誌",
+          "published_at": "2026-09-23T07:17:11+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
           "type": "new",
           "changes": [
             "Incident first detected by monitoring workflow"
@@ -15548,61 +16134,6 @@
       ]
     },
     {
-      "incident_id": "PSI-2026-0218",
-      "stream": "Semiconductor",
-      "title": "4 Semiconductor Proxy Stocks with Strong Expansion Plans - Equitymaster",
-      "incident_date": null,
-      "reported_at": "2026-07-13T12:14:54+00:00",
-      "first_detected": "2026-08-16T23:34:38+00:00",
-      "last_updated": "2026-08-16T23:34:38+00:00",
-      "status": "Active",
-      "review_status": "Under Review",
-      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
-      "process_safety_concern": "Exhaust and abatement-system reliability.",
-      "scores": {
-        "source_reliability": 2,
-        "process_safety_relevance": 1,
-        "semiconductor_relevance": 1,
-        "severity_potential": 0,
-        "confidence": 2,
-        "watch_score": 1.1
-      },
-      "keyword_evidence": {
-        "semiconductor": [
-          "semiconductor"
-        ],
-        "process_safety": [
-          "duct"
-        ],
-        "severity": []
-      },
-      "sources": [
-        {
-          "title": "4 Semiconductor Proxy Stocks with Strong Expansion Plans - Equitymaster",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdlVOTU1PaEtHRS1ST0VzRjYxVWFLczR1Mzk0SWdKNWl3dWlOUHdFQnR4ZkctZWxuNTV1V2M1T2EwaEFQbkgtSjRrMGh3X05mdVUzYU9IbnBtMjl4SHdueFZsT1FCT0NpTXhZLTU0eHIzWUtkbnIzVDlXOWplWE9ENUwxalF1eThxQTRKSmNfcy1XZldfaFZFMlFfblFUeDFIUEFLR3Z4UUpaM0NIRll6Z25nbVJKZVRITElKeVYxRlVsYjgxR0E?oc=5",
-          "domain": "equitymaster.com",
-          "source_name": "Equitymaster",
-          "published_at": "2026-07-13T12:14:54+00:00",
-          "source_country": null,
-          "language": "English",
-          "reliability": 2,
-          "discovery_sources": [
-            "Google News RSS"
-          ],
-          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
-        }
-      ],
-      "change_history": [
-        {
-          "timestamp": "2026-08-16T23:34:38+00:00",
-          "type": "new",
-          "changes": [
-            "Incident first detected by monitoring workflow"
-          ]
-        }
-      ]
-    },
-    {
       "incident_id": "PSI-2026-0059",
       "stream": "Semiconductor",
       "title": "Seven hospitalized after toxic gas fire at SK hynix advanced memory plant — Cheongju 4th campus incident today led to all 3,600 staff being evacuated - Tom's Hardware",
@@ -15946,6 +16477,68 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0004",
+      "stream": "Semiconductor",
+      "title": "Department of Commerce Announces Direct Funding Agreement with Bosch for a $225 Million CHIPS Program Award to Support Domestic Production of Silicon Carbide Semiconductors - National Institute of Standards and Technology (.gov)",
+      "incident_date": null,
+      "reported_at": "2026-07-13T12:00:00+00:00",
+      "first_detected": "2026-07-19T13:19:02+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Archived",
+      "review_status": "Confirmed",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 5,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 5,
+        "watch_score": 2.0
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "Department of Commerce Announces Direct Funding Agreement with Bosch for a $225 Million CHIPS Program Award to Support Domestic Production of Silicon Carbide Semiconductors - National Institute of Standards and Technology (.gov)",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQNXI0ZlJta0NSbmgtcVR2WHZMaWNpbEZacy10M3VEUHBOcDF0ZmNZLWRIUmJZSHRTLU95dWxuc2NyZ1V1emdYMmROUlFmT0VGTEMyWEhhYndsX3hUbUNEZ3RTSVcyNi1fSzNSX0lzRFYwREViaTBXb0Fpc1BOUmJLRUJoNGZtWVY0T0V2VFNkUXhaclhsYTU4bEtGVGZUVllnRHpZVU1DWTFGODhJaGpYaV9pOGw2XzFQM3c?oc=5",
+          "domain": "nist.gov",
+          "source_name": "National Institute of Standards and Technology (.gov)",
+          "published_at": "2026-07-13T12:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 5,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-19T13:19:02+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "archived",
+          "changes": [
+            "Moved outside the rolling 90-day window"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0005",
       "stream": "Semiconductor",
       "title": "Singapore using AI to hasten the discovery of recipes for next-gen semiconductors, clean hydrogen - The Straits Times",
@@ -16214,6 +16807,68 @@
         },
         {
           "timestamp": "2026-08-31T01:23:08+00:00",
+          "type": "archived",
+          "changes": [
+            "Moved outside the rolling 90-day window"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0006",
+      "stream": "Cross-Industry",
+      "title": "Russia's Ilsky oil refinery catches fire, Taganrog evacuates after drone attacks - Reuters",
+      "incident_date": null,
+      "reported_at": "2026-07-09T07:00:00+00:00",
+      "first_detected": "2026-07-19T13:19:02+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Archived",
+      "review_status": "Confirmed",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 4,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 4,
+        "watch_score": 1.85
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Russia's Ilsky oil refinery catches fire, Taganrog evacuates after drone attacks - Reuters",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPWkxtXy1vTHhfbERRTHloS3VqWWRZVHF0MFRmb19nWDFnOG5HYU9pai1zYWx4X0pSYWVXQUVjdVJfWlMwY3ozdUhGcHd5R25WWUpNWDN1dEFCS1paLTZhRjFzWkxLRDdWTDAxV1dlMGllWDY2OGRYLVVVU0VETVF1cDhkTzUxTnB0RGpfekdvSzlBNENyYUNSRDkycTE2T2xIU1VDWVlIMl9DV2MzWnl3RWtHZm1Ld0pWTG42X0QyeXhfYlpiRUE?oc=5",
+          "domain": "reuters.com",
+          "source_name": "Reuters",
+          "published_at": "2026-07-09T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 4,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-19T13:19:02+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
           "type": "archived",
           "changes": [
             "Moved outside the rolling 90-day window"
@@ -18536,6 +19191,136 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0026",
+      "stream": "Semiconductor",
+      "title": "Hedging semiconductor exposure is getting harder - TradingView",
+      "incident_date": null,
+      "reported_at": "2026-07-07T14:05:15+00:00",
+      "first_detected": "2026-07-19T13:19:02+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Archived",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 2,
+        "semiconductor_relevance": 1,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.6
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct",
+          "exposure"
+        ],
+        "severity": [
+          "exposure"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Hedging semiconductor exposure is getting harder - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQnhUd0V5M0tGMm9MTnB6dkJOZE1tT0ZjN1dtYXhZdXM5WWZxUEhLQlVhX0wxTDlfOUhCTTdmUWhKZGZlb1Z4LVZnQVFyS1FRZmpRSDBZMkNCaUkwb3BncWZIbXk2d3BrYnp3d0RxbmxZaTRwSjhnZWU4Q1AyYVppaDFqdmd6eVVXeHZHRjlOcVJfSTI1ZTI0cjVfUTJtNXNFVzAtOHNUYnNabnA3LTU1WGlfRXNESWZ5Q2c?oc=5",
+          "domain": "tradingview.com",
+          "source_name": "TradingView",
+          "published_at": "2026-07-07T14:05:15+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-19T13:19:02+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "archived",
+          "changes": [
+            "Moved outside the rolling 90-day window"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0027",
+      "stream": "Semiconductor",
+      "title": "Morgan Stanley Advises Reducing Semiconductor Stock Exposure as Earnings Peak - 조선일보",
+      "incident_date": null,
+      "reported_at": "2026-07-07T07:00:00+00:00",
+      "first_detected": "2026-07-19T13:19:02+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Archived",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 2,
+        "semiconductor_relevance": 1,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.6
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct",
+          "exposure"
+        ],
+        "severity": [
+          "exposure"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Morgan Stanley Advises Reducing Semiconductor Stock Exposure as Earnings Peak - 조선일보",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVmIydFh2VU0tdU1uUUJ1N0VobUZ3QzVtSE1MVkltaDV3dVAzWjM2ekV2RERHenZGMkg5MkpINTVsVTUzQ2lVekZkYnQ5d2NUQ1lzNzEwT1NwS3RSUVNLMG5JQjhWcE05SlNaMGVOOTlFMk50YVA4cjlySElUWHlKN19NNE1fdmVuMmpiVm93?oc=5",
+          "domain": "chosun.com",
+          "source_name": "조선일보",
+          "published_at": "2026-07-07T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-19T13:19:02+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "archived",
+          "changes": [
+            "Moved outside the rolling 90-day window"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0028",
       "stream": "Semiconductor",
       "title": "AMS Advanced Material surges to new record high; Kenanga flags rising semiconductor exposure - The Edge Malaysia",
@@ -19389,6 +20174,71 @@
         },
         {
           "timestamp": "2026-07-19T13:19:02+00:00",
+          "type": "archived",
+          "changes": [
+            "Moved outside the rolling 90-day window"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0032",
+      "stream": "Semiconductor",
+      "title": "SK Hynix debuts on Nasdaq, shares jump 14%, ETFs adjust exposure to the chipmaker. - Pluang",
+      "incident_date": null,
+      "reported_at": "2026-07-13T12:10:30+00:00",
+      "first_detected": "2026-07-19T13:19:02+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Archived",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Loss-of-containment prevention and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 2,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.5
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "chipmaker",
+          "sk hynix"
+        ],
+        "process_safety": [
+          "exposure"
+        ],
+        "severity": [
+          "exposure"
+        ]
+      },
+      "sources": [
+        {
+          "title": "SK Hynix debuts on Nasdaq, shares jump 14%, ETFs adjust exposure to the chipmaker. - Pluang",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYTVtQ0JiTjY4bGdhTkJZRHRpX2ZzWEJLazdSRC1jWW5DTmpkcE5LMnBjY1pjUTJ4TlctdVJpQkJ1aWhQNHl5a1dITDBoVHVRa0kzbzZjdFF1RlNhZjRtVThtVmxYamVLUjJhOEdWSjdNSjFCdjNQbUJGVVFqS01IZktKb0hMXzRTZWln?oc=5",
+          "domain": "pluang.com",
+          "source_name": "Pluang",
+          "published_at": "2026-07-13T12:10:30+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-19T13:19:02+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
           "type": "archived",
           "changes": [
             "Moved outside the rolling 90-day window"
@@ -22029,6 +22879,254 @@
       ]
     },
     {
+      "incident_id": "PSI-2026-0133",
+      "stream": "Cross-Industry",
+      "title": "Fire under control at Marathon’s Catlettsburg refinery - WSAZ",
+      "incident_date": null,
+      "reported_at": "2026-07-11T07:00:00+00:00",
+      "first_detected": "2026-07-27T00:13:40+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Archived",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Fire under control at Marathon’s Catlettsburg refinery - WSAZ",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUzJ2cFFiOWFpNDZxN1d5RFZ5WDZHNTJxQXFLNzZjMldZdjdVblhWQVloMnlONHFrWlZ3ampBdElkYVExanF0d3ZJTmdzcVlSTnB4ZGpPX1ZjWVc0dkpvYVl5THpMTHpJTlBJNTBfbmE2aDRoNXp5T0oxa2lmY0xDMUlHUTBvQmlMSURF0gGfAUFVX3lxTFBFRnZiaEt1Z0VWMVFpVWEwdUVhcmQwQS1SRk1iZlItdklfWHNpNWl2d0szclFXQVdCY192dHlLR2E3VDBTMi0xdzUxSUpERExGdjNrME9hUUN0dlJ1M3UxcDlBX1JKZmNTRkw4SnF0RzFuSFRKNXVuT0xFTE9IR1dXcGNEXzJEZ2piVVRod056MW9DOG85WDNvNnB5VDNIUQ?oc=5",
+          "domain": "wsaz.com",
+          "source_name": "WSAZ",
+          "published_at": "2026-07-11T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-27T00:13:40+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "archived",
+          "changes": [
+            "Moved outside the rolling 90-day window"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0096",
+      "stream": "Cross-Industry",
+      "title": "Fire reported near Moscow oil refinery after drone attack on city - Українська правда",
+      "incident_date": null,
+      "reported_at": "2026-07-10T07:00:00+00:00",
+      "first_detected": "2026-07-19T13:33:27+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Archived",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Fire reported near Moscow oil refinery after drone attack on city - Українська правда",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBWV1NGMkZoUUg0TU9OcGJnZXZ2V1BOV3ZtcC1wcm92cEt6aFQ2N1RWenp3VEpCUlpSLUpqRUdoMDFNQWFzYS1PYjd0RFZSUWxVVW5jbEJSMHZJWDhpODQtY1pFMDLSAXBBVV95cUxNX2VCOGdSN25pOVhUZXdrX1VUaGtta1RrZzFGXzRfMGJad0owMGx3MkZDeHd1a1lXWmEyU09YNjJDSlVzU3VQdXpuLWNLWFlLT2NIVnQ2UDhXUGJGeTR4M0dZdEpodFNFZl9JMkkzZlpj?oc=5",
+          "domain": "pravda.com.ua",
+          "source_name": "Українська правда",
+          "published_at": "2026-07-10T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-19T13:33:27+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "archived",
+          "changes": [
+            "Moved outside the rolling 90-day window"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0134",
+      "stream": "Cross-Industry",
+      "title": "Moscow Oil Refinery reportedly on fire again - The Kyiv Independent",
+      "incident_date": null,
+      "reported_at": "2026-07-10T07:00:00+00:00",
+      "first_detected": "2026-07-27T00:13:40+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Archived",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Moscow Oil Refinery reportedly on fire again - The Kyiv Independent",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1tV2llTzYzb2J4eGNsX3VUVFVFVHhpX2I5aDV5SGtIUFRGNC11VjVsbTBtX0VMdklxenYwcmJ4aG9KeDdfb3dXbXJFeU9SYV8xYWVDOWJydTROY2hMTzBLamViX1Fyci01UlVGTzVIM0Z2OTg?oc=5",
+          "domain": "kyivindependent.com",
+          "source_name": "The Kyiv Independent",
+          "published_at": "2026-07-10T07:00:00+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-27T00:13:40+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "archived",
+          "changes": [
+            "Moved outside the rolling 90-day window"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0108",
+      "stream": "Cross-Industry",
+      "title": "Russia's Ilsky oil refinery catches fire, Taganrog evacuates afte - Global Banking & Finance Review",
+      "incident_date": null,
+      "reported_at": "2026-07-10T05:58:02+00:00",
+      "first_detected": "2026-07-20T00:13:45+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Archived",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Fire and explosion prevention, ignition control and emergency response.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 0,
+        "severity_potential": 1,
+        "confidence": 2,
+        "watch_score": 1.25
+      },
+      "keyword_evidence": {
+        "semiconductor": [],
+        "process_safety": [
+          "fire"
+        ],
+        "severity": [
+          "fire"
+        ]
+      },
+      "sources": [
+        {
+          "title": "Russia's Ilsky oil refinery catches fire, Taganrog evacuates afte - Global Banking & Finance Review",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNenl3ZkRkUWlfRnBDSjJDYnd1Qm9sbFBNQkNaTG00VWNJZ0F6bktmM2FTbDJzUWZiY05xOVpOalNXbjlBMmMySUkyQXJoaUFackU5V1AwQXVQVzl0c0hMY0ZITHl5dVFLQzhmUnF0LXFrdmJpeE5RVjdiR2xGQW4yOEl5TWpLclRtUjBXMlJYLUowTmtmLVJjaGdYZzAwQ3hF?oc=5",
+          "domain": "globalbankingandfinance.com",
+          "source_name": "Global Banking & Finance Review",
+          "published_at": "2026-07-10T05:58:02+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-07-20T00:13:45+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
+          "type": "archived",
+          "changes": [
+            "Moved outside the rolling 90-day window"
+          ]
+        }
+      ]
+    },
+    {
       "incident_id": "PSI-2026-0097",
       "stream": "Cross-Industry",
       "title": "Details emerge of Chalmette refinery blast that shook surrounding area - NOLA.com",
@@ -22393,6 +23491,68 @@
         },
         {
           "timestamp": "2026-08-09T23:48:20+00:00",
+          "type": "archived",
+          "changes": [
+            "Moved outside the rolling 90-day window"
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "PSI-2026-0218",
+      "stream": "Semiconductor",
+      "title": "4 Semiconductor Proxy Stocks with Strong Expansion Plans - Equitymaster",
+      "incident_date": null,
+      "reported_at": "2026-07-13T12:14:54+00:00",
+      "first_detected": "2026-08-16T23:34:38+00:00",
+      "last_updated": "2026-10-12T02:26:12+00:00",
+      "status": "Archived",
+      "review_status": "Under Review",
+      "summary": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.",
+      "process_safety_concern": "Exhaust and abatement-system reliability.",
+      "scores": {
+        "source_reliability": 2,
+        "process_safety_relevance": 1,
+        "semiconductor_relevance": 1,
+        "severity_potential": 0,
+        "confidence": 2,
+        "watch_score": 1.1
+      },
+      "keyword_evidence": {
+        "semiconductor": [
+          "semiconductor"
+        ],
+        "process_safety": [
+          "duct"
+        ],
+        "severity": []
+      },
+      "sources": [
+        {
+          "title": "4 Semiconductor Proxy Stocks with Strong Expansion Plans - Equitymaster",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdlVOTU1PaEtHRS1ST0VzRjYxVWFLczR1Mzk0SWdKNWl3dWlOUHdFQnR4ZkctZWxuNTV1V2M1T2EwaEFQbkgtSjRrMGh3X05mdVUzYU9IbnBtMjl4SHdueFZsT1FCT0NpTXhZLTU0eHIzWUtkbnIzVDlXOWplWE9ENUwxalF1eThxQTRKSmNfcy1XZldfaFZFMlFfblFUeDFIUEFLR3Z4UUpaM0NIRll6Z25nbVJKZVRITElKeVYxRlVsYjgxR0E?oc=5",
+          "domain": "equitymaster.com",
+          "source_name": "Equitymaster",
+          "published_at": "2026-07-13T12:14:54+00:00",
+          "source_country": null,
+          "language": "English",
+          "reliability": 2,
+          "discovery_sources": [
+            "Google News RSS"
+          ],
+          "description": "Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News."
+        }
+      ],
+      "change_history": [
+        {
+          "timestamp": "2026-08-16T23:34:38+00:00",
+          "type": "new",
+          "changes": [
+            "Incident first detected by monitoring workflow"
+          ]
+        },
+        {
+          "timestamp": "2026-10-12T02:26:12+00:00",
           "type": "archived",
           "changes": [
             "Moved outside the rolling 90-day window"
