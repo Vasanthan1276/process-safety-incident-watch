@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_run": "2026-10-26T01:13:09+00:00",
+  "last_run": "2026-11-02T02:32:55+00:00",
   "sources": {
     "eletimes.ai": {
       "domain": "eletimes.ai",
@@ -30,8 +30,8 @@
       "domain": "tradingview.com",
       "source_name": "TradingView",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 14,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 15,
       "sample_titles": [
         "Hedging semiconductor exposure is getting harder - TradingView",
         "Mitsubishi Chemical Group: Strong Q1 driven by semiconductor demand and inventory gains; Q2 to normalize as special factors fade - TradingView",
@@ -44,8 +44,8 @@
       "domain": "chosun.com",
       "source_name": "조선일보",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-10-12T02:26:12+00:00",
-      "times_seen": 45,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 46,
       "sample_titles": [
         "Morgan Stanley Advises Reducing Semiconductor Stock Exposure as Earnings Peak - 조선일보",
         "Second Fire at SK Hynix Sparks Safety Management Questions - 조선일보",
@@ -93,8 +93,8 @@
       "domain": "indexbox.io",
       "source_name": "IndexBox",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 39,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 40,
       "sample_titles": [
         "Gas Purging System Market Forecast Points Higher Toward 2035, Driven by Semiconductor Fab Expansions - IndexBox",
         "PTFE Ball Valve Market Forecast Points Higher Toward 2035, Driven by Semiconductor Capacity Expansion - IndexBox",
@@ -267,8 +267,8 @@
       "domain": "gasworld.com",
       "source_name": "gasworld",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 11,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 13,
       "sample_titles": [
         "HyET and Nippon Sanso advance UHP hydrogen tech for semiconductors - gasworld",
         "Are semiconductor manufacturers asking more from specialty gas producers? - gasworld",
@@ -358,8 +358,8 @@
       "domain": "businesstimes.com.sg",
       "source_name": "The Business Times",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-09-14T01:08:14+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "Australia says refinery fire may hit petrol production more than diesel, jet fuel - The Business Times",
         "Yemen’s Houthis say they attacked Saudi Aramco Jazan refinery, fire extinguished - The Business Times",
@@ -403,8 +403,8 @@
       "domain": "militarnyi.com",
       "source_name": "Мілітарний",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 9,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 11,
       "sample_titles": [
         "The Salavat Oil Refinery is on Fire After Being Hit by Ukrainian UAVs - Мілітарний",
         "Russia: Wildberries Hub and Kstovo Oil Refinery Hit by Drones, Catch Fire - Мілітарний",
@@ -437,12 +437,13 @@
       "domain": "datacenterdynamics.com",
       "source_name": "Data Center Dynamics",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-10-19T01:18:26+00:00",
-      "times_seen": 8,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 9,
       "sample_titles": [
         "Small number of workers exposed to fluorine gas leak at SK Hynix Cheongju campus – report - Data Center Dynamics",
         "Small number of workers exposed to fluorine gas leak at SK Hynix Cheongju campus – report - datacenterdynamics.com",
-        "Two workers killed, third injured, in explosion at Intel’s Kiryat Gat fab in Israel - Data Center Dynamics"
+        "Two workers killed, third injured, in explosion at Intel’s Kiryat Gat fab in Israel - Data Center Dynamics",
+        "Intel says Israel fab explosion will cost company $600m in losses, as Q3 ‘26 revenue hits $16.5bn - Data Center Dynamics"
       ]
     },
     "asiae.co.kr": {
@@ -605,10 +606,12 @@
       "domain": "news.az",
       "source_name": "Latest news from Azerbaijan",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-08-23T23:36:22+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 5,
       "sample_titles": [
-        "At least 7 hospitalized after fire at SK hynix plant - Latest news from Azerbaijan"
+        "At least 7 hospitalized after fire at SK hynix plant - Latest news from Azerbaijan",
+        "Large fire breaks out at Russia's Kstovo oil refinery after attack - Latest news from Azerbaijan",
+        "Drone attack sparks fire at oil refinery in Russia’s Ufa - Latest news from Azerbaijan"
       ]
     },
     "dimsumdaily.hk": {
@@ -635,8 +638,8 @@
       "domain": "pravda.com.ua",
       "source_name": "Українська правда",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 17,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 19,
       "sample_titles": [
         "Fire reported near Moscow oil refinery after drone attack on city - Українська правда",
         "Ukraine hits Lukoil refinery in Russia's Perm: fire raging– video - Українська правда",
@@ -872,11 +875,12 @@
       "domain": "ukrinform.net",
       "source_name": "Ukrinform",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-08-03T00:13:50+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "Drone attacks Tyumen Oil Refinery, fire breaks out - Ukrinform",
-        "Chemical plant on fire in France - Ukrinform"
+        "Chemical plant on fire in France - Ukrinform",
+        "Explosions reported in Russia's Ufa, oil refinery unit on fire – media - Ukrinform"
       ]
     },
     "kyivpost.com": {
@@ -1020,8 +1024,8 @@
       "domain": "english.nv.ua",
       "source_name": "The New Voice of Ukraine",
       "first_seen": "2026-08-03T00:13:50+00:00",
-      "last_seen": "2026-09-28T01:41:20+00:00",
-      "times_seen": 8,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 11,
       "sample_titles": [
         "Major fire erupts at Saratov oil refinery after drone attack - The New Voice of Ukraine",
         "Fire breaks out at Ufa refinery after drone attack damages unit under repair - The New Voice of Ukraine",
@@ -1078,12 +1082,13 @@
       "domain": "euronews.com",
       "source_name": "Euronews.com",
       "first_seen": "2026-08-03T00:13:50+00:00",
-      "last_seen": "2026-09-07T01:02:45+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "‘If Ukraine burns, so will Moscow,’ Zelenskyy says after refinery fire - Euronews.com",
         "Video. One dead, several injured in Rotterdam port blast at Gunvor refinery - Euronews.com",
-        "Explosion at Dutch port of Rotterdam leaves one dead, police say - Euronews.com"
+        "Explosion at Dutch port of Rotterdam leaves one dead, police say - Euronews.com",
+        "Drone attack and fire reported at Russia's Novokuibyshevsk oil refinery - Euronews.com"
       ]
     },
     "seatrade-maritime.com": {
@@ -1131,8 +1136,8 @@
       "domain": "chemanalyst.com",
       "source_name": "ChemAnalyst",
       "first_seen": "2026-08-09T23:48:20+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "Linde Invests $1 Billion to Expand US Semiconductor Gas Supply - ChemAnalyst",
         "Messer Boosts Vietnam Gas Capacity to Support Semiconductor Growth - ChemAnalyst",
@@ -1173,12 +1178,13 @@
       "domain": "united24media.com",
       "source_name": "UNITED24 Media",
       "first_seen": "2026-08-09T23:48:20+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "Drone Attack Triggers Fire at Key Russian Oil Refinery as Explosions Rock Yaroslavl - UNITED24 Media",
         "Ukrainian Drone Attack Sparks Fire at Major Rosneft Refinery in Russia’s Samara Region - UNITED24 Media",
-        "Explosion and Fire at Moscow-Area Chemical Plant, Leaving 7 Dead - UNITED24 Media"
+        "Explosion and Fire at Moscow-Area Chemical Plant, Leaving 7 Dead - UNITED24 Media",
+        "Fire Point’s FP-1 Drones Strike Russian Refinery Producing Jet Fuel for Moscow’s Military - UNITED24 Media"
       ]
     },
     "qcintel.com": {
@@ -1279,10 +1285,11 @@
       "domain": "equitymaster.com",
       "source_name": "Equitymaster",
       "first_seen": "2026-08-16T23:34:38+00:00",
-      "last_seen": "2026-10-05T02:02:15+00:00",
-      "times_seen": 8,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 9,
       "sample_titles": [
-        "4 Semiconductor Proxy Stocks with Strong Expansion Plans - Equitymaster"
+        "4 Semiconductor Proxy Stocks with Strong Expansion Plans - Equitymaster",
+        "5 Semiconductor Chemical Stocks to Watch in India - Equitymaster"
       ]
     },
     "calmatters.org": {
@@ -1406,8 +1413,8 @@
       "domain": "business-standard.com",
       "source_name": "Business Standard",
       "first_seen": "2026-08-23T23:36:22+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 10,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 11,
       "sample_titles": [
         "UP-Japan investment meet to focus on green hydrogen, semiconductor push - Business Standard",
         "UP-Japan investment meet to focus on green hydrogen, semiconductor push - business-standard.com"
@@ -1448,12 +1455,13 @@
       "domain": "newsukraine.rbc.ua",
       "source_name": "RBC-Ukraine",
       "first_seen": "2026-08-23T23:36:22+00:00",
-      "last_seen": "2026-10-05T02:02:15+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "Fire Point confirms strikes on oil refinery and Ozon warehouse in Russia's Samara region - RBC-Ukraine",
         "Drone strike sparks huge fire at Russian Novokuibyshevsk oil refinery - RBC-Ukraine",
-        "Drones attack Russia's Volgograd, fire erupts near Lukoil refinery and chemical plant - RBC-Ukraine"
+        "Drones attack Russia's Volgograd, fire erupts near Lukoil refinery and chemical plant - RBC-Ukraine",
+        "Russia's Kstovo oil refinery attacked: Large-scale fire breaks out at facility - RBC-Ukraine"
       ]
     },
     "ukrmedia.news": {
@@ -1573,8 +1581,8 @@
       "domain": "techtimes.com",
       "source_name": "Tech Times",
       "first_seen": "2026-08-31T01:23:08+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 9,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 10,
       "sample_titles": [
         "Semiconductor Supply Chain Closes Fluoropolymer Gap: Nichias Builds PFA Tube Plant in Hsinchu - Tech Times",
         "Semiconductor Supply Chain Closes Fluoropolymer Gap: Nichias Builds PFA Tube Plant in Hsinchu - techtimes.com"
@@ -1644,8 +1652,8 @@
       "domain": "phys.org",
       "source_name": "Phys.org",
       "first_seen": "2026-09-07T01:02:45+00:00",
-      "last_seen": "2026-09-07T01:02:45+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 2,
       "sample_titles": [
         "'Power of disorder' tames CF₄, a semiconductor greenhouse gas that can persist for 50,000 years - Phys.org"
       ]
@@ -1743,8 +1751,8 @@
       "domain": "uk.finance.yahoo.com",
       "source_name": "Yahoo Finance UK",
       "first_seen": "2026-09-14T01:08:14+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "Electronic Hydrofluoric Acid Market to Reach $1.87 Billion by 2030 as Controlled Semiconductor Capacity Expands - Yahoo Finance UK",
         "Burckhardt Compression secures orders for semiconductor hydrogen application - Yahoo Finance UK"
@@ -1804,8 +1812,8 @@
       "domain": "news.sbs.co.kr",
       "source_name": "news.sbs.co.kr",
       "first_seen": "2026-09-21T01:08:28+00:00",
-      "last_seen": "2026-10-19T01:18:26+00:00",
-      "times_seen": 5,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 6,
       "sample_titles": [
         "338 Labor Law Violations Found at Semiconductor Manufacturers, SK Hynix Cheongju Campus Accused of 119 - news.sbs.co.kr"
       ]
@@ -1915,8 +1923,8 @@
       "domain": "livemint.com",
       "source_name": "Livemint",
       "first_seen": "2026-09-28T01:41:20+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "India's semiconductor boom: how to separate the wheat from the chaff - Livemint"
       ]
@@ -1935,8 +1943,8 @@
       "domain": "electronics.economictimes.indiatimes.com",
       "source_name": "electronics.economictimes.indiatimes.com",
       "first_seen": "2026-10-05T02:02:15+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 2,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 3,
       "sample_titles": [
         "Air Liquide to invest 170 mn euros in Japan to supply UHP gases to semiconductor maker - electronics.economictimes.indiatimes.com",
         "Waaree Energies’ subsidiary forays into specialty gases biz to serve solar cell, semiconductor makers - electronics.economictimes.indiatimes.com"
@@ -2148,8 +2156,8 @@
       "domain": "nvidianews.nvidia.com",
       "source_name": "NVIDIA Newsroom",
       "first_seen": "2026-10-19T01:18:26+00:00",
-      "last_seen": "2026-10-19T01:18:26+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 2,
       "sample_titles": [
         "NVIDIA and Semiconductor Leaders Advance AI Across Chip Design and Manufacturing for AI-Defined Fabs - NVIDIA Newsroom"
       ]
@@ -2158,8 +2166,8 @@
       "domain": "jpost.com",
       "source_name": "The Jerusalem Post",
       "first_seen": "2026-10-19T01:18:26+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "Three seriously injured in suspected gas cylinder explosion at Intel chip plant in southern Israel - The Jerusalem Post",
         "Second factory worker injured in suspected gas cylinder explosion at Intel plant pronounced dead - The Jerusalem Post"
@@ -2199,11 +2207,12 @@
       "domain": "ynetnews.com",
       "source_name": "Ynetnews",
       "first_seen": "2026-10-19T01:18:26+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 4,
       "sample_titles": [
         "Yakir Kosashvili, 35, identified as second victim of deadly Intel factory explosion - Ynetnews",
-        "Death toll rises to one in Intel plant explosion; two remain seriously injured - Ynetnews"
+        "Death toll rises to one in Intel plant explosion; two remain seriously injured - Ynetnews",
+        "Intel shares plunge 16% as Israel plant blast adds $600M hit - Ynetnews"
       ]
     },
     "israelnationalnews.com": {
@@ -2220,11 +2229,14 @@
       "domain": "calcalistech.com",
       "source_name": "CTech",
       "first_seen": "2026-10-19T01:18:26+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 3,
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "Three seriously injured in explosion at Intel’s Kiryat Gat plant - CTech",
-        "Intel plant reports suspected gas leak less than a week after fatal explosion - CTech"
+        "Intel plant reports suspected gas leak less than a week after fatal explosion - CTech",
+        "Intel’s $600 million question: How the Kiryat Gat explosion hit its forecast - CTech",
+        "Intel shares plunge as Israel factory blast compounds weak outlook - CTech",
+        "Worker dies after explosion at Intel’s Kiryat Gat plant - CTech"
       ]
     },
     "etvbharat.com": {
@@ -2405,6 +2417,96 @@
       "times_seen": 1,
       "sample_titles": [
         "MRPL refinery fire at coker-adjacent plant kills one, injures another - Oil & Gas Journal"
+      ]
+    },
+    "etfstream.com": {
+      "domain": "etfstream.com",
+      "source_name": "ETF Stream",
+      "first_seen": "2026-11-02T02:32:55+00:00",
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "VanEck extends semiconductor ETF range with pure-play China exposure - ETF Stream"
+      ]
+    },
+    "tokenpost.com": {
+      "domain": "tokenpost.com",
+      "source_name": "www.tokenpost.com",
+      "first_seen": "2026-11-02T02:32:55+00:00",
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Goldman Sachs Ties Semiconductor Exposure to 54% of Return Gaps - www.tokenpost.com"
+      ]
+    },
+    "businesstoday.com.my": {
+      "domain": "businesstoday.com.my",
+      "source_name": "BusinessToday Malaysia",
+      "first_seen": "2026-11-02T02:32:55+00:00",
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Texchem Boosted By Semiconductor Demand But Weighed By Poor F&B Unit - BusinessToday Malaysia"
+      ]
+    },
+    "money.usnews.com": {
+      "domain": "money.usnews.com",
+      "source_name": "US News Money",
+      "first_seen": "2026-11-02T02:32:55+00:00",
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "7 Best Semiconductor ETFs to Buy for 2026 | Investing - US News Money"
+      ]
+    },
+    "igorslab.de": {
+      "domain": "igorslab.de",
+      "source_name": "igor´sLAB",
+      "first_seen": "2026-11-02T02:32:55+00:00",
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Intel Under Pressure After Explosion at Israeli Chip Factory: $600 Million in Revenue Losses Expected - igor´sLAB"
+      ]
+    },
+    "en.globes.co.il": {
+      "domain": "en.globes.co.il",
+      "source_name": "Globes - Israel Business News",
+      "first_seen": "2026-11-02T02:32:55+00:00",
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Kiryat Gat explosion proves costly for Intel - Globes - Israel Business News"
+      ]
+    },
+    "desmoinesregister.com": {
+      "domain": "desmoinesregister.com",
+      "source_name": "The Des Moines Register",
+      "first_seen": "2026-11-02T02:32:55+00:00",
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Coating & High-Purity Expertise: Semicera Builds Semiconductor Process Material Brand Moat with 59,000㎡ Facility - The Des Moines Register"
+      ]
+    },
+    "news.liga.net": {
+      "domain": "news.liga.net",
+      "source_name": "LIGA.net",
+      "first_seen": "2026-11-02T02:32:55+00:00",
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "A large oil refinery is on fire in Kstovo, Russia – photo - LIGA.net"
+      ]
+    },
+    "mlive.com": {
+      "domain": "mlive.com",
+      "source_name": "MLive.com",
+      "first_seen": "2026-11-02T02:32:55+00:00",
+      "last_seen": "2026-11-02T02:32:55+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Worker sues LG Energy Solution after pipe explosion at Holland battery plant - MLive.com"
       ]
     }
   }
