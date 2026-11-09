@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_run": "2026-11-02T02:32:55+00:00",
+  "last_run": "2026-11-09T02:41:11+00:00",
   "sources": {
     "eletimes.ai": {
       "domain": "eletimes.ai",
@@ -44,8 +44,8 @@
       "domain": "chosun.com",
       "source_name": "조선일보",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 46,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 47,
       "sample_titles": [
         "Morgan Stanley Advises Reducing Semiconductor Stock Exposure as Earnings Peak - 조선일보",
         "Second Fire at SK Hynix Sparks Safety Management Questions - 조선일보",
@@ -199,8 +199,8 @@
       "domain": "globenewswire.com",
       "source_name": "GlobeNewswire",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-10-12T02:26:12+00:00",
-      "times_seen": 15,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 16,
       "sample_titles": [
         "Electronic Hydrofluoric Acid Market to Reach $1.87 Billion by 2030 as Controlled Semiconductor Capacity Expands - GlobeNewswire",
         "Electronic Hydrofluoric Acid Market to Reach $1.87 Billion by 2030 as Controlled Semiconductor Capacity Expands - globenewswire.com",
@@ -267,8 +267,8 @@
       "domain": "gasworld.com",
       "source_name": "gasworld",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 13,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 17,
       "sample_titles": [
         "HyET and Nippon Sanso advance UHP hydrogen tech for semiconductors - gasworld",
         "Are semiconductor manufacturers asking more from specialty gas producers? - gasworld",
@@ -358,8 +358,8 @@
       "domain": "businesstimes.com.sg",
       "source_name": "The Business Times",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 5,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 6,
       "sample_titles": [
         "Australia says refinery fire may hit petrol production more than diesel, jet fuel - The Business Times",
         "Yemen’s Houthis say they attacked Saudi Aramco Jazan refinery, fire extinguished - The Business Times",
@@ -403,8 +403,8 @@
       "domain": "militarnyi.com",
       "source_name": "Мілітарний",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 11,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 12,
       "sample_titles": [
         "The Salavat Oil Refinery is on Fire After Being Hit by Ukrainian UAVs - Мілітарний",
         "Russia: Wildberries Hub and Kstovo Oil Refinery Hit by Drones, Catch Fire - Мілітарний",
@@ -638,8 +638,8 @@
       "domain": "pravda.com.ua",
       "source_name": "Українська правда",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 19,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 20,
       "sample_titles": [
         "Fire reported near Moscow oil refinery after drone attack on city - Українська правда",
         "Ukraine hits Lukoil refinery in Russia's Perm: fire raging– video - Українська правда",
@@ -897,8 +897,8 @@
       "domain": "kyivindependent.com",
       "source_name": "The Kyiv Independent",
       "first_seen": "2026-07-27T00:13:40+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 7,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 8,
       "sample_titles": [
         "Ukrainian drones strike oil refinery, pumping station, explosions seen near 'Russia's Amazon' logistics hub - The Kyiv Independent",
         "Moscow Oil Refinery reportedly on fire again - The Kyiv Independent",
@@ -1285,8 +1285,8 @@
       "domain": "equitymaster.com",
       "source_name": "Equitymaster",
       "first_seen": "2026-08-16T23:34:38+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 9,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 10,
       "sample_titles": [
         "4 Semiconductor Proxy Stocks with Strong Expansion Plans - Equitymaster",
         "5 Semiconductor Chemical Stocks to Watch in India - Equitymaster"
@@ -1455,23 +1455,26 @@
       "domain": "newsukraine.rbc.ua",
       "source_name": "RBC-Ukraine",
       "first_seen": "2026-08-23T23:36:22+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 4,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 5,
       "sample_titles": [
         "Fire Point confirms strikes on oil refinery and Ozon warehouse in Russia's Samara region - RBC-Ukraine",
         "Drone strike sparks huge fire at Russian Novokuibyshevsk oil refinery - RBC-Ukraine",
         "Drones attack Russia's Volgograd, fire erupts near Lukoil refinery and chemical plant - RBC-Ukraine",
-        "Russia's Kstovo oil refinery attacked: Large-scale fire breaks out at facility - RBC-Ukraine"
+        "Russia's Kstovo oil refinery attacked: Large-scale fire breaks out at facility - RBC-Ukraine",
+        "Explosions rock Russia's Saratov as drone attack sparks refinery fire - RBC-Ukraine"
       ]
     },
     "ukrmedia.news": {
       "domain": "ukrmedia.news",
       "source_name": "UkrMedia News",
       "first_seen": "2026-08-23T23:36:22+00:00",
-      "last_seen": "2026-08-23T23:36:22+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 3,
       "sample_titles": [
-        "Drones attacked the Novokuybyshevsk oil refinery in Russia; a fire has broken out at the plant - UkrMedia News"
+        "Drones attacked the Novokuybyshevsk oil refinery in Russia; a fire has broken out at the plant - UkrMedia News",
+        "An oil refinery in Saratov has been attacked: a fire has been reported - UkrMedia News",
+        "The Afipsk oil refinery is under attack once again: a fire has broken out in the Krasnodar Region - UkrMedia News"
       ]
     },
     "inquirer.com": {
@@ -1581,8 +1584,8 @@
       "domain": "techtimes.com",
       "source_name": "Tech Times",
       "first_seen": "2026-08-31T01:23:08+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 10,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 11,
       "sample_titles": [
         "Semiconductor Supply Chain Closes Fluoropolymer Gap: Nichias Builds PFA Tube Plant in Hsinchu - Tech Times",
         "Semiconductor Supply Chain Closes Fluoropolymer Gap: Nichias Builds PFA Tube Plant in Hsinchu - techtimes.com"
@@ -1672,12 +1675,13 @@
       "domain": "247wallst.com",
       "source_name": "24/7 Wall St.",
       "first_seen": "2026-09-07T01:02:45+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 10,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 11,
       "sample_titles": [
         "Micron’s Insane Productivity Explosion: Revenue Per Employee Doubled to $1.7 Million in Just 9 Months - 24/7 Wall St.",
         "On Semiconductor Climbs 8%, Synaptics Surges 14% as $5.7B Cash Bid Replaces $7B Stock Deal - 24/7 Wall St.",
-        "You Bought a Semiconductor Fund. On $500,000, $87,743 of It Is NVIDIA - 24/7 Wall St."
+        "You Bought a Semiconductor Fund. On $500,000, $87,743 of It Is NVIDIA - 24/7 Wall St.",
+        "Own a Semiconductor ETF? Lam Research’s Buyback Move Affects You - 24/7 Wall St."
       ]
     },
     "idahostatesman.com": {
@@ -1695,23 +1699,25 @@
       "domain": "hazardexonthenet.net",
       "source_name": "HazardEx",
       "first_seen": "2026-09-07T01:02:45+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 12,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 13,
       "sample_titles": [
         "Brazil chemical plant fire involves multiple explosions - HazardEx",
         "Chile chemical plant fire triggers multiple explosions - HazardEx",
         "India MRPL refinery explosion kills one and injures nine after separator rupture - HazardEx",
-        "South Korea chemical plant fire spreads to seven storage tanks during toluene transfer - HazardEx"
+        "South Korea chemical plant fire spreads to seven storage tanks during toluene transfer - HazardEx",
+        "Explosion and fire at chemical plant in US - HazardEx"
       ]
     },
     "english.aawsat.com": {
       "domain": "english.aawsat.com",
       "source_name": "ASHARQ AL-AWSAT English",
       "first_seen": "2026-09-07T01:02:45+00:00",
-      "last_seen": "2026-09-07T01:02:45+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Production Resumes at Iraq Refinery after Fire - ASHARQ AL-AWSAT English"
+        "Production Resumes at Iraq Refinery after Fire - ASHARQ AL-AWSAT English",
+        "Thick Smoke at Tehran Refinery Caused by Safety Flaring, No Fire Reported - ASHARQ AL-AWSAT English"
       ]
     },
     "misbar.com": {
@@ -1812,8 +1818,8 @@
       "domain": "news.sbs.co.kr",
       "source_name": "news.sbs.co.kr",
       "first_seen": "2026-09-21T01:08:28+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 6,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 7,
       "sample_titles": [
         "338 Labor Law Violations Found at Semiconductor Manufacturers, SK Hynix Cheongju Campus Accused of 119 - news.sbs.co.kr"
       ]
@@ -2066,10 +2072,11 @@
       "domain": "semiconductors.org",
       "source_name": "Semiconductor Industry Association | SIA",
       "first_seen": "2026-10-12T02:26:12+00:00",
-      "last_seen": "2026-10-12T02:26:12+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Year-to-Date Global Semiconductor Sales Top $1 Trillion Through August - Semiconductor Industry Association | SIA"
+        "Year-to-Date Global Semiconductor Sales Top $1 Trillion Through August - Semiconductor Industry Association | SIA",
+        "Global Semiconductor Sales Increase 24.1% from Q2 2026 to Q3 2026 - Semiconductor Industry Association | SIA"
       ]
     },
     "english.cw.com.tw": {
@@ -2156,8 +2163,8 @@
       "domain": "nvidianews.nvidia.com",
       "source_name": "NVIDIA Newsroom",
       "first_seen": "2026-10-19T01:18:26+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 2,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 3,
       "sample_titles": [
         "NVIDIA and Semiconductor Leaders Advance AI Across Chip Design and Manufacturing for AI-Defined Fabs - NVIDIA Newsroom"
       ]
@@ -2229,8 +2236,8 @@
       "domain": "calcalistech.com",
       "source_name": "CTech",
       "first_seen": "2026-10-19T01:18:26+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 7,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 9,
       "sample_titles": [
         "Three seriously injured in explosion at Intel’s Kiryat Gat plant - CTech",
         "Intel plant reports suspected gas leak less than a week after fatal explosion - CTech",
@@ -2403,10 +2410,11 @@
       "domain": "arabnews.com",
       "source_name": "Arab News",
       "first_seen": "2026-10-26T01:13:09+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Venezuela’s Cardon refinery halted amid fire, sources say - Arab News"
+        "Venezuela’s Cardon refinery halted amid fire, sources say - Arab News",
+        "Thick smoke at Tehran refinery caused by safety flaring, no fire reported - Arab News"
       ]
     },
     "ogj.com": {
@@ -2453,10 +2461,11 @@
       "domain": "money.usnews.com",
       "source_name": "US News Money",
       "first_seen": "2026-11-02T02:32:55+00:00",
-      "last_seen": "2026-11-02T02:32:55+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "7 Best Semiconductor ETFs to Buy for 2026 | Investing - US News Money"
+        "7 Best Semiconductor ETFs to Buy for 2026 | Investing - US News Money",
+        "7 Best Semiconductor ETFs to Buy for 2026 | Investing - U.S. News - Money"
       ]
     },
     "igorslab.de": {
@@ -2507,6 +2516,118 @@
       "times_seen": 1,
       "sample_titles": [
         "Worker sues LG Energy Solution after pipe explosion at Holland battery plant - MLive.com"
+      ]
+    },
+    "global.morningstar.com": {
+      "domain": "global.morningstar.com",
+      "source_name": "Morningstar",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "TSMC, Samsung, and SK Hynix: Why This Investment Trust Is Reducing Its AI Exposure - Morningstar"
+      ]
+    },
+    "rockfordnewsfirst.com": {
+      "domain": "rockfordnewsfirst.com",
+      "source_name": "WIFR",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 2,
+      "sample_titles": [
+        "City of Oregon Mayor addresses fire at former Paragon Foundry - WIFR",
+        "Oregon police investigate massive fire at former foundry building - WIFR"
+      ]
+    },
+    "hoodline.com": {
+      "domain": "hoodline.com",
+      "source_name": "Hoodline",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Oregon Foundry Fire: Historic Vacant Building Destroyed - Hoodline"
+      ]
+    },
+    "shawlocal.com": {
+      "domain": "shawlocal.com",
+      "source_name": "Shaw Local",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Firefighters battling large fire at Oregon’s old foundry building Friday night - Shaw Local"
+      ]
+    },
+    "ebc.com": {
+      "domain": "ebc.com",
+      "source_name": "EBC Financial Group",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "AIFR ETF Explained: How Foundry Exposure Differs From SMH and SOXX - EBC Financial Group"
+      ]
+    },
+    "insurancejournal.com": {
+      "domain": "insurancejournal.com",
+      "source_name": "Insurance Journal",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Mississippi Chemical Plant Explosion Linked to Herbicide Fire - Insurance Journal"
+      ]
+    },
+    "actionnews5.com": {
+      "domain": "actionnews5.com",
+      "source_name": "Action News 5",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Shelter-in-place lifted after chemical plant explosion in Mississippi Delta; fire contained - Action News 5"
+      ]
+    },
+    "reform.news": {
+      "domain": "reform.news",
+      "source_name": "REFORM.news",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Optoelectronics Plant Catches Fire in Oryol and Oil Refinery in Saratov Following Drone Attack - REFORM.news"
+      ]
+    },
+    "censor.net": {
+      "domain": "censor.net",
+      "source_name": "Цензор.НЕТ",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 2,
+      "sample_titles": [
+        "Drones attacked oil refinery in Saratov: fire broke out - Цензор.НЕТ",
+        "In Krasnodar Region, drones attacked Afipsk oil refinery: fire broke out. VIDEO+PHOTO - Цензор.НЕТ"
+      ]
+    },
+    "localmemphis.com": {
+      "domain": "localmemphis.com",
+      "source_name": "localmemphis.com",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "EMA shares update on Greenville, Mississippi, chemical plant explosion - localmemphis.com"
+      ]
+    },
+    "darkhorsepressnow.com": {
+      "domain": "darkhorsepressnow.com",
+      "source_name": "Darkhorse Press",
+      "first_seen": "2026-11-09T02:41:11+00:00",
+      "last_seen": "2026-11-09T02:41:11+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Officials: No hazards detected in air monitoring after Greenville chemical plant fire - Darkhorse Press"
       ]
     }
   }

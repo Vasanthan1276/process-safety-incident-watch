@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-11-09T02:41:11+00:00",
+  "queries_total": 5,
+  "articles_discovered": 183,
+  "unique_articles": 182,
+  "quick_screened_in": 64,
+  "selected_for_enrichment": 46,
+  "article_pages_enriched": 46,
+  "confirmed_candidates": 3,
+  "under_review_candidates": 38,
+  "rejected_after_analysis": 5,
+  "outside_lookback_window": 112,
+  "query_details": [
+    {
+      "name": "semiconductor_incidents",
+      "stream": "Semiconductor",
+      "priority": "normal",
+      "discovered": 50,
+      "quick_screened_in": 19,
+      "selected_for_enrichment": 18,
+      "selected_titles": [
+        "TSMC, Samsung, and SK Hynix: Why This Investment Trust Is Reducing Its AI Exposure - Morningstar",
+        "NVIDIA and Semiconductor Leaders Advance AI Across Chip Design and Manufacturing for AI-Defined Fabs - NVIDIA Newsroom",
+        "Semiconductor and AI Revolution - www.pib.gov.in",
+        "City of Oregon Mayor addresses fire at former Paragon Foundry - WIFR",
+        "Oregon Foundry Fire: Historic Vacant Building Destroyed - Hoodline",
+        "Firefighters battling large fire at Oregon’s old foundry building Friday night - Shaw Local",
+        "Oregon police investigate massive fire at former foundry building - WIFR",
+        "Own a Semiconductor ETF? Lam Research’s Buyback Move Affects You - 24/7 Wall St.",
+        "Global Semiconductor Sales Increase 24.1% from Q2 2026 to Q3 2026 - Semiconductor Industry Association | SIA",
+        "CGA launches new semiconductor gas standards library - gasworld",
+        "Nippon Sanso expands South Korea semiconductor gas capacity | Electronics & Semiconductors - gasworld",
+        "7 Best Semiconductor ETFs to Buy for 2026 | Investing - U.S. News - Money",
+        "AIFR ETF Explained: How Foundry Exposure Differs From SMH and SOXX - EBC Financial Group",
+        "China hits Japan with anti-dumping measures for semiconductor chemical - The Business Times",
+        "Japan’s Air Water buys 35% stake in Taiwan semiconductor gas supplier - gasworld",
+        "Vacant industrial building in Oregon destroyed by Friday night fire; cause is under investigation - Shaw Local",
+        "Oregon mayor addresses major fire at city-owned industrial building - WIFR",
+        "Chip Stocks Have Been Hit Hard. Nvidia and 4 More at Fire-Sale Prices. - Barron's"
+      ]
+    },
+    {
+      "name": "semiconductor_hazard_systems",
+      "stream": "Semiconductor",
+      "priority": "normal",
+      "discovered": 26,
+      "quick_screened_in": 1,
+      "selected_for_enrichment": 1,
+      "selected_titles": [
+        "Burckhardt Compression secures orders for semiconductor hydrogen application - GlobeNewswire"
+      ]
+    },
+    {
+      "name": "major_semiconductor_company_incidents",
+      "stream": "Semiconductor",
+      "priority": "high",
+      "discovered": 48,
+      "quick_screened_in": 3,
+      "selected_for_enrichment": 3,
+      "selected_titles": [
+        "Intel plant reports suspected gas leak less than a week after fatal explosion - CTech",
+        "Intel Israel plant explosion sparks NF3 leak - gasworld",
+        "Worker dies after explosion at Intel’s Kiryat Gat plant - CTech"
+      ]
+    },
+    {
+      "name": "semiconductor_fluorine_hf_watch",
+      "stream": "Semiconductor",
+      "priority": "high",
+      "discovered": 8,
+      "quick_screened_in": 7,
+      "selected_for_enrichment": 6,
+      "selected_titles": [
+        "Hokkaido University student dies following hydrofluoric acid exposure - Chemical & Engineering News",
+        "338 Labor Law Violations Found at Semiconductor Manufacturers, SK Hynix Cheongju Campus Accused of 119 - news.sbs.co.kr",
+        "5 Semiconductor Chemical Stocks to Watch in India - Equitymaster",
+        "Semiconductor Supply Chain Closes Fluoropolymer Gap: Nichias Builds PFA Tube Plant in Hsinchu - Tech Times",
+        "Semiconductor Sector's Chinese Raw Material Dependency Deepens Vulnerability - 조선일보",
+        "Electronic Grade Hydrofluoric Acid Market in India: Size, Trends and Forecast to 2035 - IndexBox"
+      ]
+    },
+    {
+      "name": "cross_industry_process_safety",
+      "stream": "Cross-Industry",
+      "priority": "normal",
+      "discovered": 51,
+      "quick_screened_in": 34,
+      "selected_for_enrichment": 18,
+      "selected_titles": [
+        "Explosions rock Russia's Saratov as drone attack sparks refinery fire - RBC-Ukraine",
+        "Mississippi Chemical Plant Explosion Linked to Herbicide Fire - Insurance Journal",
+        "Explosion and fire at chemical plant in US - HazardEx",
+        "Shelter-in-place lifted after chemical plant explosion in Mississippi Delta; fire contained - Action News 5",
+        "Crews respond to early morning explosion at a Mississippi chemical plant - AP News",
+        "Libya oil refinery fire: Firefighters battle huge blaze after drone attack - BBC",
+        "Thick Smoke at Tehran Refinery Caused by Safety Flaring, No Fire Reported - ASHARQ AL-AWSAT English",
+        "Thick smoke at Tehran refinery caused by safety flaring, no fire reported - Arab News",
+        "Optoelectronics Plant Catches Fire in Oryol and Oil Refinery in Saratov Following Drone Attack - REFORM.news",
+        "Drones attacked oil refinery in Saratov: fire broke out - Цензор.НЕТ",
+        "An oil refinery in Saratov has been attacked: a fire has been reported - UkrMedia News",
+        "Ukrainian Drone Strike Sparks Fire at Afipsky Oil Refinery in Russia - Мілітарний",
+        "The Afipsk oil refinery is under attack once again: a fire has broken out in the Krasnodar Region - UkrMedia News",
+        "In Krasnodar Region, drones attacked Afipsk oil refinery: fire broke out. VIDEO+PHOTO - Цензор.НЕТ",
+        "Ukrainian forces target oil refinery as explosions reported across southern Russia - The Kyiv Independent",
+        "Afipsky oil refinery in Russia's Krasnodar Krai targeted in attack, fire breaks out – photos - Українська правда",
+        "EMA shares update on Greenville, Mississippi, chemical plant explosion - localmemphis.com",
+        "Officials: No hazards detected in air monitoring after Greenville chemical plant fire - Darkhorse Press"
+      ]
+    }
+  ],
+  "providers": {
+    "GDELT": {
+      "queries_succeeded": 2,
+      "queries_failed": 1,
+      "articles_returned": 1,
+      "failures": [
+        "GDELT semiconductor_incidents: HTTP 429"
+      ]
+    },
+    "Google News RSS": {
+      "queries_succeeded": 5,
+      "queries_failed": 0,
+      "articles_returned": 182,
+      "failures": []
+    }
+  }
+}
