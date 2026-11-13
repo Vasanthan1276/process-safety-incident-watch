@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_run": "2026-11-09T02:41:11+00:00",
+  "last_run": "2026-11-13T10:24:51+00:00",
   "sources": {
     "eletimes.ai": {
       "domain": "eletimes.ai",
@@ -267,8 +267,8 @@
       "domain": "gasworld.com",
       "source_name": "gasworld",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-11-09T02:41:11+00:00",
-      "times_seen": 17,
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 18,
       "sample_titles": [
         "HyET and Nippon Sanso advance UHP hydrogen tech for semiconductors - gasworld",
         "Are semiconductor manufacturers asking more from specialty gas producers? - gasworld",
@@ -403,8 +403,8 @@
       "domain": "militarnyi.com",
       "source_name": "Мілітарний",
       "first_seen": "2026-07-19T13:19:02+00:00",
-      "last_seen": "2026-11-09T02:41:11+00:00",
-      "times_seen": 12,
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 14,
       "sample_titles": [
         "The Salavat Oil Refinery is on Fire After Being Hit by Ukrainian UAVs - Мілітарний",
         "Russia: Wildberries Hub and Kstovo Oil Refinery Hit by Drones, Catch Fire - Мілітарний",
@@ -662,13 +662,14 @@
       "domain": "themoscowtimes.com",
       "source_name": "The Moscow Times",
       "first_seen": "2026-07-19T13:33:27+00:00",
-      "last_seen": "2026-10-19T01:18:26+00:00",
-      "times_seen": 9,
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 10,
       "sample_titles": [
         "Ukrainian Strike Kills 1 in Southern Russia, Refinery on Fire - The Moscow Times",
         "Ukrainian Drone Attack Kills One, Sparks Fire at Yaroslavl Oil Refinery - The Moscow Times",
         "Ukrainian Drone Attack Sparks Fire at Yaroslavl Oil Refinery - The Moscow Times",
-        "Ukrainian Drones Spark Fire at Ryazan Refinery as Zelensky Vows to Resume Attacks - The Moscow Times"
+        "Ukrainian Drones Spark Fire at Ryazan Refinery as Zelensky Vows to Resume Attacks - The Moscow Times",
+        "Ukrainian Drone Attack Kills Woman, Sparks Fire at Leningrad Region Refinery - The Moscow Times"
       ]
     },
     "mezha.net": {
@@ -1346,8 +1347,8 @@
       "domain": "aljazeera.com",
       "source_name": "Al Jazeera",
       "first_seen": "2026-08-16T23:34:38+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 8,
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 9,
       "sample_titles": [
         "Huge fire breaks out at Libya’s Zawiya refinery after drone attack - Al Jazeera",
         "Fire rages after drone strikes Libya’s largest oil refinery - Al Jazeera",
@@ -1713,11 +1714,12 @@
       "domain": "english.aawsat.com",
       "source_name": "ASHARQ AL-AWSAT English",
       "first_seen": "2026-09-07T01:02:45+00:00",
-      "last_seen": "2026-11-09T02:41:11+00:00",
-      "times_seen": 2,
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 3,
       "sample_titles": [
         "Production Resumes at Iraq Refinery after Fire - ASHARQ AL-AWSAT English",
-        "Thick Smoke at Tehran Refinery Caused by Safety Flaring, No Fire Reported - ASHARQ AL-AWSAT English"
+        "Thick Smoke at Tehran Refinery Caused by Safety Flaring, No Fire Reported - ASHARQ AL-AWSAT English",
+        "Ukrainian Drone Attack Sets Russia’s Major Kirishi Oil Refinery on Fire, Governor Says - ASHARQ AL-AWSAT English"
       ]
     },
     "misbar.com": {
@@ -1818,10 +1820,11 @@
       "domain": "news.sbs.co.kr",
       "source_name": "news.sbs.co.kr",
       "first_seen": "2026-09-21T01:08:28+00:00",
-      "last_seen": "2026-11-09T02:41:11+00:00",
-      "times_seen": 7,
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 8,
       "sample_titles": [
-        "338 Labor Law Violations Found at Semiconductor Manufacturers, SK Hynix Cheongju Campus Accused of 119 - news.sbs.co.kr"
+        "338 Labor Law Violations Found at Semiconductor Manufacturers, SK Hynix Cheongju Campus Accused of 119 - news.sbs.co.kr",
+        "Malaysia Investigates AI Semiconductor Leak Involving Firm Linked to Alice Huang - news.sbs.co.kr"
       ]
     },
     "tataelectronics.com": {
@@ -2021,10 +2024,11 @@
       "domain": "en.apa.az",
       "source_name": "Apa.az",
       "first_seen": "2026-10-05T02:02:15+00:00",
-      "last_seen": "2026-10-05T02:02:15+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Fire at chemical plant in Moscow region kills five - Apa.az"
+        "Fire at chemical plant in Moscow region kills five - Apa.az",
+        "Massive drone attack hits Russia's Volgograd, fire breaks out at oil refinery - VIDEO - Apa.az"
       ]
     },
     "sg.finance.yahoo.com": {
@@ -2236,8 +2240,8 @@
       "domain": "calcalistech.com",
       "source_name": "CTech",
       "first_seen": "2026-10-19T01:18:26+00:00",
-      "last_seen": "2026-11-09T02:41:11+00:00",
-      "times_seen": 9,
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 11,
       "sample_titles": [
         "Three seriously injured in explosion at Intel’s Kiryat Gat plant - CTech",
         "Intel plant reports suspected gas leak less than a week after fatal explosion - CTech",
@@ -2421,8 +2425,8 @@
       "domain": "ogj.com",
       "source_name": "Oil & Gas Journal",
       "first_seen": "2026-10-26T01:13:09+00:00",
-      "last_seen": "2026-10-26T01:13:09+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 2,
       "sample_titles": [
         "MRPL refinery fire at coker-adjacent plant kills one, injures another - Oil & Gas Journal"
       ]
@@ -2593,10 +2597,11 @@
       "domain": "reform.news",
       "source_name": "REFORM.news",
       "first_seen": "2026-11-09T02:41:11+00:00",
-      "last_seen": "2026-11-09T02:41:11+00:00",
-      "times_seen": 1,
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 2,
       "sample_titles": [
-        "Optoelectronics Plant Catches Fire in Oryol and Oil Refinery in Saratov Following Drone Attack - REFORM.news"
+        "Optoelectronics Plant Catches Fire in Oryol and Oil Refinery in Saratov Following Drone Attack - REFORM.news",
+        "Fire Breaks Out at Omsk Oil Refinery After Strikes - REFORM.news"
       ]
     },
     "censor.net": {
@@ -2628,6 +2633,66 @@
       "times_seen": 1,
       "sample_titles": [
         "Officials: No hazards detected in air monitoring after Greenville chemical plant fire - Darkhorse Press"
+      ]
+    },
+    "detroitnews.com": {
+      "domain": "detroitnews.com",
+      "source_name": "The Detroit News",
+      "first_seen": "2026-11-13T10:24:51+00:00",
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Fire breaks out at tent camp following Israeli airstrike on metal foundry in Gaza City - The Detroit News"
+      ]
+    },
+    "digitalfoundry.net": {
+      "domain": "digitalfoundry.net",
+      "source_name": "Digital Foundry",
+      "first_seen": "2026-11-13T10:24:51+00:00",
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Rockstar Officially Confirms GTA 6 Regional Release Times - and They're Not What We Thought - Digital Foundry"
+      ]
+    },
+    "cen.acs.org": {
+      "domain": "cen.acs.org",
+      "source_name": "Chemical & Engineering News",
+      "first_seen": "2026-11-13T10:24:51+00:00",
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Hokkaido University student dies following hydrofluoric acid exposure - Chemical & Engineering News"
+      ]
+    },
+    "kitv.com": {
+      "domain": "kitv.com",
+      "source_name": "KITV",
+      "first_seen": "2026-11-13T10:24:51+00:00",
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Honolulu firefighters extinguish refinery equipment fire in Kalihi - KITV"
+      ]
+    },
+    "nationalsecurityjournal.org": {
+      "domain": "nationalsecurityjournal.org",
+      "source_name": "National Security Journal",
+      "first_seen": "2026-11-13T10:24:51+00:00",
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Russia Just Got Handed Another Refinery Fire: Ukraine Hit the Plant That Supplies St. Petersburg and Pulkovo Airport With Fuel, Again - National Security Journal"
+      ]
+    },
+    "abc.net.au": {
+      "domain": "abc.net.au",
+      "source_name": "ABC News & Headlines – Australian Broadcasting Corporation",
+      "first_seen": "2026-11-13T10:24:51+00:00",
+      "last_seen": "2026-11-13T10:24:51+00:00",
+      "times_seen": 1,
+      "sample_titles": [
+        "Ukrainian drone attack sets Russia's Kirishi refinery ablaze, woman killed by debris - ABC News & Headlines – Australian Broadcasting Corporation"
       ]
     }
   }

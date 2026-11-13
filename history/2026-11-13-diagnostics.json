@@ -1,0 +1,264 @@
+{
+  "generated_at": "2026-11-13T10:24:51+00:00",
+  "queries_total": 5,
+  "articles_discovered": 182,
+  "unique_articles": 181,
+  "quick_screened_in": 21,
+  "selected_for_enrichment": 20,
+  "article_pages_enriched": 0,
+  "confirmed_candidates": 0,
+  "needs_review_candidates": 20,
+  "under_review_candidates": 20,
+  "rejected_after_analysis": 0,
+  "screened_out": [
+    {
+      "title": "Japan's Five Major Chemical Companies All Raise Guidance, AI Semiconductor Demand Drives Gains; Mitsubishi Chemical Group Sees Core Profit of ¥340 Billion - BigGo Finance",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9PVm9Fdjh1aEMwZzFFdGtSeFQzR29aVGRYT3FBamstT1p3MVVWV0RGTnhNSXlCeDVDMlY2cmhCNm1OX2pKemtLUVZPaEItbkNJdXE3X3BLd01LVG1jeGpmRkJuVWEwNUI1VDUzdGZEY3hLbEdEOXc?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "IEMC targets 2028 start for new Taiwan specialty gas plant - gasworld",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPY280ZmlLcGgzajhjbWVfNWk2anYtYVZ5VHRnd2Z3a210U3R0a1NFdFBRRmdSSzhEbGRWQ0xiQmZuSXgwSFdWSEJzV0prMjhJRnNNZDNhei1iekR0UjdKM2ZfbkJqZktJdkhKQTI3YzIyNndHOU92NHIzVlc3clg3ekhOVjhIcm9JNGtjYzRBZU5QMTcxUGZfZl9nZGVpaXdDN3VlUFJhTlZHQQ?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "Semiconductors drive earnings growth at Japan’s chemical companies - Chemical & Engineering News",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdGFZSXVVQnBfNENHWjJGYnI3TXVramphSXNPTkJqWWwyT3BBb2h4X2F5NElrMW90bTZoZUJTdTF3eUxmVE9aOE93UDhFUUY2SEpxU0NHVkdBRHl3bkIzd0FQakR5Rk5CTVNOSDliYm90UU5RbnRaVDY0MTg5RnVzU3Y1YWcxQjJxY29GRzBjajdaeGNfLXk0ODF4dUVRNnktRzU1czUtUEUtS0E?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "$11.6 bn Mitsui Chemicals–JSR deal signals global consolidation in semiconductor chemicals - Indiatimes",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQaHFTcWdUcE9wd2pENncwS3AtZ2Z2TDh2VXdxdFNEWHNhWVVlN0NpSlJpYVo4UGgya1JmZ2ZoOG9KOGhTYzVRU2VYQTExTFFMZ1VGaGNvbHIyM1c1SVVhU0RhMjhiZVJSY3UtZ0JZczhaZHZlZElUNUVuZWxKM2t2aGk0OHQ0X2trbUxXVk1IemZVM1d6Ni1vTlpmbjNwVFR5LWtJa1RPcGtfbnMzNU9tcTRIdW9fS09WekRkV285MGdnMmNnUzdvNHNMVVJDeS1VeF9sbU5RbHQ3NjRFZmJTemFGelJONXZVN1lhNWNtRmhEQmFDd3JtWHROZFYtc2_SAYMCQVVfeXFMTTJCNGVKZWhrNFZjVkdBbS01c1ZaYzhtSXhDMDJuZkJjUWJra1pkczBOTFM5aXFtVHdCOUwzWjhsVU94SEpjbTgwV3R4S0JjVDFTZUpCTHlJZFB4c001VWpibmhmdHdiRWVITTFqV2c2eHFwLWhYdTFHekdoNVVrOURoaEpNcmhqdDcydHZVZnE2QVFQUWNpb2V5Z3ltV1IwVEg3aWJJVUNnVHVmbGd0TktlNmlTaldqVXZrYVNwRjh2QThUNlBJUlpLNGRndmM0bWQ0THlGTl9CSjlUeUFQZlo4Z3RhWVhMX3N5QzVwSHh2Ni1xUG83UzdhaVpsZmdNaXNwTQ?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "Mitsubishi Gas Chemical Expands Thailand BT Materials Capacity for Semiconductor Boom - ChemAnalyst",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOMUhpYm1SVUpEV3VJM1lySU9qSUxSZkJCdlJRZ1VUVmp6UmEyck5CRGk4b09FQnhhdElta1dLdk1Dc0ZnaGJEeHVqQ29nYm9uUERLd1E5Y0xkalB2akJwNlFicW9TczlWSGtVc2hxYm0xSE1wdDFYRDBET2lSVnRINnNqaHM2dmMyalZxT3cxNElGd0pQRWtiMGw1ZV8xOExiZ1ZfVE41MFo1d0ZDTy1zQS1mV1pPTWtkR19LS3RWWmV5a0VvckNGUUNVLTRManFIUGFLWHp3?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "ETFs & Nvidia: Midterms, Investigations & Dip Buyers - ETF Database",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQald0anVUb2JQSVZpZHY2MXVXTk56S0l2SUMzTXZoZ3VzNlNrWHVxNWtGeFY5V2FWUDFzYjRUZ0dSYU0wbDRxTmx2MU05RWRIUUx1bkd4QllhU0pEcXpuQzZ0c3o2VTNLS09GTWRvTVFqSTVnNF9zM3ZXWGdFai1EVTFhb1lYT0ljQ0FPVlI2UWVRQQ?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "China hits Japan with anti-dumping measures for semiconductor chemical - The Business Times",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNS1gtYW1QeGVkcXNuc2VTeHVwMmJOSHdiZTg2NWJwcnJ4SEFMTHVZOW9Hb3lkcFpyZF9mYjZEM0xBZWcxTXhWWW5ldFRpQnJLelF0YjdidGMxQVVjcjNfbld6VHFIRTZ4R3Z6TzRFUDR1N2dxV284S3dNMmJiMnpKbzFXMWJiYmtJd0FEdEhiMThXaWJpNnF2bXdpYkZSVHpQekxyS215NS1EUTVB?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "Nvidia sell-off puts semiconductor ETF concentration in focus as Amundi and VanEck hold significant exposure - Citywire",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOMnJYS2VBOUc1Vk8xZmhJTklIYkRHR0c5NTVCZ2ZxcXBvWXJYTzJiSUZyMGFYM0VNV29IU0JGQjl2OC1FWlpUQndySDlRSGRjYUZFU3dCYm9TMUgyTDI4YTlrSjVGOHNYdzVGbHJlTkk0dXRqbUMtZi1SRVZNMnRicUF2NnZkckZFaHFGaTBVQXBNTk5RQjRLM21rUWtxY1BvenROdlhrVTJIWTJmOGxUN1hnanYwYS1oOXVwcGFpWEVlZjZraEoyRXBLN0pMTnpuUXN1VXI0T3QtNTNYSlBWQ2psQ05leDQ?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "7 Best Semiconductor ETFs to Buy for 2026 | Investing - U.S. News - Money",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9NNDJ4SUhnVzEwWENRQ3NnbjJGVUIteElZbW1WRkR5WGxNZkNQdm8wbHJkdTVqZ0tvVk9qMnhvVnBFcmFPSHBLS0dHaU5iUGxvMXAyVFR3UmN5ZGpkUW10VWtRME9hcmVGZlRyRDExOHBTbWl1X3paVnRBVEZ1Q1k?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "Governor Abbott Announces Texas Semiconductor Innovation Fund Grant To Texas Tech University - KCBD",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPaEpoellRUG9hOXNNVFFYUnZmZW1wTWEwcVQxdlo1eXgtSHBGWWNoRkY4aThfYTR0dEN3alVvZ1ZMcnBQQVZFLVUxZGxFMmJGZVlmNmlkX2wzY0s5aHJzbzN6Wkl6WTc3MDlma2dyTW5jS25Fd05YaktVMW4wRTNocGFQSjYwMFFqNy03bmNYeWxpTFg4ZmU2OWdmSFZmbnljazM2NDI3N2lOVTBXUDZoUDE1LWJtckpyRDFJWFVySdIB0wFBVV95cUxOYVFKbm1sdE11NEhTSnhzVUk2Wk5wRVJHd0VsM0M2WldSU2tmYVhEX1JPbExwNDVSMmZ4T0lBaXF3cTJMN19xZGtOeTNDY1laZzRERG5HeHE5X29CWk9QZHdwQ2JZejA1UFRVanpUZFYxV3pZbkhhYWh2MF9vZmtxMHR0U0RSU0dRc2xGS2FFRXI1dGZISXZzQzZUcDd2R3dmWFo2b3hIajA1V09CQmVUbVdRS0dJeFI5dExmUDJNZmpXX055ZFM4TExVSkFZWjlORXlB?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "Siemens to expand portfolio for semiconductor design and verificat ... - Siemens Press",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPTVR4RXJ5V1BXYzkwQW1KNFRKMElESXlkdGgwR1czWlU3RlFXMkcxb3hxUkFwOVg2V0FkaVlfaU40MGtKd0lPNDlreVFMWmNCRjI0SjBMZGZmaU53QnpyckUwV21zemNvaF9XNjJTZFhodzBBdnNiM0p0TDl4R1JyVzBlRnZzRDY0eFdhakYzNl84WXNhaXVkRUl4OVVLZ3BOQmZzbmNkTEZxdHBZWDQzZGRfYXBtNjFLZTdVbktINE1mX2NFWkdqTGowMA?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "Japan’s Air Water buys 35% stake in Taiwan semiconductor gas supplier - gasworld",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeFJ6cWlPVzdNb1VmY2E0eVdEQjFrUzNrOUE4VE5SQ1htb0pEa2VLWlFXTVg4aHNVNnl2UDlTbC1TdkJTcXBOcFRvQm5ZWjZ1YlliX3dXbzBub1ptZElWOWxqekVnUjlRMUZla2FYOGlGZXNqTEdPRDFtSG9XdG1oSVBsMHJNMmJCUHpFTEdXMnloajM4R21hcW5mdVd4cFdnUmJjdkI2bEk1aFV6bGNTQTE2UUJzdzQ?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "Nippon Sanso expands South Korea semiconductor gas capacity | Electronics & Semiconductors - gasworld",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRzQ0YUhuLTZ6RzdJQU9iVERIekJCaEEtbVY3ck1Lbl9lSzNLNkpDVWhQNGhDczgxaUxtanBGcVlidHR6ajk0cEFXOEZES0xSWkZuWUFYZDd0SUpXTFkwdWFheEg2b1h2Si1ibHRxX2pYcE5Ra0ZFcEFvcGE1S04yYk5ralFSWEprM0JJRkJEeENpY3ZmaC1WbGZ5VGdvLTJtS3FSRkZHbzNMLTQ?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "AIFR ETF Explained: How Foundry Exposure Differs From SMH and SOXX - EBC Financial Group",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbTVwRjEtZ3E1NzZMWEZDWmI1eFRHemZYSmU0VnNtdHhhdDFOcVVXZ0pQdWNZNmc3WW5VaE1jUnJlN2dSTWFCaXd2RG5Mckhpc21lRldDZDZDZEhVTFJGNUlhYmN2SXcxYXhNMU5BNUtKcURndUVRRlFEOG1WNDcxWE1vREZrVzZsQnNFd0Q3R2Exd2Q4c1E?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "POSCO, a rare gas player expanding from semiconductors to space - 머니투데이",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBUeDdwU3RqLXh3ck9HRnduMEZ0TFkxUkdzdi1IR21td2Y3ZzVOdFNiQmVfNU56b1JoRjdWZ1ZvaXUxbF9TUVRZX256RzFXNldMczdBZG1jeHdMMXZjRFgzQkRXd0VZVlRRRFR5Vk9zT0k?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "Nvidia CEO on brink of being fired after second affair claim - as major chipmaker sees stock price slump to 52-week low - LBC",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOMXg3c2pEdTdSYzRjZVc0OUQ5bWIzUnZWcTh3aEg3QVBCejRuWGRXVkZzYXhyUHBnNThuRGVBRTVxM2U3TFMyWUtrSUtMcTJVbXVOUEtPYmJnaUtzeDlhcUZtaV9oa3pNSUxKYWsxeHB3VENSbldzdGZJbU41XzFXbTE4MFY?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "NVIDIA and Semiconductor Leaders Advance AI Across Chip Design and Manufacturing for AI-Defined Fabs - NVIDIA Newsroom",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQY0JQSW1rVk16Vk96aEt1QzRJeHNUNXZfclVRVlBFdmhhQ09HS2N3YUlfRnRTejgtdGkwc040QWdHbXkyVXFJcW1uaTdZdV9EMUo0ZDN6cnFiOWxneTlidVpIYmljSHJkTVJaNmhUTDRwb2czQXNtN00taFQ5MkhBZVlITUN6QTBYcUVrdV8tQXFtcDJ2d2EwRjVONU1VdGRCNUhRRnBUbUp1UFRfMmNqaWFJMVdRVXRLa2UzTF9yVmhnM0VadXk3TzRSTjJMZGJn?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "Fire at old Oregon foundry was intentionally set, police chief says - Shaw Local",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTi1qYUwxSXpUQ20zSkFhanB1Y252cXRVellEb3FMeU1ESUdWUUVhZkRfWjRad192MkdUeFc4ald4S1hINlNHSlZMTDJfZS1GNHcwWUI5a2xKUFR2c3dkT0dBRXE4R29SckFfUU9FTlZ5Xzh2WU02cmJHYWdhczlvMnU1bHpEWTJQRWtmZ3Jza2JDQXFURXZZYkt3aWpyWlFJZFhLRFRKeUY4Qy0zaVdVUE5xckp4emxSV2NBblZ3?oc=5",
+      "reason": "Disused building fire; no industrial process event identified"
+    },
+    {
+      "title": "Trump Administration Launches Foundry School to Build the Workforce Behind America’s Manufacturing Comeback - U.S. Department of State (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPTXNZbHdlV1lxQlItVVkxMGhjZlA5b0paZGhWVjF3UEs4MDZOOXZWS3NzaHF1aWlJaUU0OHc4UGI4Nml0X0xNdlUzai1zZDBjQ2NaQzNwTGtTbk5sTllfcTF0TDVxdnVKSFBKb0x3bUFZM1N0NFJFR0tXWGktb0h2WGM5OWZkZ204OV9HMDJ3Tl9UUnNnM2hNSmR6U3dIbTk2V2ZraDhvd3ZKQ010VVI4SXdSRVo2cVlhTTlYSFJRZ2hFcnNfZWZ6ODJPc0kxMDhoNS1uOXFpNmNIeDNyU0tzekxvOXFpV3FuMVc0RWRwbHBVZ0dqdDR6SFdFVy0?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "Organic semiconductor sheet enables light-driven water splitting without external voltage - Tech Xplore",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNYkJtczJJcVhxYlpfMGV2VnJScnF5alNFWTFBbDZ4bnZmbUpVWlF4TXBjbXdZd0ttblVKZUJTQ1JvWkNIdVp1U0c0WVI0ZVpUN1FwZEFHSVJwZTNBRWVISTVudVBsSUN1VkE1VTVxS1A4anQzVllBaGhPa3dXc3B0QTFoRGNkc1BTUy1Mcg?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "Burckhardt Compression secures orders for semiconductor hydrogen application - Yahoo Finance UK",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPV3ktT25CQVNrclRtYkRRTlctN2pKRjRPdGtJSEpXR3A2VVlrQ1gxTDRKVXdrUjg0aE44Q2NrQ29QRzdOdk9pSDNtNGNPSzFyZ3N3MTBaZHVudlEtR3NtTURQRkxySVkzVk9oS3NhSHE2YVNjOFU3QnVRbUdhQjJPQlRqUFdjTkNQYkROa2tGNDRxRDdTQmhkOVNyRUhsazlJUGc?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "Sunlit Fluo & Chemical: The Critical, Under-the-Radar Cog in Taiwan's Semiconductor Sector｜Industry｜2026-09-23 - 天下雜誌",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9wWDZhSVVZTW9tcWhPV3F4WGlvT0lrWmw3M01CQmJBblVqb2dLSVNNYVNVSi1Ja3VWX19GcXZiSDVHejFaeWg5M3AyNjVBQTJvcU1HX0pqLXBwc2IwWmVvajR4cEE0VEk?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "Semiconductor Supply Chain Closes Fluoropolymer Gap: Nichias Builds PFA Tube Plant in Hsinchu - Tech Times",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQbkprZ2NJUmNWakRKQWVMWjZKXzRmMXNESUVTTU56eXZYS29BU0lITUJoazlpUFZtQzhjTlZxSW10ZGRyNDhMcWVobGY3eVlnamdoOEd6OTQ2WGpNWTR3S1B6S3ZxelNWQzdSc1llVXlkQzRpRnNvWWZ5b0o1NDh6MzhKX0hXeTMzY0VmN0RIMm5zam9MYnNEd3RfNlpxYVpuOTRZWC1uOVZPdWd0QXNTS0w0MFJRX19rcGFVRi1PcXpzUHdIS3JJN0dYakxLaEVUUVk1Wk5JdG84ZnBf?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "Semicon India 2026: India Has Potential To Become Semiconductor Hub, Says Navin Fluorine's Devavrata Mafatlal - ETV Bharat",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOOHdPT1g0akNnSXpNZzNKbko2amR5NXJ3UUZQVFNiUHN4SFpfZmdET2FxR0RUSGtPVjNSTWNvQno3MkN3U1pCS3N2bWlTT21uZGtaM2hlVkRHRUZ6UjBxZzk0cTRuOWw5SUtsNWtwSG9SRE1Ta0Z2Wi1rNnFfcEN1VFNzMXNBM2VTYmNFcmR2QUdmbkFXUGJDbUdGSWwwTFFSclZRZmxleGVjRXVUZmFoR3RwY0FJMzFWNHlia3dqZ1VCU29vN2ZNNmp3QlFSd0o0ODhhMmQyY1lhOEhaeU9icEZ5U0hyYXFMMTNUX0J3eUJxTnPSAfgBQVVfeXFMTnpZVnJhdmRHcnFyYmJ1cURZRmF5eG5fd1hVWnlvVVBhQzVWRjhLR1NtVUF4OTE3aGNhUE13cm5mem5DRUhRMk9NeXhwTk0tUXIxVjJRdXZTWmpxaVVibVBKS3ZsWXNTUmo3bG5jRm0xR0NBcTBnSEp4UWdONTVWa2YtaUpFeW41TXhHNXNYdVMtNV8xcTRJRVZSa2xmZWNMOVFRUm5sSGp5UnNnRTBsQnYybjRlU0h4a2kxT3ZDWGszc0VQWVdnWHd6RlFtaUV1RnFxU1gxRXlINk1iUTlUX0pBbGZGZ1cxZ21YdEcwcmlBRi1iTmRwZ3E?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "5 Semiconductor Chemical Stocks to Watch in India - Equitymaster",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOLXJzZnpvcmJQdDhoS19QNVBpT1dCUGs3TWJiSWR1d29pUnRNMmJNd1p2LU1OVW5GTFFuTEtjdVVYbWVKUk5Nc0tMY2pIdlpsTHZReTBBRmFwWU9OME5FcERtVzlZRk9SUWFfWW1OVGg3VFd5ajU5XzFHRmxZN2lBczNWR1hWVFRhSmU4ZE01LWlkSDFuWmhmdGF1dHBpbnhvXzJNTWVSQWRwaXRIelF6Y0VxZGJ6SENSdEZB?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "338 Labor Law Violations Found at Semiconductor Manufacturers, SK Hynix Cheongju Campus Accused of 119 - news.sbs.co.kr",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9uQ0F6dDRlaUlKOEN2b2FZMW1zdTJ4ZVhCdjIxX3RmeWpDVGxVX1hoMG9aeGwxcEt3Tmw5TjhONndwcF9sNmo3VkoydFRYVnN0bWR4NTVGS05pZFZXX1phVE9HdWlzRzdES2dwemtn?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    },
+    {
+      "title": "5 Speciality Chemicals Stocks India 2026: Future Roadmaps - Univest",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNYjZtZEw2RlZUV2ZKRHJWZmUzX3MxZ2dWc0c5WkhINmFDeDRKeE9lMlpObElqM0RBclZ5WmlTYUYwQldpWElfVU9adFJYQWROeEpmalcySEdiYWdaRUpBRjktbnFkd2RfajFPYWdiZEVkdGhwRWFHNU1TaS05dnl6VkRNX2Jidw?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "5 ‘Buy’ recommendations by Jefferies with 13% to 31% upside potential - The Financial Express",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZEU5aXZIUGxZSmFBQTFZRHVNWHNyRGh5WGtCUURwRVZVZkl1Tm9QU2lkbXhaMzdUVVNRMUwwZG1haTBicjUyZVBYN1oyOEtub1Azamt6QjVFUEJMcnpSc2xPd2pBTHF3dHU4dVBoOEw1eEV4aFVKckVRVExnc0NsTzlxWjNPOFkyWmdzWmdRLUZaWFA4Q2ZWdFBYMWFRMDV1NjBDOGpSNVJ6cXBKNlhFZEdUNmnSAbsBQVVfeXFMTlktQkZSTFBOaGFaRkNtSDB2MUFyRDdTOWVQdUc0aURoQUdCc3R2Zk5uUkJpSk9EY2Z1Y2JuaFF6bXJVWmpEZi1pY3hfdXJHOHZpMXJ1S3FCTzJIWkdIdlhzUm9xdkg0bVlNV1lVeVVFNHBOa2lNUVVKY0RxY1BkRmduNDNuZlNfeGV2ZS04dk9VMGtGVEF0RHpnWkZZdlJBajFYMk52SUxSeHdOcXhldjdYMXQ5eVdTOTV5OA?oc=5",
+      "reason": "Business/investment coverage without a physical incident"
+    },
+    {
+      "title": "Anhydrous Hydrofluoric Acid Plant Setup Cost 2026: Production - openPR.com",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOUHhRcTA0UExGUDFvMlNybkd3bWNWUHZDYzZ3ODVlY3JEWnc4NGNYS0VjQy1GYS1GNldJQWY1a1BZeDl2YkIwbmNkdEptOGh1YlpvWmhvb1A5VzRneFJCMjVDcDNteXduZ2JKRjU5aEV3YUZycW5xcVZRV0hnXzlENnY5MjdhQVB2Q3BTR0JZSlRzWjZCTHEwUjRoQng?oc=5",
+      "reason": "No physical process-safety event identified in title/lead"
+    }
+  ],
+  "article_retrieval": {
+    "aggregator_only": 20
+  },
+  "outside_lookback_window": 132,
+  "query_details": [
+    {
+      "name": "semiconductor_incidents",
+      "stream": "Semiconductor",
+      "priority": "normal",
+      "discovered": 50,
+      "quick_screened_in": 4,
+      "selected_for_enrichment": 4,
+      "selected_titles": [
+        "Fire breaks out at tent camp following Israeli airstrike on metal foundry in Gaza City - The Detroit News",
+        "Israeli fire kills seven, including a father and son, in Gaza, medics say - Reuters",
+        "Malaysia Investigates AI Semiconductor Leak Involving Firm Linked to Alice Huang - news.sbs.co.kr",
+        "Rockstar Officially Confirms GTA 6 Regional Release Times - and They're Not What We Thought - Digital Foundry"
+      ],
+      "deferred_by_limit": 0
+    },
+    {
+      "name": "semiconductor_hazard_systems",
+      "stream": "Semiconductor",
+      "priority": "normal",
+      "discovered": 24,
+      "quick_screened_in": 0,
+      "selected_for_enrichment": 0,
+      "selected_titles": [],
+      "deferred_by_limit": 0
+    },
+    {
+      "name": "major_semiconductor_company_incidents",
+      "stream": "Semiconductor",
+      "priority": "high",
+      "discovered": 48,
+      "quick_screened_in": 3,
+      "selected_for_enrichment": 3,
+      "selected_titles": [
+        "Intel plant reports suspected gas leak less than a week after fatal explosion - CTech",
+        "Intel Israel plant explosion sparks NF3 leak - gasworld",
+        "Worker dies after explosion at Intel’s Kiryat Gat plant - CTech"
+      ],
+      "deferred_by_limit": 0
+    },
+    {
+      "name": "semiconductor_fluorine_hf_watch",
+      "stream": "Semiconductor",
+      "priority": "high",
+      "discovered": 10,
+      "quick_screened_in": 2,
+      "selected_for_enrichment": 1,
+      "selected_titles": [
+        "Hokkaido University student dies following hydrofluoric acid exposure - Chemical & Engineering News"
+      ],
+      "deferred_by_limit": 0
+    },
+    {
+      "name": "cross_industry_process_safety",
+      "stream": "Cross-Industry",
+      "priority": "normal",
+      "discovered": 50,
+      "quick_screened_in": 12,
+      "selected_for_enrichment": 12,
+      "selected_titles": [
+        "UK oil refinery broke toxic pollution limits dozens of times, documents reveal - BBC",
+        "Drones Attack Oil Refinery in Russia’s Volgograd, Sparking Fire at Facility - Мілітарний",
+        "Massive drone attack hits Russia's Volgograd, fire breaks out at oil refinery - VIDEO - Apa.az",
+        "Honolulu firefighters extinguish refinery equipment fire in Kalihi - KITV",
+        "Fire Breaks Out at Omsk Oil Refinery After Strikes - REFORM.news",
+        "Ukrainian Drone Attack Sets Russia’s Major Kirishi Oil Refinery on Fire, Governor Says - ASHARQ AL-AWSAT English",
+        "Russia Just Got Handed Another Refinery Fire: Ukraine Hit the Plant That Supplies St. Petersburg and Pulkovo Airport With Fuel, Again - National Security Journal",
+        "Ukrainian Drone Attack Kills Woman, Sparks Fire at Leningrad Region Refinery - The Moscow Times",
+        "Fire Erupts at Kirishi Oil Refinery in Russia’s Leningrad Region Following Ukrainian Drone Attack - Мілітарний",
+        "MRPL refinery fire at coker-adjacent plant kills one, injures another - Oil & Gas Journal",
+        "Two killed, refinery on fire in Russia’s Krasnodar after drone attack - Al Jazeera",
+        "Ukrainian drone attack sets Russia's Kirishi refinery ablaze, woman killed by debris - ABC News & Headlines – Australian Broadcasting Corporation"
+      ],
+      "deferred_by_limit": 0
+    }
+  ],
+  "providers": {
+    "GDELT": {
+      "queries_succeeded": 0,
+      "queries_failed": 3,
+      "articles_returned": 0,
+      "failures": [
+        "GDELT semiconductor_incidents: unexpected response structure.",
+        "GDELT semiconductor_hazard_systems: HTTP 429",
+        "GDELT cross_industry_process_safety: unexpected response structure."
+      ],
+      "last_success_at": "2026-11-09T02:41:11+00:00",
+      "status": "unavailable"
+    },
+    "Google News RSS": {
+      "queries_succeeded": 5,
+      "queries_failed": 0,
+      "articles_returned": 182,
+      "failures": [],
+      "last_success_at": "2026-11-13T10:24:51+00:00",
+      "status": "healthy"
+    }
+  },
+  "health": "degraded",
+  "last_success_at": "2026-11-13T10:24:51+00:00"
+}
