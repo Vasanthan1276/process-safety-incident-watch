@@ -1,101 +1,74 @@
-\
 # Process Safety Incident Watch
 
-A rolling 90-day incident-intelligence monitor for:
+Public-source screening for semiconductor and significant industrial process-safety reports. Discovery is automated; incident verification and any formal Tier classification require human review.
 
-1. Semiconductor-related process safety incidents.
-2. Significant cross-industry process safety incidents with potential relevance to semiconductor manufacturing.
+## Current workflow
 
-## What the starter version does
+1. Search GDELT and Google News RSS using the existing five configured query groups.
+2. Screen titles and leads with word boundaries, physical-event context and industrial relevance. Preserve uncertain event reports for review; record rejected discoveries and their reasons.
+3. Retrieve article metadata where available. Failed requests and unresolved Google redirect pages stay explicit; a blocked article does not discard an otherwise relevant headline.
+4. Update the permanent incident database. Merge identical source URLs, retaining old source versions; suggest cross-publisher duplicate matches for human review without deleting or merging historical IDs.
+5. Build a review projection with attributed claims, explicit missing data, tentative company/location mentions, potential fab assessment questions and human review annotations.
+6. Publish the static dashboard through the existing weekly workflow. The schedule remains Monday 07:17 Asia/Singapore; actual starts can be delayed by GitHub.
 
-- Searches GDELT's DOC API across the previous three months.
-- Uses multiple discovery queries for semiconductor and cross-industry incidents.
-- Retrieves source-page descriptions and article text where accessible.
-- Applies transparent 0-5 scoring for:
-  - Source reliability
-  - Process safety relevance
-  - Semiconductor relevance
-  - Severity / potential severity
-  - Confidence
-  - Overall Watch Score
-- Keeps a permanent incident database.
-- Adds newly discovered corroborating sources to existing incidents.
-- Creates a weekly change history.
-- Moves incidents outside the rolling 90-day window to the archive.
-- Publishes a searchable GitHub Pages dashboard.
+The new dashboard provides searchable, paginated review candidates, screened-out records, all historical dates, duplicate links, source health, local review drafts and exports. `public/classic.html` preserves the previous card layout with corrected legacy status wording and a link back.
 
-## Important limitation of Version 0.1
+## Run and check locally
 
-Automated title matching is used for incident deduplication. It is intentionally conservative,
-but it can still split one incident into multiple records or incorrectly merge similar stories.
-The next development stage should improve entity/event matching and add AI-assisted factual
-summarisation with citations.
+Python 3.12 and Node 22 are used in CI. No paid API, AI service, analytics or secret is required.
 
-## Repository structure
-
-```text
-.github/workflows/weekly_update.yml
-config/settings.json
-config/scoring.json
-data/incidents.json
-data/latest_report.json
-history/
-public/index.html
-public/data/
-src/main.py
-requirements.txt
+```bash
+pip install -r requirements.txt
+python -m unittest discover -s tests -v
+node --check public/app.js
+node tests/test_dashboard.cjs
+python src/build_review.py
+python -m http.server 8765 --directory public
 ```
 
-## First setup
+Open `http://localhost:8765/`. `build_review.py` reads the stored database and creates `data/review_index.json` plus its public copy. It does **not** discover new incidents or refresh the source collection date.
 
-1. Create a new GitHub repository, for example:
-   `process-safety-incident-watch`
+```bash
+# Live discovery: changes local data and creates new history snapshots.
+python -u src/main.py
 
-2. Upload all files from this starter project, preserving the folder structure.
+# Portable, embedded-data preview: no server or live feeds required.
+python src/make_preview.py docs/incident-watch-preview.html
+```
 
-3. Commit the files to the default branch.
+The portable preview requires a modern browser supporting `DecompressionStream`. Review draft storage may be unavailable for downloaded HTML in some browsers; an explicit message is shown if saving fails. Its Existing layout link opens the currently published dashboard. The served application links to the preserved `classic.html`.
 
-4. Go to:
-   **Settings → Pages → Build and deployment → Source**
+## Review and evidence semantics
 
-5. Select:
-   **GitHub Actions**
+- **Needs review / In review:** incomplete human assessment.
+- **Reviewed:** a reviewer recorded a decision and evidence notes. It does not certify every claim.
+- **Excluded:** a reviewer excluded a record; it remains in the database.
+- **Retain / Needs context / Out of scope:** automated relevance screening, separate from review state.
+- **Possible duplicate:** a suggested match, not an established shared event or independent corroboration.
+- **Legacy Confirmed:** originally a publisher-rating threshold, never proof of independent verification. The raw historical label is preserved. A later successful collector run migrates operational labels to Needs review while retaining `legacy_review_status`.
 
-6. Go to:
-   **Actions → Weekly Process Safety Incident Update → Run workflow**
+Company and location matching is a limited dictionary of explicit title mentions, with source links and an unverified label. The publisher's country is never used as the incident location. Unknown entities are left unknown until reviewed. Source titles and usable descriptions are attributed reporting, not confirmed facts. Lessons are assessment prompts, not findings of root cause or safeguard failure. No definitive Tier 1 or Tier 2 assignment is generated.
 
-7. When the workflow finishes, open:
-   **Settings → Pages**
-   to find the published site URL.
+### Save a review
 
-## Weekly schedule
+Use each record's evidence panel to save a browser-only draft, then Export review drafts. This does not update GitHub. Review exported notes for public suitability, merge the selected entries into `config/reviews.json` (do not replace unrelated entries), rebuild and submit for repository review.
 
-The starter workflow is scheduled for Monday at 7:17 AM Singapore time.
+Each entry is keyed by an existing incident ID and requires `status`, `reviewed_by`, `reviewed_at` (ISO timestamp), and `notes`. Optional `confirmed_facts`, `preliminary_or_disputed`, and `consequences` are lists of `{ "text": "…", "source_url": "…" }`. Confirmed facts require status Reviewed. Optional `incident_date`, `company`, and `location` each require a corresponding `incident_date_source_url`, `company_source_url` or `location_source_url`. Evidence URLs must match a source already attached to that record. Add a missing public source through normal repository review first; do not invent a URL.
 
-You can also run it manually at any time from the Actions tab.
+The schema validator enforces provenance fields, not the truth of a claim or the quality of a review. Browser exports contain workflow decisions and notes; they do not automatically populate confirmed facts. Only public-source information belongs in this public repository.
 
-## Adjusting source scoring
+## Dates and health
 
-Edit:
+Incident date, publication date, source update date, discovery date and database update time are separate. The dashboard uses an incident date when supplied, otherwise publication/discovery time as a labelled proxy for its rolling 90-day filter. The original records have no established incident dates. GDELT `seendate` is treated as discovery time in new records; legacy GDELT date ambiguity is labelled.
 
-`config/scoring.json`
+Source health is independent of the GitHub job result. Partial source failures produce a degraded state and retain successful feed results. A total discovery failure preserves database/report bytes and their collection dates, updates diagnostics, and keeps the dashboard usable. Healthy empty responses are distinct from outages. Staleness is shown after eight days from the stored data collection time, not from a rebuild of the review projection. A clean run does not guarantee complete coverage.
 
-A reliability score of 3 or higher is required for publication by default.
+The weekly workflow is restricted to `main` for collection and deployment. A separate read-only CI workflow runs offline tests for pull requests and non-main pushes. No branch preview deployment is configured. GitHub workflow execution has not been triggered as part of this proposed change.
 
-## Adjusting search scope
+## Preservation and limitations
 
-Edit:
+All existing raw data and history files are unchanged in this proposal. Re-screening is a derived index; it never deletes old records or rewrites snapshots. New same-day history snapshots use unique filenames instead of overwriting earlier runs.
 
-`config/settings.json`
+The rules favor transparent, conservative decisions but are English-focused and imperfect. Duplicate suggestions depend on a limited entity vocabulary and nearby report dates; they can miss follow-up coverage or suggest unrelated events. Existing erroneous historical merges are not silently split. Source independence, actual event dates, consequences and causes still require source checking. Some original publisher URLs cannot be resolved from Google News. Query caps and article fetch limits leave coverage incomplete; diagnostics expose those limits.
 
-The search queries are intentionally separated so that semiconductor events and cross-industry
-events remain distinct in the database.
-
-## Next planned development stages
-
-1. Improve event deduplication and company/location extraction.
-2. Add a manual review queue for reliability scores below 3.
-3. Add regulator-specific feeds and targeted company searches.
-4. Generate a polished weekly HTML/Markdown report.
-5. Add subscriber management and weekly email distribution.
-6. Add Copilot/AI-ready exports and optional AI-assisted summaries.
+See [the change review and validation record](docs/review-2026-11-13.md) for the baseline findings, test results and remaining review steps.

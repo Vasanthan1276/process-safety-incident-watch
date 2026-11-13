@@ -16,6 +16,11 @@ from urllib.parse import parse_qsl, quote_plus, urlencode, urlparse, urlunparse
 import requests
 from bs4 import BeautifulSoup
 
+try:
+    from . import reliability as quality
+except ImportError:
+    import reliability as quality
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -26,6 +31,8 @@ INCIDENTS_PATH = ROOT / "data" / "incidents.json"
 REPORT_PATH = ROOT / "data" / "latest_report.json"
 DIAGNOSTICS_PATH = ROOT / "data" / "run_diagnostics.json"
 UNKNOWN_SOURCES_PATH = ROOT / "data" / "unknown_sources.json"
+REVIEW_INDEX_PATH = ROOT / "data" / "review_index.json"
+REVIEWS_PATH = ROOT / "config" / "reviews.json"
 
 HISTORY_DIR = ROOT / "history"
 PUBLIC_DATA_DIR = ROOT / "public" / "data"
@@ -124,24 +131,7 @@ def domain_matches(domain: str, configured_domain: str) -> bool:
 
 
 def is_government_domain(domain: str) -> bool:
-    government_markers = (
-        ".gov",
-        ".gov.",
-        ".gob",
-        ".gob.",
-        ".go.kr",
-        ".go.jp",
-        ".go.th",
-        ".go.id",
-        ".gov.sg",
-        ".gov.my",
-        ".gov.tw",
-        ".gov.au",
-        ".gov.nz",
-        ".gc.ca",
-    )
-
-    return any(marker in domain for marker in government_markers)
+    return bool(re.search(r"(?:\.gov(?:\.[a-z]{2})?|\.go\.(?:kr|jp|th|id)|\.gc\.ca)$", domain))
 
 
 def score_reliability(domain: str, scoring: dict) -> int:
@@ -181,7 +171,7 @@ def keyword_hits(text: str, keywords: list[str]) -> list[str]:
         {
             keyword
             for keyword in keywords
-            if keyword.lower() in lowered
+            if re.search(r"(?<!\w)" + re.escape(keyword.lower()) + r"(?!\w)", lowered)
         }
     )
 
@@ -309,7 +299,7 @@ def fetch_gdelt(
                 f"GDELT network error. Retrying in {delay:.0f}s.",
                 flush=True,
             )
-            time.sleep(delay)
+            time.sleep(min(delay, 55))
             continue
 
         if response.status_code == 200:
@@ -320,7 +310,7 @@ def fetch_gdelt(
                     f"GDELT {query_name}: invalid JSON response."
                 ) from exc
 
-            articles = payload.get("articles", [])
+            articles = payload.get("articles") if isinstance(payload, dict) else None
 
             if not isinstance(articles, list):
                 raise DiscoveryError(
@@ -343,7 +333,9 @@ def fetch_gdelt(
                         "url": url,
                         "source_domain": domain_from_url(url),
                         "source_name": article.get("domain", ""),
-                        "published_at": parse_gdelt_date(article.get("seendate")),
+                        "published_at": None,
+                        "discovered_at": parse_gdelt_date(article.get("seendate")),
+                        "date_basis": "GDELT discovery time; publication unknown",
                         "description": "",
                         "discovery_source": "GDELT",
                         "source_country": article.get("sourcecountry"),
@@ -368,7 +360,7 @@ def fetch_gdelt(
                 flush=True,
             )
 
-            time.sleep(delay)
+            time.sleep(min(delay, 55))
             continue
 
         raise DiscoveryError(
@@ -413,6 +405,9 @@ def fetch_google_news_rss(
             f"Google News RSS {query_name}: invalid XML."
         ) from exc
 
+    if root.tag != "rss" or root.find("channel") is None:
+        raise DiscoveryError(f"Google News RSS {query_name}: unexpected feed structure")
+
     results = []
 
     for item in root.findall(".//item")[:max_records]:
@@ -438,6 +433,7 @@ def fetch_google_news_rss(
                 "source_domain": source_domain,
                 "source_name": source_name,
                 "published_at": parse_rss_date(pub_date),
+                "date_basis": "RSS publication date",
                 "description": description,
                 "discovery_source": "Google News RSS",
                 "source_country": None,
@@ -454,13 +450,11 @@ def fetch_google_news_rss(
 
 
 def article_key(article: dict) -> str:
+    url = quality.canonical_url(article.get("url", ""))
+    if url:
+        return url
     title = normalize_text(article.get("title", ""))
-    domain = article.get("source_domain", "")
-
-    if title:
-        return f"{title}|{domain}"
-
-    return canonicalize_url(article.get("url", ""))
+    return f"{title}|{article.get('source_domain', '')}|{article.get('published_at') or article.get('discovered_at') or ''}" if title else ""
 
 
 def merge_discovered_articles(
@@ -517,6 +511,8 @@ def fetch_article_context(url: str) -> dict:
         "description": "",
         "text": "",
         "final_url": url,
+        "retrieval_status": "not_attempted",
+        "retrieved_at": iso_now(),
     }
 
     if not url:
@@ -530,11 +526,16 @@ def fetch_article_context(url: str) -> dict:
         )
 
         result["final_url"] = response.url
+        result["http_status"] = response.status_code
         response.raise_for_status()
+        if domain_from_url(response.url) in {"news.google.com", "google.com"}:
+            result["retrieval_status"] = "aggregator_only"
+            return result
 
         content_type = response.headers.get("content-type", "")
 
         if "html" not in content_type.lower():
+            result["retrieval_status"] = "unsupported_content"
             return result
 
         soup = BeautifulSoup(response.text, "html.parser")
@@ -552,6 +553,12 @@ def fetch_article_context(url: str) -> dict:
                 )
                 break
 
+        for field, prop in (("published_at", "article:published_time"), ("updated_at", "article:modified_time")):
+            tag = soup.find("meta", attrs={"property": prop})
+            if tag and quality.parse_date(tag.get("content")):
+                result[field] = quality.parse_date(tag["content"]).isoformat()
+        for tag in soup.select("nav, footer, header, aside, script, style"):
+            tag.decompose()
         paragraphs = []
 
         for paragraph in soup.find_all("p"):
@@ -569,10 +576,13 @@ def fetch_article_context(url: str) -> dict:
                 break
 
         result["text"] = " ".join(paragraphs)[:5000]
+        result["description"] = quality.clean_content(result["description"])
+        result["retrieval_status"] = "retrieved" if result["text"] or result["description"] else "empty_content"
 
         return result
 
-    except Exception:
+    except requests.RequestException:
+        result["retrieval_status"] = "fetch_failed"
         return result
 
 
@@ -754,10 +764,7 @@ def review_status_for(
     reliability: int,
     settings: dict,
 ) -> str:
-    if reliability >= settings["minimum_confirmed_reliability"]:
-        return "Confirmed"
-
-    return "Under Review"
+    return "Needs review"
 
 
 def record_unknown_source(
@@ -805,11 +812,15 @@ def build_candidate(
     title = article.get("title", "").strip()
 
     description = (
-        context.get("description", "")
-        or article.get("description", "")
+        quality.clean_content(context.get("description", ""))
+        or quality.clean_content(article.get("description", ""))
     )
 
     body = context.get("text", "")
+    screening = quality.screen(title, description, body)
+    if screening["decision"] == "Out of scope":
+        return None
+    stream = screening["stream"] or stream
 
     source_domain = article.get("source_domain", "").strip()
     final_url = canonicalize_url(context.get("final_url", ""))
@@ -872,14 +883,6 @@ def build_candidate(
             1 if pre_process > 0 else 0,
         )
 
-    if not qualifies_for_monitoring(
-        stream,
-        process_score,
-        semiconductor_score,
-        settings,
-    ):
-        return None
-
     review_status = review_status_for(
         reliability,
         settings,
@@ -894,13 +897,7 @@ def build_candidate(
             run_time,
         )
 
-    confidence = max(
-        1,
-        min(
-            5,
-            reliability,
-        ),
-    )
+    confidence = min(2, max(1, reliability))
 
     watch_score = weighted_watch_score(
         reliability,
@@ -917,10 +914,18 @@ def build_candidate(
 
     source = {
         "title": title,
-        "url": source_url,
+        "url": final_url if quality.safe_url(final_url) and final_domain not in {"news.google.com", "google.com"} else source_url,
+        "original_url": final_url if quality.safe_url(final_url) and final_domain not in {"news.google.com", "google.com"} else None,
+        "discovery_url": source_url,
+        "retrieval_status": context.get("retrieval_status", "not_attempted"),
+        "retrieved_at": context.get("retrieved_at"),
+        "http_status": context.get("http_status"),
         "domain": source_domain,
         "source_name": article.get("source_name", ""),
-        "published_at": article.get("published_at"),
+        "published_at": context.get("published_at") or article.get("published_at"),
+        "updated_at": context.get("updated_at"),
+        "discovered_at": article.get("discovered_at"),
+        "date_basis": "Publisher metadata" if context.get("published_at") else article.get("date_basis", "Feed publication date"),
         "source_country": article.get("source_country"),
         "language": article.get("language"),
         "reliability": reliability,
@@ -934,7 +939,8 @@ def build_candidate(
     return {
         "stream": stream,
         "title": title,
-        "reported_at": article.get("published_at"),
+        "reported_at": source["published_at"] or article.get("discovered_at"),
+        "screening": screening,
         "summary": make_summary(
             title,
             description,
@@ -1023,40 +1029,8 @@ def source_urls(incident: dict) -> set[str]:
 
 
 def same_incident(candidate: dict, incident: dict) -> bool:
-    if source_urls(candidate) & source_urls(incident):
-        return True
-
-    similarity = title_similarity(
-        candidate.get("title", ""),
-        incident.get("title", ""),
-    )
-
-    if similarity < 0.78:
-        return False
-
-    candidate_hazards = set(
-        candidate.get(
-            "keyword_evidence",
-            {},
-        ).get(
-            "process_safety",
-            [],
-        )
-    )
-
-    incident_hazards = set(
-        incident.get(
-            "keyword_evidence",
-            {},
-        ).get(
-            "process_safety",
-            [],
-        )
-    )
-
-    return similarity >= 0.91 or bool(
-        candidate_hazards & incident_hazards
-    )
+    match = quality.match_records(candidate, incident)
+    return bool(match and match["kind"] == "same_report")
 
 
 def next_incident_id(
@@ -1103,15 +1077,8 @@ def recompute_incident_scores(
 
     scores["source_reliability"] = best_reliability
 
-    source_count = len(sources)
-
-    scores["confidence"] = min(
-        5,
-        max(
-            best_reliability,
-            1 + min(source_count, 4),
-        ),
-    )
+    # A publisher score or extra URLs cannot establish independent corroboration.
+    scores["confidence"] = min(2, max(1, best_reliability))
 
     scores["watch_score"] = weighted_watch_score(
         scores.get("source_reliability", 0),
@@ -1134,17 +1101,30 @@ def merge_candidate(
             continue
 
         changes = []
-        known_urls = source_urls(incident)
+        known_urls = quality.incident_urls(incident)
 
         for source in candidate.get("sources", []):
-            url = canonicalize_url(source.get("url", ""))
+            url = quality.canonical_url(source.get("url", ""))
 
-            if url and url not in known_urls:
+            candidate_urls = quality.incident_urls({"sources": [source]})
+            if url and not (candidate_urls & known_urls):
                 incident.setdefault("sources", []).append(source)
-                known_urls.add(url)
+                known_urls.update(candidate_urls)
                 changes.append(
                     f"Added source: {source.get('domain') or source.get('source_name') or 'unknown'}"
                 )
+            elif url:
+                for existing in incident.get("sources", []):
+                    if not (candidate_urls & quality.incident_urls({"sources": [existing]})):
+                        continue
+                    changed = any(source.get(k) is not None and source.get(k) != existing.get(k)
+                                  for k in ("title", "description", "published_at", "updated_at", "original_url", "retrieval_status"))
+                    if changed:
+                        snapshot = {k: v for k, v in existing.items() if k != "versions"}
+                        existing.setdefault("versions", []).append(snapshot)
+                        existing.update({k: v for k, v in source.items() if v is not None})
+                        changes.append("Source metadata updated; previous version retained")
+                    break
 
         for score_key in (
             "process_safety_relevance",
@@ -1198,6 +1178,11 @@ def merge_candidate(
                 changes.append(
                     f"Added {category.replace('_', ' ')} evidence"
                 )
+
+        report_dates = [quality.parse_date(s.get("published_at") or s.get("discovered_at")) for s in incident.get("sources", [])]
+        report_dates = [d for d in report_dates if d]
+        if report_dates:
+            incident["reported_at"] = min(report_dates).isoformat()
 
         previous_review_status = incident.get(
             "review_status",
@@ -1274,17 +1259,7 @@ def merge_candidate(
 
 
 def reported_datetime(incident: dict) -> datetime | None:
-    value = incident.get("reported_at")
-
-    if not value:
-        return None
-
-    try:
-        return datetime.fromisoformat(
-            value.replace("Z", "+00:00")
-        )
-    except ValueError:
-        return None
+    return quality.parse_date(incident.get("incident_date") or incident.get("reported_at") or incident.get("first_detected"))
 
 
 def archive_old_incidents(
@@ -1329,16 +1304,9 @@ def migrate_existing_incidents(
     settings: dict,
 ) -> None:
     for incident in incidents:
-        scores = incident.setdefault("scores", {})
-
-        if "review_status" not in incident:
-            incident["review_status"] = review_status_for(
-                scores.get(
-                    "source_reliability",
-                    0,
-                ),
-                settings,
-            )
+        if incident.get("review_status") in {"Confirmed", "Under Review"}:
+            incident.setdefault("legacy_review_status", incident["review_status"])
+            incident["review_status"] = "Needs review"
 
 
 def discover_query(
@@ -1426,9 +1394,12 @@ def collect_candidates(
         "quick_screened_in": 0,
         "selected_for_enrichment": 0,
         "article_pages_enriched": 0,
-        "confirmed_candidates": 0,
+        "confirmed_candidates": 0,  # compatibility: never auto-confirm
+        "needs_review_candidates": 0,
         "under_review_candidates": 0,
         "rejected_after_analysis": 0,
+        "screened_out": [],
+        "article_retrieval": {},
         "outside_lookback_window": 0,
         "query_details": [],
         "providers": {
@@ -1487,6 +1458,7 @@ def collect_candidates(
             "quick_screened_in": 0,
             "selected_for_enrichment": 0,
             "selected_titles": [],
+            "deferred_by_limit": 0,
         }
 
         for article in articles:
@@ -1497,23 +1469,14 @@ def collect_candidates(
 
             # Enforce the rolling window ourselves rather than relying only on
             # provider-side date syntax.
-            published_at = article.get("published_at")
-
-            if published_at:
-                try:
-                    published_dt = datetime.fromisoformat(
-                        published_at.replace(
-                            "Z",
-                            "+00:00",
-                        )
-                    )
-
-                    if published_dt < cutoff:
-                        diagnostics["outside_lookback_window"] += 1
-                        continue
-
-                except ValueError:
-                    pass
+            published_dt = quality.parse_date(article.get("published_at") or article.get("discovered_at"))
+            if published_dt and published_dt < cutoff:
+                diagnostics["outside_lookback_window"] += 1
+                continue
+            screening = quality.screen(article.get("title", ""), article.get("description", ""))
+            if screening["decision"] == "Out of scope":
+                diagnostics["screened_out"].append({"title": article.get("title"), "url": article.get("url"), "reason": screening["reason"]})
+                continue
 
             quick_text = " ".join(
                 [
@@ -1532,13 +1495,6 @@ def collect_candidates(
                 quick_text,
                 scoring,
             )
-
-            if stream == "Semiconductor":
-                if pre_semiconductor == 0 and pre_process == 0:
-                    continue
-
-            elif pre_process == 0:
-                continue
 
             reliability = score_reliability(
                 article.get("source_domain", ""),
@@ -1585,6 +1541,7 @@ def collect_candidates(
         ]
 
         selected = eligible[:enrichment_limit]
+        query_detail["deferred_by_limit"] = max(0, len(eligible) - len(selected))
 
         for item in selected:
             processed_selected_keys.add(
@@ -1644,6 +1601,8 @@ def collect_candidates(
                         }
 
                     contexts[key] = context
+                    state = context.get("retrieval_status", "fetch_failed")
+                    diagnostics["article_retrieval"][state] = diagnostics["article_retrieval"].get(state, 0) + 1
 
                     if context.get("description") or context.get("text"):
                         diagnostics["article_pages_enriched"] += 1
@@ -1674,6 +1633,8 @@ def collect_candidates(
 
             if candidate is None:
                 diagnostics["rejected_after_analysis"] += 1
+                decision = quality.screen(article.get("title", ""), context.get("description") or article.get("description", ""))
+                diagnostics["screened_out"].append({"title": article.get("title"), "url": article.get("url"), "reason": decision["reason"]})
                 continue
 
             candidates.append(candidate)
@@ -1682,19 +1643,11 @@ def collect_candidates(
                 diagnostics["confirmed_candidates"] += 1
             else:
                 diagnostics["under_review_candidates"] += 1
+                diagnostics["needs_review_candidates"] += 1
 
     diagnostics["unique_articles"] = len(all_discovered_keys)
 
-    provider_successes = sum(
-        provider["queries_succeeded"]
-        for provider in diagnostics["providers"].values()
-    )
-
-    if provider_successes == 0:
-        raise RuntimeError(
-            "All discovery providers failed. "
-            "Existing incident data has been preserved."
-        )
+    quality.provider_health(diagnostics, load_json(DIAGNOSTICS_PATH))
 
     candidates.sort(
         key=lambda item: (
@@ -1731,7 +1684,7 @@ def create_report(
     under_review = [
         incident
         for incident in active
-        if incident.get("review_status") == "Under Review"
+        if incident.get("review_status") in {"Needs review", "Under Review", "In review"}
     ]
 
     high_priority = [
@@ -1776,6 +1729,13 @@ def snapshot_history(
     )
 
     date_key = run_time[:10]
+    if any((HISTORY_DIR / f"{date_key}-{kind}.json").exists() for kind in ("incidents", "report", "diagnostics")):
+        date_key = re.sub(r"[^0-9T]", "", run_time)
+        counter = 1
+        base = date_key
+        while any((HISTORY_DIR / f"{date_key}-{kind}.json").exists() for kind in ("incidents", "report", "diagnostics")):
+            date_key = f"{base}-{counter}"
+            counter += 1
 
     save_json(
         HISTORY_DIR / f"{date_key}-incidents.json",
@@ -1804,6 +1764,7 @@ def copy_public_data() -> None:
         (REPORT_PATH, "latest_report.json"),
         (DIAGNOSTICS_PATH, "run_diagnostics.json"),
         (UNKNOWN_SOURCES_PATH, "unknown_sources.json"),
+        (REVIEW_INDEX_PATH, "review_index.json"),
     ):
         if source_path.exists():
             shutil.copy2(
@@ -1839,15 +1800,11 @@ def main() -> None:
         [],
     )
 
-    migrate_existing_incidents(
-        incidents,
-        settings,
-    )
-
+    quality.validate_reviews(load_json(REVIEWS_PATH), incidents)
     run_time = iso_now()
 
     print(
-        "Process Safety Incident Watch v0.5",
+        "Process Safety Incident Watch v0.6",
         flush=True,
     )
 
@@ -1855,13 +1812,6 @@ def main() -> None:
         f"Run started: {run_time}",
         flush=True,
     )
-
-    for incident in incidents:
-        if incident.get("status") in {
-            "New",
-            "Updated",
-        }:
-            incident["status"] = "Active"
 
     # Collect everything before changing the stored database.
     # A total provider failure therefore cannot wipe or reset the dashboard.
@@ -1871,6 +1821,22 @@ def main() -> None:
         run_time,
         unknown_sources,
     )
+
+    if diagnostics["health"] in {"unavailable", "disabled"}:
+        save_json(DIAGNOSTICS_PATH, diagnostics)
+        # Keep the last usable database/report and their original freshness dates.
+        save_json(REVIEW_INDEX_PATH, quality.build_review_index(database, diagnostics, load_json(REVIEWS_PATH), run_time))
+        copy_public_data()
+        print("::warning::Discovery unavailable; preserved last usable incident database.")
+        return
+
+    migrate_existing_incidents(incidents, settings)
+    for incident in incidents:
+        if incident.get("status") in {
+            "New",
+            "Updated",
+        }:
+            incident["status"] = "Active"
 
     print(
         "\nDiscovery diagnostics:",
@@ -1928,7 +1894,7 @@ def main() -> None:
         reverse=True,
     )
 
-    database["schema_version"] = 5
+    database["schema_version"] = 6
     database["last_run"] = run_time
 
     unknown_sources["last_run"] = run_time
@@ -1941,6 +1907,8 @@ def main() -> None:
         updated_ids,
         archived_ids,
     )
+
+    review_index = quality.build_review_index(database, diagnostics, load_json(REVIEWS_PATH), run_time)
 
     save_json(
         INCIDENTS_PATH,
@@ -1961,6 +1929,8 @@ def main() -> None:
         UNKNOWN_SOURCES_PATH,
         unknown_sources,
     )
+
+    save_json(REVIEW_INDEX_PATH, review_index)
 
     snapshot_history(
         database,
